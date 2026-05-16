@@ -170,6 +170,15 @@ input[type=range] {
   min-height: 1.2em;
 }
 
+.inline-link {
+  color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+}
+.inline-link:hover {
+  text-decoration: underline;
+}
+
 .error {
   color: #b94a48;
 }

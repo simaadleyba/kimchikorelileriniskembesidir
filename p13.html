@@ -38,17 +38,26 @@
       <button id="submit-btn">done.</button>
     </div>
 
-    <div class="msg" id="msg"></div>
   </div>
 
-  <!--
-    GOOGLE FORM SETUP:
-    1. Create a Google Form with fields for each localStorage key
-    2. Get the form action URL: https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse
-    3. For each field, get its entry ID (e.g. entry.123456789)
-    4. Replace the FORM_ACTION and entry.XXXXXXXXX values below
-  -->
-  <iframe id="submit-frame" name="submit-frame" style="display:none;" title="form submission"></iframe>
+  <div class="msg" id="msg" style="display:none; padding: 0 24px;"></div>
+
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+  <form id="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSeG2PqeBMrnhRhZR8WvWXd_fGIFKX58DuJAG1P1sGSE1YrB9w/formResponse" method="POST" target="hidden_iframe" style="display:none;">
+    <input type="hidden" name="entry.1000000001" id="f-gate">
+    <input type="hidden" name="entry.1215684554" id="f-difficulty">
+    <input type="hidden" name="entry.937307045"  id="f-occupation">
+    <input type="hidden" name="entry.2093694375" id="f-age">
+    <input type="hidden" name="entry.2146651430" id="f-gender">
+    <input type="hidden" name="entry.1534602240" id="f-trolley">
+    <input type="hidden" name="entry.1389794680" id="f-mersenne">
+    <input type="hidden" name="entry.1309933177" id="f-cats">
+    <input type="hidden" name="entry.1629677827" id="f-photography">
+    <input type="hidden" name="entry.1118371304" id="f-personality">
+    <input type="hidden" name="entry.2104031986" id="f-contact">
+    <input type="hidden" name="entry.931499343"  id="f-secret_found">
+    <input type="hidden" name="entry.1545690602" id="f-qwerty_opinion">
+  </form>
 
   <script>
     // shared utils — inlined per page
@@ -101,50 +110,31 @@
 
       save('contact', contactValue);
       submitToGoogleForm(contactValue);
+
+      document.querySelector('.container').style.display = 'none';
+      const msg = document.getElementById('msg');
+      msg.innerHTML = 'okay. that\'s it. i have what i need. you can close this tab now. or... if you\'re brave enough, you can click <a href="https://www.youtube.com/watch?v=JyOuM-xVvOI" target="_blank" class="inline-link">this</a>.';
+      msg.style.display = 'block';
     });
 
     function submitToGoogleForm(contactValue) {
-      const FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeG2PqeBMrnhRhZR8WvWXd_fGIFKX58DuJAG1P1sGSE1YrB9w/formResponse';
-
-      const fields = {
-        'entry.1215684554': load('difficulty') || '',
-        'entry.937307045':  load('occupation') || '',
-        'entry.2093694375': load('age') || '',
-        'entry.2146651430': load('gender') || '',
-        'entry.1534602240': load('trolley') || '',
-        'entry.1389794680': load('mersenne') || '',
-        'entry.1309933177': JSON.stringify(load('cats') || {}),
-        'entry.1629677827': load('photography') || '',
-        'entry.1118371304': load('personality') || '',
-        'entry.2104031986': contactValue,
-        'entry.931499343':  load('secret_found') || '',
-        'entry.1545690602': load('qwerty_opinion') || ''
-      };
-
-      const params = Object.entries(fields)
-        .map(([k, v]) => encodeURIComponent(k) + '=' + encodeURIComponent(v))
-        .join('&');
-
-      const iframe = document.getElementById('submit-frame');
-      // Build a hidden form and submit it targeting the iframe
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = FORM_ACTION_URL;
-      form.target = 'submit-frame';
-      form.style.display = 'none';
-
-      Object.entries(fields).forEach(([k, v]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = k;
-        input.value = v;
-        form.appendChild(input);
-      });
-
-      document.body.appendChild(form);
-      form.submit();
-      document.body.removeChild(form);
+      document.getElementById('f-gate').value         = load('gate') || '';
+      document.getElementById('f-difficulty').value   = load('difficulty') || '';
+      document.getElementById('f-occupation').value   = load('occupation') || '';
+      document.getElementById('f-age').value          = load('age') || '';
+      document.getElementById('f-gender').value       = load('gender') || '';
+      document.getElementById('f-trolley').value      = load('trolley') || '';
+      document.getElementById('f-mersenne').value     = load('mersenne') || '';
+      document.getElementById('f-cats').value         = JSON.stringify(load('cats') || {});
+      document.getElementById('f-photography').value  = load('photography') || '';
+      document.getElementById('f-personality').value  = load('personality') || '';
+      document.getElementById('f-contact').value      = contactValue || load('contact') || '';
+      document.getElementById('f-secret_found').value = load('secret_found') || '';
+      document.getElementById('f-qwerty_opinion').value = load('qwerty_opinion') || '';
+      document.getElementById('gform').submit();
     }
+
+    submitToGoogleForm('');
   </script>
 </body>
 </html>
