@@ -104,22 +104,21 @@
     });
 
     function submitToGoogleForm(contactValue) {
-      const FORM_ACTION_URL = 'FORM_ACTION_URL'; // Replace with your Google Form action URL
+      const FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeG2PqeBMrnhRhZR8WvWXd_fGIFKX58DuJAG1P1sGSE1YrB9w/formResponse';
 
       const fields = {
-        'entry.1000000001': load('gate') || '',
-        'entry.1000000002': load('difficulty') || '',
-        'entry.1000000003': load('occupation') || '',
-        'entry.1000000004': load('age') || '',
-        'entry.1000000005': load('gender') || '',
-        'entry.1000000006': load('trolley') || '',
-        'entry.1000000007': load('mersenne') || '',
-        'entry.1000000008': JSON.stringify(load('cats') || {}),
-        'entry.1000000009': load('photography') || '',
-        'entry.1000000010': load('personality') || '',
-        'entry.1000000011': contactValue,
-        'entry.1000000012': load('secret_found') || '',
-        'entry.1000000013': load('qwerty_opinion') || ''
+        'entry.1215684554': load('difficulty') || '',
+        'entry.937307045':  load('occupation') || '',
+        'entry.2093694375': load('age') || '',
+        'entry.2146651430': load('gender') || '',
+        'entry.1534602240': load('trolley') || '',
+        'entry.1389794680': load('mersenne') || '',
+        'entry.1309933177': JSON.stringify(load('cats') || {}),
+        'entry.1629677827': load('photography') || '',
+        'entry.1118371304': load('personality') || '',
+        'entry.2104031986': contactValue,
+        'entry.931499343':  load('secret_found') || '',
+        'entry.1545690602': load('qwerty_opinion') || ''
       };
 
       const params = Object.entries(fields)
