@@ -79,7 +79,11 @@
         el.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
       }
       tick(); setInterval(tick, 1000);
-      // no click-to-secret on this page
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => {
+        save('secret_return', window.location.pathname + window.location.search);
+        navigate('secret.html');
+      });
     }
 
     if (!requireGate()) { /* redirecting */ }
