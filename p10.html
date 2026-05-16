@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar-container"><div id="progress-bar"></div></div>
+  <div id="timer">00:00</div>
+
+  <div class="container">
+    <div class="sincere-block">
+      <p>i like myself. i'm confident in how i look, how i talk, how i think. and somehow i still ended up being told i'm too much. i don't think i am. i think i just have a lot to give — attention, care, love, all of it.</p>
+      <p>what i actually want is very simple. someone to study together. someone to facetime for no reason. someone i can send random messages during the day. someone who will send me selfies just because they wanted to. a person who is also a little clingy, a little introverted, who has maybe two close friends and doesn't need more. monogamous, communicates, has something they're working toward.</p>
+      <p>i know that list sounds easy. it isn't, apparently.</p>
+      <p>i'm not looking for perfect. i'm looking for someone who puts me first and lets me do the same. joint first, ideally. if you know what that means, you might be it.</p>
+    </div>
+
+    <button id="next-btn">next</button>
+  </div>
+
+  <script>
+    // shared utils — inlined per page
+    function getGateKey() { return localStorage.getItem('gate'); }
+    function requireGate() { if (!getGateKey()) { window.location.href = 'index.html'; return false; } return true; }
+    function save(k, v) { localStorage.setItem(k, typeof v === 'object' ? JSON.stringify(v) : String(v)); }
+    function load(k) { const v = localStorage.getItem(k); try { return JSON.parse(v); } catch { return v; } }
+    function navigate(url) { setTimeout(() => { window.location.href = url; }, 150); }
+    function setProgress(pct) {
+      const bar = document.getElementById('progress-bar');
+      if (bar) setTimeout(() => bar.style.width = pct + '%', 300);
+    }
+    function initTimer() {
+      if (!localStorage.getItem('timer_start')) localStorage.setItem('timer_start', Date.now());
+      const el = document.getElementById('timer');
+      if (!el) return;
+      function tick() {
+        const s = Math.floor((Date.now() - +localStorage.getItem('timer_start')) / 1000);
+        el.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+      el.addEventListener('click', () => {
+        save('secret_return', window.location.pathname + window.location.search);
+        navigate('secret.html');
+      });
+    }
+
+    if (!requireGate()) { /* redirecting */ }
+    initTimer();
+    setProgress(89);
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      setTimeout(() => navigate('p11.html'), 300);
+    });
+  </script>
+</body>
+</html>

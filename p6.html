@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar-container"><div id="progress-bar"></div></div>
+  <div id="timer">00:00</div>
+
+  <div class="container">
+    <blockquote class="exchange">
+      some of my guilty pleasures: watching football (soccer for you yanks) and playing ea fc. chocolate chip cookies. some k-dramas. i'm not sorry.
+    </blockquote>
+
+    <div class="field-group">
+      <span class="field-label">how old are you?</span>
+      <div class="age-row">
+        <input type="range" id="age-slider" min="13" max="99" value="25">
+        <span class="age-value mono" id="age-display">25</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <span class="field-label">gender</span>
+      <div class="btn-group">
+        <button class="gender-btn" data-value="she/her">she/her</button>
+        <button class="gender-btn" data-value="he/him">he/him</button>
+        <button class="gender-btn" data-value="they/them">they/them</button>
+        <button class="gender-btn" data-value="other">other</button>
+      </div>
+    </div>
+
+    <button id="submit-btn">continue</button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <script>
+    // shared utils — inlined per page
+    function getGateKey() { return localStorage.getItem('gate'); }
+    function requireGate() { if (!getGateKey()) { window.location.href = 'index.html'; return false; } return true; }
+    function save(k, v) { localStorage.setItem(k, typeof v === 'object' ? JSON.stringify(v) : String(v)); }
+    function load(k) { const v = localStorage.getItem(k); try { return JSON.parse(v); } catch { return v; } }
+    function navigate(url) { setTimeout(() => { window.location.href = url; }, 150); }
+    function setProgress(pct) {
+      const bar = document.getElementById('progress-bar');
+      if (bar) setTimeout(() => bar.style.width = pct + '%', 300);
+    }
+    function initTimer() {
+      if (!localStorage.getItem('timer_start')) localStorage.setItem('timer_start', Date.now());
+      const el = document.getElementById('timer');
+      if (!el) return;
+      function tick() {
+        const s = Math.floor((Date.now() - +localStorage.getItem('timer_start')) / 1000);
+        el.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+      el.addEventListener('click', () => {
+        save('secret_return', window.location.pathname + window.location.search);
+        navigate('secret.html');
+      });
+    }
+
+    if (!requireGate()) { /* redirecting */ }
+    initTimer();
+    setProgress(45);
+
+    let selectedGender = null;
+
+    const slider = document.getElementById('age-slider');
+    const display = document.getElementById('age-display');
+    slider.addEventListener('input', () => { display.textContent = slider.value; });
+
+    document.querySelectorAll('.gender-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedGender = btn.dataset.value;
+      });
+    });
+
+    document.getElementById('submit-btn').addEventListener('click', () => {
+      save('age', parseInt(slider.value));
+      save('gender', selectedGender || 'unspecified');
+      navigate('p7.html');
+    });
+  </script>
+</body>
+</html>

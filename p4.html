@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar-container"><div id="progress-bar"></div></div>
+  <div id="timer">00:00</div>
+
+  <div class="container">
+    <p class="flavor" style="margin-bottom: 16px;">okay. important part.</p>
+    <div class="question">please name the following cats.</div>
+
+    <div class="cat-grid" style="margin-bottom: 32px;">
+      <div class="cat-item">
+        <img src="images/goobula.jpg" alt="cat">
+        <span class="cat-label">name:</span>
+        <input type="text" class="cat-name" data-cat="goobula" placeholder="name" autocomplete="off">
+      </div>
+      <div class="cat-item">
+        <img src="images/molecule.png" alt="cat">
+        <span class="cat-label">name:</span>
+        <input type="text" class="cat-name" data-cat="molecule" placeholder="name" autocomplete="off">
+      </div>
+      <div class="cat-item">
+        <img src="images/nacho.jpg" alt="cat">
+        <span class="cat-label">name:</span>
+        <input type="text" class="cat-name" data-cat="nacho" placeholder="name" autocomplete="off">
+      </div>
+      <div class="cat-item">
+        <img src="images/tangyuan.jpg" alt="cat">
+        <span class="cat-label">name:</span>
+        <input type="text" class="cat-name" data-cat="tangyuan" placeholder="name" autocomplete="off">
+      </div>
+      <div class="cat-item">
+        <img src="images/uni.jpg" alt="cat">
+        <span class="cat-label">name:</span>
+        <input type="text" class="cat-name" data-cat="uni" placeholder="name" autocomplete="off">
+      </div>
+    </div>
+
+    <button id="submit-btn">submit</button>
+    <div class="reaction" id="reaction"></div>
+  </div>
+
+  <script>
+    // shared utils — inlined per page
+    function getGateKey() { return localStorage.getItem('gate'); }
+    function requireGate() { if (!getGateKey()) { window.location.href = 'index.html'; return false; } return true; }
+    function save(k, v) { localStorage.setItem(k, typeof v === 'object' ? JSON.stringify(v) : String(v)); }
+    function load(k) { const v = localStorage.getItem(k); try { return JSON.parse(v); } catch { return v; } }
+    function navigate(url) { setTimeout(() => { window.location.href = url; }, 150); }
+    function setProgress(pct) {
+      const bar = document.getElementById('progress-bar');
+      if (bar) setTimeout(() => bar.style.width = pct + '%', 300);
+    }
+    function initTimer() {
+      if (!localStorage.getItem('timer_start')) localStorage.setItem('timer_start', Date.now());
+      const el = document.getElementById('timer');
+      if (!el) return;
+      function tick() {
+        const s = Math.floor((Date.now() - +localStorage.getItem('timer_start')) / 1000);
+        el.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+      el.addEventListener('click', () => {
+        save('secret_return', window.location.pathname + window.location.search);
+        navigate('secret.html');
+      });
+    }
+
+    if (!requireGate()) { /* redirecting */ }
+    initTimer();
+    setProgress(31);
+
+    document.getElementById('submit-btn').addEventListener('click', () => {
+      const inputs = document.querySelectorAll('.cat-name');
+      const cats = {};
+      inputs.forEach(inp => { cats[inp.dataset.cat] = inp.value.trim(); });
+      save('cats', cats);
+
+      const goobula = (cats['goobula'] || '').toLowerCase().trim();
+      if (goobula === 'goobula') {
+        document.getElementById('reaction').textContent = 'oh. you know that one.';
+        setTimeout(() => navigate('p5.html'), 1500);
+      } else {
+        navigate('p5.html');
+      }
+    });
+  </script>
+</body>
+</html>

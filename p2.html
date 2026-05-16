@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p2</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .captcha-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 120px);
+      gap: 3px;
+      margin-bottom: 24px;
+    }
+    .captcha-cell {
+      width: 120px;
+      height: 120px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      position: relative;
+    }
+    .captcha-cell img {
+      width: 300%;
+      height: 300%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    .captcha-cell.selected { border-color: var(--accent); }
+    .captcha-cell.selected::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(196, 98, 45, 0.15);
+    }
+    #verify-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div id="progress-bar-container"><div id="progress-bar"></div></div>
+  <div id="timer">00:00</div>
+
+  <div class="container">
+    <p class="flavor" style="margin-bottom: 24px;">before we continue. a quick security check.</p>
+
+    <div class="question" style="margin-bottom: 8px;">i'm suspicious you might be a robot.</div>
+    <p class="flavor" style="margin-bottom: 24px;">select all images containing tung tung tung sahur.</p>
+
+    <div class="captcha-grid">
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:0;margin-top:0"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:-120px;margin-top:0"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:-240px;margin-top:0"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:0;margin-top:-120px"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:-120px;margin-top:-120px"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:-240px;margin-top:-120px"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:0;margin-top:-240px"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:-120px;margin-top:-240px"></div>
+      <div class="captcha-cell"><img src="images/big_tung.jpeg" alt="" style="margin-left:-240px;margin-top:-240px"></div>
+    </div>
+
+    <button id="verify-btn">continue</button>
+    <div class="msg" id="verified-msg"></div>
+  </div>
+
+  <script>
+    // shared utils — inlined per page
+    function getGateKey() { return localStorage.getItem('gate'); }
+    function requireGate() { if (!getGateKey()) { window.location.href = 'index.html'; return false; } return true; }
+    function save(k, v) { localStorage.setItem(k, typeof v === 'object' ? JSON.stringify(v) : String(v)); }
+    function load(k) { const v = localStorage.getItem(k); try { return JSON.parse(v); } catch { return v; } }
+    function navigate(url) { setTimeout(() => { window.location.href = url; }, 150); }
+    function setProgress(pct) {
+      const bar = document.getElementById('progress-bar');
+      if (bar) setTimeout(() => bar.style.width = pct + '%', 300);
+    }
+    function initTimer() {
+      if (!localStorage.getItem('timer_start')) localStorage.setItem('timer_start', Date.now());
+      const el = document.getElementById('timer');
+      if (!el) return;
+      function tick() {
+        const s = Math.floor((Date.now() - +localStorage.getItem('timer_start')) / 1000);
+        el.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+      el.addEventListener('click', () => {
+        save('secret_return', window.location.pathname + window.location.search);
+        navigate('secret.html');
+      });
+    }
+
+    if (!requireGate()) { /* redirecting */ }
+    initTimer();
+    setProgress(17);
+
+    // toggle selection on cells
+    document.querySelectorAll('.captcha-cell').forEach(cell => {
+      cell.addEventListener('click', () => cell.classList.toggle('selected'));
+    });
+
+    document.getElementById('verify-btn').addEventListener('click', () => {
+      const btn = document.getElementById('verify-btn');
+      const msg = document.getElementById('verified-msg');
+      btn.disabled = true;
+      msg.textContent = 'verifying captcha...';
+      setTimeout(() => {
+        save('captcha', 'verified');
+        msg.textContent = 'verified. probably.';
+        setTimeout(() => navigate('p3.html'), 1200);
+      }, 2200);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar-container"><div id="progress-bar"></div></div>
+  <div id="timer">00:00</div>
+
+  <div class="container">
+    <p class="flavor" style="margin-bottom: 24px;">a brief interlude.</p>
+
+    <div class="question">unscramble the following.</div>
+
+    <div style="margin-bottom: 16px;">
+      <!-- REPLACE THIS with your chosen scrambled word display -->
+      <span class="scrambled">AELRTT</span>
+    </div>
+
+    <!-- Update this hint when you choose your word -->
+    <p class="flavor" style="margin-bottom: 24px;">it's a common word. six letters.</p>
+
+    <input type="text" id="answer" placeholder="your answer" autocomplete="off" style="margin-bottom: 24px;">
+
+    <button id="submit-btn">submit</button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <script>
+    // shared utils — inlined per page
+    function getGateKey() { return localStorage.getItem('gate'); }
+    function requireGate() { if (!getGateKey()) { window.location.href = 'index.html'; return false; } return true; }
+    function save(k, v) { localStorage.setItem(k, typeof v === 'object' ? JSON.stringify(v) : String(v)); }
+    function load(k) { const v = localStorage.getItem(k); try { return JSON.parse(v); } catch { return v; } }
+    function navigate(url) { setTimeout(() => { window.location.href = url; }, 150); }
+    function setProgress(pct) {
+      const bar = document.getElementById('progress-bar');
+      if (bar) setTimeout(() => bar.style.width = pct + '%', 300);
+    }
+    function initTimer() {
+      if (!localStorage.getItem('timer_start')) localStorage.setItem('timer_start', Date.now());
+      const el = document.getElementById('timer');
+      if (!el) return;
+      function tick() {
+        const s = Math.floor((Date.now() - +localStorage.getItem('timer_start')) / 1000);
+        el.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+      el.addEventListener('click', () => {
+        save('secret_return', window.location.pathname + window.location.search);
+        navigate('secret.html');
+      });
+    }
+
+    if (!requireGate()) { /* redirecting */ }
+    initTimer();
+    setProgress(44);
+
+    let attemptCount = 0;
+
+    // REPLACE 'RATTLE' with your actual answer
+    const CORRECT_ANSWER = 'RATTLE';
+
+    document.getElementById('submit-btn').addEventListener('click', () => {
+      const val = document.getElementById('answer').value.trim().toUpperCase();
+      if (!val) return;
+
+      if (val === CORRECT_ANSWER) {
+        navigate('p6.html');
+      } else {
+        attemptCount++;
+        const msg = document.getElementById('msg');
+        msg.className = 'msg';
+        if (attemptCount === 1) {
+          msg.textContent = 'hey, think again.';
+        }
+        // second wrong and beyond: stay silent
+      }
+    });
+
+    document.getElementById('answer').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') document.getElementById('submit-btn').click();
+    });
+  </script>
+</body>
+</html>

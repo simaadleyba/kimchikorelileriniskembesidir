@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p7</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar-container"><div id="progress-bar"></div></div>
+  <div id="timer">00:00</div>
+
+  <div class="container">
+    <p class="flavor" style="margin-bottom: 24px;">a classic scenario. you've probably encountered this before.</p>
+
+    <div class="question">there is a trolley.
+
+it is heading toward five people tied to the tracks.
+
+you are standing next to a lever. pulling it diverts the trolley
+onto a second track, where one person is tied.
+
+if you do nothing, five people die.
+if you pull the lever, one person dies.
+
+what do you do?</div>
+
+    <div class="btn-group" id="choice-btns">
+      <button id="btn-pull">pull the lever</button>
+      <button id="btn-nothing">do nothing</button>
+      <button id="btn-negotiate">i'd negotiate with the trolley</button>
+    </div>
+
+    <div class="reaction" id="reaction"></div>
+    <div style="margin-top: 24px;" id="second-choice" style="display:none;"></div>
+  </div>
+
+  <script>
+    // shared utils — inlined per page
+    function getGateKey() { return localStorage.getItem('gate'); }
+    function requireGate() { if (!getGateKey()) { window.location.href = 'index.html'; return false; } return true; }
+    function save(k, v) { localStorage.setItem(k, typeof v === 'object' ? JSON.stringify(v) : String(v)); }
+    function load(k) { const v = localStorage.getItem(k); try { return JSON.parse(v); } catch { return v; } }
+    function navigate(url) { setTimeout(() => { window.location.href = url; }, 150); }
+    function setProgress(pct) {
+      const bar = document.getElementById('progress-bar');
+      if (bar) setTimeout(() => bar.style.width = pct + '%', 300);
+    }
+    function initTimer() {
+      if (!localStorage.getItem('timer_start')) localStorage.setItem('timer_start', Date.now());
+      const el = document.getElementById('timer');
+      if (!el) return;
+      function tick() {
+        const s = Math.floor((Date.now() - +localStorage.getItem('timer_start')) / 1000);
+        el.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+      el.addEventListener('click', () => {
+        save('secret_return', window.location.pathname + window.location.search);
+        navigate('secret.html');
+      });
+    }
+
+    if (!requireGate()) { /* redirecting */ }
+    initTimer();
+    setProgress(62);
+
+    let firstChoice = null;
+
+    const reactions = {
+      'pull': 'utilitarian. noted.',
+      'nothing': 'deontological. or cowardly. unclear.',
+      'negotiate': null // handled specially
+    };
+
+    function disableChoiceBtns() {
+      document.querySelectorAll('#choice-btns button').forEach(b => b.disabled = true);
+    }
+
+    function showSecondChoice(finalDelay) {
+      const container = document.getElementById('second-choice');
+      container.style.display = 'block';
+
+      const reconsiderBtn = document.createElement('button');
+      reconsiderBtn.textContent = 'actually. reconsider.';
+      reconsiderBtn.style.marginRight = '12px';
+
+      const standByBtn = document.createElement('button');
+      standByBtn.textContent = 'i stand by this.';
+
+      const group = document.createElement('div');
+      group.className = 'btn-group';
+      group.appendChild(reconsiderBtn);
+      group.appendChild(standByBtn);
+      container.appendChild(group);
+
+      const secondReaction = document.createElement('div');
+      secondReaction.className = 'reaction';
+      container.appendChild(secondReaction);
+
+      reconsiderBtn.addEventListener('click', () => {
+        // re-enable original buttons, hide second choice
+        document.querySelectorAll('#choice-btns button').forEach(b => b.disabled = false);
+        container.style.display = 'none';
+        document.getElementById('reaction').textContent = '';
+        container.innerHTML = '';
+      });
+
+      standByBtn.addEventListener('click', () => {
+        reconsiderBtn.disabled = true;
+        standByBtn.disabled = true;
+        secondReaction.textContent = 'okay. noted.';
+        save('trolley', firstChoice);
+        setTimeout(() => navigate('p8.html'), 1200);
+      });
+    }
+
+    function handleChoice(choice, label) {
+      firstChoice = label;
+      disableChoiceBtns();
+      const reactionEl = document.getElementById('reaction');
+
+      if (choice === 'negotiate') {
+        setTimeout(() => {
+          reactionEl.textContent = 'okay.';
+          setTimeout(() => {
+            reactionEl.textContent += ' ...okay.';
+            setTimeout(() => showSecondChoice(2400), 800);
+          }, 800);
+        }, 600);
+      } else {
+        reactionEl.textContent = reactions[choice];
+        setTimeout(() => showSecondChoice(1800), 1800);
+      }
+    }
+
+    document.getElementById('btn-pull').addEventListener('click', () => handleChoice('pull', 'pull the lever'));
+    document.getElementById('btn-nothing').addEventListener('click', () => handleChoice('nothing', 'do nothing'));
+    document.getElementById('btn-negotiate').addEventListener('click', () => handleChoice('negotiate', "i'd negotiate with the trolley"));
+  </script>
+</body>
+</html>

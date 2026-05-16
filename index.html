@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>—</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .center { text-align: center; }
+    p { font-family: 'Courier New', monospace; font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <h1 class="mono">one moment.</h1>
+    <p>initializing.</p>
+  </div>
+  <script>
+    function rand(n) {
+      const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      return Array.from({length: n}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
+    }
+    let key = localStorage.getItem('gate');
+    if (!key) { key = rand(8); localStorage.setItem('gate', key); }
+    setTimeout(() => { window.location.href = 'gate.html?key=' + key; }, 400);
+  </script>
+</body>
+</html>
