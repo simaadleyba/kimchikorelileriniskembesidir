@@ -8,29 +8,21 @@
   <style>
     .captcha-grid {
       display: grid;
-      grid-template-columns: repeat(3, auto);
-      gap: 0;
+      grid-template-columns: repeat(3, 120px);
+      gap: 6px;
       margin-bottom: 24px;
-      width: fit-content;
     }
-    .captcha-cell {
-      cursor: pointer;
-      position: relative;
-      line-height: 0;
-    }
-    .captcha-cell img {
+    .captcha-grid img {
       display: block;
       width: 120px;
       height: 120px;
       object-fit: cover;
-      pointer-events: none;
+      cursor: pointer;
+      outline: 3px solid transparent;
     }
-    .captcha-cell.selected::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(196, 98, 45, 0.35);
-      box-shadow: inset 0 0 0 3px var(--accent);
+    .captcha-grid img.selected {
+      outline-color: var(--accent);
+      opacity: 0.75;
     }
     #verify-btn:disabled { opacity: 0.5; cursor: not-allowed; }
   </style>
@@ -46,15 +38,15 @@
     <p class="flavor" style="margin-bottom: 24px;">select all images containing tung tung tung sahur.</p>
 
     <div class="captcha-grid">
-      <div class="captcha-cell"><img src="images/big_tung/image_part_001.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_002.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_003.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_004.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_005.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_006.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_007.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_008.jpg" alt=""></div>
-      <div class="captcha-cell"><img src="images/big_tung/image_part_009.jpg" alt=""></div>
+      <img src="images/big_tung/image_part_001.jpg" alt="">
+      <img src="images/big_tung/image_part_002.jpg" alt="">
+      <img src="images/big_tung/image_part_003.jpg" alt="">
+      <img src="images/big_tung/image_part_004.jpg" alt="">
+      <img src="images/big_tung/image_part_005.jpg" alt="">
+      <img src="images/big_tung/image_part_006.jpg" alt="">
+      <img src="images/big_tung/image_part_007.jpg" alt="">
+      <img src="images/big_tung/image_part_008.jpg" alt="">
+      <img src="images/big_tung/image_part_009.jpg" alt="">
     </div>
 
     <button id="verify-btn">continue</button>
@@ -91,9 +83,8 @@
     initTimer();
     setProgress(17);
 
-    // toggle selection on cells
-    document.querySelectorAll('.captcha-cell').forEach(cell => {
-      cell.addEventListener('click', () => cell.classList.toggle('selected'));
+    document.querySelectorAll('.captcha-grid img').forEach(img => {
+      img.addEventListener('click', () => img.classList.toggle('selected'));
     });
 
     document.getElementById('verify-btn').addEventListener('click', () => {
