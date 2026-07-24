@@ -10,28 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
-  <style>
-    .language-switcher { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; justify-content: flex-end; margin: 0 0 1.5rem; font-family: var(--mono, monospace); font-size: .78rem; }
-    .language-switcher span { color: var(--muted, #777); letter-spacing: .08em; }
-    .language-switcher a { border: 1px solid currentColor; padding: .35rem .55rem; text-decoration: none; }
-    .language-switcher a[aria-current="true"] { background: var(--ink, #111); color: var(--paper, #fff); }
-  </style>
 </head>
 <body>
   <div class="site-shell">
     <header class="utility-header">
-      <a class="wordmark" href="../">SIMA / NOTES</a>
-      <nav aria-label="Primary navigation">
-        <a href="../#archive">ALL POSTS</a>
-        <a href="#sources">SOURCES</a>
+      <a class="wordmark" href="../" data-language-link>SIMA / NOTES</a>
+      <nav aria-label="Primary navigation" data-i18n-aria-label="nav.aria">
+        <a href="../#latest" data-language-link data-i18n="nav.latest">LATEST</a>
+        <a href="../#archive" data-language-link data-i18n="nav.archive">ARCHIVE</a>
+        <a href="mailto:hello@kimchikorelileriniskembesidir.com" data-i18n="nav.contact">CONTACT</a>
+        <span class="language-switcher" aria-label="Language selector" data-i18n-aria-label="language.aria">
+          <button type="button" data-lang-switch="tr" aria-pressed="false">TR</button><span>/</span><button type="button" data-lang-switch="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang-switch="cn" aria-pressed="false">CN</button>
+        </span>
       </nav>
     </header>
 
     <main>
-      <div class="language-switcher" aria-label="Language selector">
-        <a href="?lang=tr" data-set-lang="tr">TR</a><span>/</span><a href="?lang=en" data-set-lang="en" aria-current="true">EN</a><span>/</span><a href="?lang=cn" data-set-lang="cn">CN</a>
-      </div>
-
       <article class="article-page longform" data-article-root>
         <header class="article-hero">
           <p class="eyebrow">POST / 02 · ENGLISH</p>
@@ -230,8 +224,8 @@
     </main>
 
     <footer class="site-footer">
-      <a href="../">← ALL POSTS</a>
-      <span>POST 02</span>
+      <a href="../" data-language-link data-i18n="footer.back">← ALL POSTS</a>
+      <span data-i18n="footer.post">POST 02</span>
     </footer>
   </div>
 
@@ -430,178 +424,178 @@
           </div>
         </div>
 </template>
-  <template id="article-tr">
+<template id="article-tr">
         <header class="article-hero">
-          <p class="eyebrow">YAZI / 02 · TÜRKÇE</p>
+          <p class="eyebrow">POST / 02 · TÜRKÇE</p>
           <h1>Tebrikler, ChatGPT’ye Sormayarak Gezegeni Kurtardınız</h1>
-          <p class="summary">Yapay zekânın gerçek bir çevresel bedeli var; ama nadiren kişisel ahlak meselesine çevirdiğimiz sıradan keyiflerin de var.</p>
+          <p class="summary">Yapay zekânın gerçek bir çevresel maliyeti var; ama nadiren kişisel ahlak meselesine çevirdiğimiz sıradan keyiflerin de var.</p>
           <div class="post-meta large">
             <span>TARİH: 19 TEM 26</span>
             <span>OKUMA SÜRESİ: 12 DK</span>
             <span>DİL: TÜRKÇE</span>
           </div>
-          
+          <a class="pdf-action" href="../pdf_files/Congratulations__You_Saved_the_Planet_by_Not_Asking_ChatGPT.pdf" download>SON DERECE BİLİMSEL MAKALENİN TAMAMINI OKU (PDF, YALNIZCA İNGİLİZCE) ↓</a>
         </header>
 
-        <section class="metric-strip" aria-label="Key figures">
-          <div><span>ORTANCA METİN SORGUSU</span><strong>0.34 Wh</strong><small>evrensel bir rakam değil</small></div>
+        <section class="metric-strip" aria-label="Temel rakamlar">
+          <div><span>MEDYAN METİN SORGUSU</span><strong>0.34 Wh</strong><small>evrensel bir rakam değil</small></div>
           <div><span>VERİ MERKEZLERİ, 2030</span><strong>945 TWh</strong><small>IEA projeksiyonu</small></div>
-          <div><span>ASIL SORU</span><strong>Neden yapay zekâ?</strong><small>peki neden diğer her şey değil?</small></div>
+          <div><span>TEMEL SORU</span><strong>Neden yapay zekâ?</strong><small>neden diğer her şey değil?</small></div>
         </section>
 
         <section class="comparison-panel" aria-labelledby="comparison-title">
-          <p class="section-label">01 / ÖLÇEK HİSSİ</p>
+          <p class="section-label">01 / ÖLÇEĞİ ANLAMAK</p>
           <h2 id="comparison-title">Mesele karşılaştırmanın kendisi.</h2>
-          <p class="panel-deck">Bu tahminler farklı sınırlar kullanıyor, yani bire bir eşdeğer değiller; amaç ölçek vermek ve tanıdık alışkanlıkları yeniden görünür kılmak.</p>
-          <div class="impact-chart" role="img" aria-label="Illustrative emissions comparison from an AI query to a beef meal">
+          <p class="panel-deck">Bu tahminlerin kapsamları farklı, dolayısıyla bire bir eşdeğer değiller; amaç ölçeği göstermek ve artık görmediğimiz kadar alıştığımız alışkanlıkları yeniden görünür kılmak.</p>
+          <div class="impact-chart" role="img" aria-label="Bir yapay zekâ sorgusundan bir porsiyon dana etine kadar temsili emisyon karşılaştırması">
             <div class="impact-row"><div><span>Sıradan bir yapay zekâ metin sorgusu</span><strong>0.00007–0.00027 kg CO₂e</strong></div><i style="--size: 1%; --bar: var(--accent)"></i></div>
-            <div class="impact-row"><div><span>Yılda, günde 25 sıradan metin sorgusu</span><strong>0.66–2.45 kg CO₂e</strong></div><i style="--size: 15%; --bar: var(--accent)"></i></div>
+            <div class="impact-row"><div><span>Günde 25 sıradan metin sorgusu / bir yıl</span><strong>0.66–2.45 kg CO₂e</strong></div><i style="--size: 15%; --bar: var(--accent)"></i></div>
             <div class="impact-row"><div><span>İki sade kahve</span><strong>0.52 kg CO₂e</strong></div><i style="--size: 9%"></i></div>
-            <div class="impact-row"><div><span>10 km benzinli araba yolculuğu</span><strong>≈2.5 kg CO₂e</strong></div><i style="--size: 17%"></i></div>
-            <div class="impact-row"><div><span>150 g dana eti içeren öğün</span><strong>≈14.9 kg CO₂e</strong></div><i style="--size: 100%; --bar: var(--alert)"></i></div>
+            <div class="impact-row"><div><span>Benzinli araçla 10 km yol</span><strong>≈2.5 kg CO₂e</strong></div><i style="--size: 17%"></i></div>
+            <div class="impact-row"><div><span>150 g dana etli bir öğün</span><strong>≈14.9 kg CO₂e</strong></div><i style="--size: 100%; --bar: var(--alert)"></i></div>
           </div>
-          <p class="method-note">Yöntem notu: sorgu tahminleri modele, yanıt uzunluğuna, donanıma, enerji karışımına, toplu işlemeye ve soğutmaya göre değişir. Su rakamları yaklaşık operasyonel tahminlerdir; evrensel yaşam döngüsü toplamları değildir.</p>
+          <p class="method-note">Yöntem notu: sorgu tahminleri modele, yanıt uzunluğuna, donanıma, enerji karışımına, toplu işlem biçimine ve soğutmaya göre değişiyor. Su rakamları evrensel yaşam döngüsü toplamları değil, yaklaşık operasyonel tahminler.</p>
         </section>
 
         <div class="article-layout story-layout">
-          <aside class="contents" aria-label="Article contents">
+          <aside class="contents" aria-label="Yazı içeriği">
             <span>İÇİNDEKİLER</span>
-            <a href="#premise">01 / VARSAYIM</a>
+            <a href="#premise">01 / MESELE</a>
             <a href="#scale">02 / ÖLÇEK</a>
             <a href="#query">03 / TEK SORGU</a>
             <a href="#mirror">04 / AYNA</a>
             <a href="#joy">05 / KEYİF</a>
-            <a href="#verdict">06 / HÜKÜM</a>
+            <a href="#verdict">06 / SONUÇ</a>
           </aside>
 
           <div class="prose story-prose">
             <section class="story-intro">
-              <p>Bir kayanın altında yaşamıyorsanız, yapay zekâ, veri merkezleri ve bunların ne kadar elektrik ve su tükettiği hakkındaki tartışmaları muhtemelen görmüşsünüzdür.</p>
-              <p>Aklımı kaçırmadan önce küçük bir terminoloji şikâyeti: insanlar “Yapay zekâ kullanmıyorum” dediğinde çoğunlukla “büyük dil modelleri kullanmıyorum” demek istiyor. LLM’ler yapay zekâdır, evet; ama arama motorlarını, öneri sistemlerini, sosyal medya akışlarını, dolandırıcılık tespitini, navigasyonu, fotoğraf işlemeyi, çeviriyi ve her gün kullanılan sayısız hizmeti de yapay zekâ çalıştırır.</p>
-              <p>Şimdi sıradan bir hafta sonu hayal edin: uyanıp Instagram’a bakıyorsunuz, granola ya da belki sucuklu yumurtalı geleneksel bir Türk kahvaltısı yiyorsunuz, arabayla kafeye gidiyorsunuz, arkadaşlarla birkaç kahve içiyorsunuz, mağazalarda dolaşıp market alışverişi yapıyor ve eve dönüyorsunuz.</p>
-              <p>You open Amazon, Trendyol, or whatever else you use and order something. Perhaps you are environmentally conscious, so you buy it second-hand from a shop in Kadıköy or through Dolap. You eat dinner, stream something, scroll a little more, and go to sleep while looking forward to your trip to Cologne (or Japan, which appears to be the new default destination), and perhaps you would not be opposed to having a child if the economy were less catastrophic.</p>
+              <p>Son birkaç yıldır mağarada yaşamıyorsanız yapay zekâ, veri merkezleri ve bunların ne kadar elektrik ve su tükettiği hakkındaki tartışmaları muhtemelen görmüşsünüzdür.</p>
+              <p>Önce, kafayı yemeden bir terminoloji itirazı: insanlar “Yapay zekâ kullanmıyorum” derken genellikle “Büyük dil modelleri kullanmıyorum” demek istiyor. LLM’ler yapay zekâdır, evet; ama arama motorlarını, öneri sistemlerini, sosyal medya akışlarını, dolandırıcılık tespitini, navigasyonu, fotoğraf işlemeyi, çeviriyi ve her gün kullandığımız sayısız başka hizmeti de yapay zekâ çalıştırıyor.</p>
+              <p>Şimdi sıradan bir hafta sonu düşünün: uyanıp Instagram’a bakıyorsunuz, granola yiyor ya da sucuklu yumurtayla geleneksel bir Türk kahvaltısı yapıyorsunuz, arabayla bir kafeye gidip arkadaşlarınızla birkaç kahve içiyorsunuz, mağazaları dolaşıp alışveriş yapıyor ve eve dönüyorsunuz.</p>
+              <p>Amazon’u, Trendyol’u ya da her ne kullanıyorsanız onu açıp bir şey sipariş ediyorsunuz. Belki çevreye duyarlısınız; bu yüzden Kadıköy’deki bir dükkândan ya da Dolap’tan ikinci el alıyorsunuz. Akşam yemeğinizi yiyip bir şeyler izliyor, ekranı biraz daha kaydırıp uyuyorsunuz. Köln seyahatinizi —ya da artık varsayılan tatil rotası gibi görünen Japonya’yı— heyecanla bekliyorsunuz; ekonomi bu kadar felaket olmasa çocuk sahibi olmaya da hayır demezdiniz.</p>
               <div class="headline-box">
-                <span>THE WEEKEND AUDIT</span>
-                <strong>O gün çevresel açıdan masum muydu?</strong>
-                <p>Daha önemlisi, tek bir ChatGPT sorgusu yapmadığınız için gurur duyar mıydınız?</p>
+                <span>HAFTA SONU DENETİMİ</span>
+                <strong>Peki, o gün çevresel açıdan masum muydu?</strong>
+                <p>Daha önemlisi, ChatGPT’ye tek bir soru bile sormadığınız için kendinizle gurur duyar mıydınız?</p>
               </div>
-              <p>I suspect many people would. However, something about that does not add up, so I decided to look at both sides of the comparison: the global environmental impact of AI infrastructure and the environmental impact of the ordinary habits we rarely moralize.</p>
+              <p>Bence birçok kişi duyardı. Fakat burada hesabı tutmayan bir şey var. Bu yüzden karşılaştırmanın iki tarafına da bakmaya karar verdim: yapay zekâ altyapısının küresel çevresel etkisine ve nadiren ahlak meselesine çevirdiğimiz sıradan alışkanlıklarımızın çevresel etkisine.</p>
             </section>
 
             <section id="premise">
-              <p class="story-number">01 / VARSAYIM</p>
+              <p class="story-number">01 / MESELE</p>
               <h2>Herkes yapay zekâdan nefret ediyor. Herkes aynı zamanda onu kullanıyor.</h2>
-              <p>The obvious expectation is that people who are deeply concerned about AI would avoid using it. In reality, adoption keeps rising while public trust remains low.</p>
-              <p>A 2026 Pew survey found that 49% of American adults had used an AI chatbot, up from 33% in 2024. Among adults aged 18–29, usage reached 66%. At the same time, 63% said AI was advancing too quickly, and only 16% expected its long-term effect on society to be positive.<sup><a href="#source-1">1</a></sup></p>
-              <p>This is not automatically contradictory: you can use something while distrusting it, and you can believe a technology is useful while opposing the companies, labor practices, copyright rules, politics, or social consequences surrounding it. I believe those are valid discussions.</p>
-              <p>However, if someone says using an LLM is environmentally unacceptable, continues using it, and then blames other users for aggregate demand, they are not standing outside the system they criticize.</p>
-              <blockquote class="formula-card">Total inference demand = users × queries per user × computation per query.</blockquote>
-              <p>Of course, adoption is not driven only by individual chatbot users. AI is increasingly embedded in search engines, office software (I am looking at you, Google Docs), customer service, advertising, social media, and corporate workflows, but aggregate usage does not appear from nowhere; it is composed of individual, corporate, and automatic uses, including the use of people who say they dislike it.</p>
+              <p>Yapay zekâ konusunda çok endişeli olan insanların onu kullanmaktan kaçınmasını beklersiniz. Gerçekte ise kullanım artmaya devam ederken kamuoyunun güveni düşük kalıyor.</p>
+              <p>Pew’in 2026 tarihli araştırmasına göre Amerikalı yetişkinlerin %49’u bir yapay zekâ sohbet botu kullanmıştı; bu oran 2024’te %33’tü. 18–29 yaş grubunda kullanım %66’ya ulaştı. Aynı anda katılımcıların %63’ü yapay zekânın çok hızlı ilerlediğini söylerken yalnızca %16’sı toplum üzerindeki uzun vadeli etkisinin olumlu olacağını düşünüyordu.<sup><a href="#source-1">1</a></sup></p>
+              <p>Bu kendi başına bir çelişki değil: bir şeyi kullanırken ona güvenmeyebilirsiniz; bir teknolojiyi faydalı bulurken o teknolojinin arkasındaki şirketlere, çalışma koşullarına, telif kurallarına, siyasete ya da toplumsal sonuçlara karşı çıkabilirsiniz. Bunların hepsinin geçerli tartışmalar olduğunu düşünüyorum.</p>
+              <p>Ancak biri LLM kullanmanın çevresel açıdan kabul edilemez olduğunu söylüyor, kullanmaya devam ediyor ve sonra toplam talep yüzünden diğer kullanıcıları suçluyorsa, eleştirdiği sistemin dışında durmuyor.</p>
+              <blockquote class="formula-card">Toplam çıkarım talebi = kullanıcı sayısı × kullanıcı başına sorgu × sorgu başına hesaplama.</blockquote>
+              <p>Elbette kullanımdaki artışın tek nedeni sohbet botu kullanan bireyler değil. Yapay zekâ arama motorlarına, ofis yazılımlarına (sana bakıyorum Google Docs), müşteri hizmetlerine, reklamlara, sosyal medyaya ve kurumsal iş akışlarına giderek daha fazla yerleşiyor. Ama toplam kullanım da gökten inmiyor; yapay zekâdan hoşlanmadığını söyleyenlerin kullanımları da dahil olmak üzere bireysel, kurumsal ve otomatik kullanımların toplamından oluşuyor.</p>
             </section>
 
             <section id="scale">
               <p class="story-number">02 / ÖLÇEK</p>
               <h2>Küresel tablo küçük değil.</h2>
-              <p>Obviously, a small footprint per query does not mean the AI industry has a small total footprint.</p>
-              <p>Data centers consumed roughly 415–460 TWh of electricity worldwide in 2024. The International Energy Agency projects approximately <strong>945 TWh by 2030</strong>, just under 3% of global electricity demand and more than double today’s level.<sup><a href="#source-2">2</a></sup></p>
-              <p>AI is the largest driver of the expected growth, although those facilities also serve cloud computing, streaming, storage, cryptocurrency, websites, and the rest of the internet. Hardware associated with AI workloads is projected to grow around 30% annually through 2030.</p>
-              <aside class="alert-box"><span>LOCAL MATTERS</span><p>Global percentages conceal regional grid and water pressure. Data centers are concentrated; power plants, grids, and water systems are local.</p></aside>
-              <p>Renewables may meet almost half of the additional electricity demand, but natural gas and coal are still expected to supply more than 40% of the increase. Data-centre electricity emissions are projected to peak at roughly <strong>320 million tonnes of CO₂</strong> in 2030.<sup><a href="#source-3">3</a></sup></p>
+              <p>Açıkçası, sorgu başına düşük bir ayak izi yapay zekâ sektörünün toplam ayak izinin de düşük olduğu anlamına gelmiyor.</p>
+              <p>Veri merkezleri 2024’te dünya genelinde yaklaşık 415–460 TWh elektrik tüketti. Uluslararası Enerji Ajansı bu tüketimin 2030’a kadar yaklaşık <strong>945 TWh’ye</strong>, yani küresel elektrik talebinin %3’ünün biraz altına ve bugünkü seviyenin iki katından fazlasına ulaşacağını öngörüyor.<sup><a href="#source-2">2</a></sup></p>
+              <p>Beklenen artışın en büyük itici gücü yapay zekâ; ancak bu tesisler bulut bilişime, dijital yayınlara, depolamaya, kripto paralara, web sitelerine ve internetin geri kalanına da hizmet ediyor. Yapay zekâ iş yükleriyle bağlantılı donanımın 2030’a kadar yılda yaklaşık %30 büyümesi bekleniyor.</p>
+              <aside class="alert-box"><span>YEREL ETKİ ÖNEMLİ</span><p>Küresel yüzdeler bölgesel elektrik şebekeleri ve su kaynakları üzerindeki baskıyı gizliyor. Veri merkezleri belli yerlerde yoğunlaşıyor; santraller, şebekeler ve su sistemleri ise yerel.</p></aside>
+              <p>Ek elektrik talebinin neredeyse yarısını yenilenebilir kaynaklar karşılayabilir; ancak artışın %40’ından fazlasının hâlâ doğal gaz ve kömürden gelmesi bekleniyor. Veri merkezlerinin elektrik tüketiminden kaynaklanan emisyonların 2030’da yaklaşık <strong>320 milyon ton CO₂</strong> ile zirve yapacağı öngörülüyor.<sup><a href="#source-3">3</a></sup></p>
               <div class="checklist-box">
-                <span>WHAT COMPANIES SHOULD DISCLOSE</span>
+                <span>ŞİRKETLER NELERİ AÇIKLAMALI?</span>
                 <ul>
-                  <li>Electricity consumption and facility locations</li>
-                  <li>Direct and indirect water consumption</li>
-                  <li>Local grid and water impacts</li>
-                  <li>Cooling technology and hardware lifecycle emissions</li>
-                  <li>Training and inference energy, reported separately</li>
+                  <li>Elektrik tüketimi ve tesis konumları</li>
+                  <li>Doğrudan ve dolaylı su tüketimi</li>
+                  <li>Yerel elektrik şebekesi ve su sistemleri üzerindeki etkiler</li>
+                  <li>Soğutma teknolojisi ve donanımın yaşam döngüsü emisyonları</li>
+                  <li>Eğitim ve çıkarım enerjisi, ayrı ayrı</li>
                 </ul>
               </div>
-              <p>They should also be regulated. But this standard should not be invented only for AI. Fashion companies, airlines, meat producers, oil companies, electronics manufacturers, delivery platforms, streaming services, and social-media companies also benefit from weak reporting, selective accounting, greenwashing, and insufficient regulation.</p>
-              <p><strong>The answer is consistent environmental governance, not treating one new industry as uniquely sinful while accepting opacity everywhere else.</strong></p>
+              <p>Ayrıca bu şirketler düzenlenmeli. Fakat bu standart yalnızca yapay zekâ için icat edilmemeli. Moda şirketleri, havayolları, et üreticileri, petrol şirketleri, elektronik üreticileri, teslimat platformları, dijital yayın hizmetleri ve sosyal medya şirketleri de zayıf raporlamadan, seçici muhasebeden, yeşil aklamadan ve yetersiz düzenlemeden faydalanıyor.</p>
+              <p><strong>Cevap, diğer her yerdeki şeffaflık eksikliğini kabullenirken yeni bir sektörü benzersiz ölçüde günahkâr ilan etmek değil; tutarlı bir çevresel yönetim.</strong></p>
 
-              <h3>Şirketlerin fazla kapasite kurması da hikâyenin bir parçası.</h3>
-              <p>It is easy to imagine data-center construction as a direct response to the number of questions ordinary people ask, but the relationship is not that simple. Technology companies build ahead of demonstrated demand because they fear becoming compute-constrained.</p>
-              <p>Infrastructure decisions also reflect model training, enterprise contracts, cloud ambitions, competition, investor expectations, and the strategic fear of not owning enough capacity. Meta’s reported talks to lease as much as $10 billion in compute capacity to Anthropic illustrate how infrastructure can be accumulated for one strategy and commercialized for another.<sup><a href="#source-4">4</a></sup></p>
-              <p>This does not make users irrelevant, because demand still matters; it means a new data center is not necessarily being constructed because you asked ChatGPT where to place a comma.</p>
+              <h3>Şirketlerin ihtiyaçtan fazla altyapı kurması da hikâyenin bir parçası.</h3>
+              <p>Veri merkezlerinin doğrudan sıradan insanların sorduğu soru sayısına karşılık olarak inşa edildiğini düşünmek kolay. Ancak ilişki o kadar basit değil. Teknoloji şirketleri hesaplama kapasitesi sıkıntısı yaşamaktan korktukları için kanıtlanmış talebin önüne geçerek altyapı kuruyor.</p>
+              <p>Altyapı kararlarında model eğitimi, kurumsal sözleşmeler, bulut hizmeti hedefleri, rekabet, yatırımcı beklentileri ve yeterli kapasiteye sahip olmama korkusu da etkili. Meta’nın 10 milyar dolara varan hesaplama kapasitesini Anthropic’e kiralamak üzere görüştüğü haberi, bir strateji doğrultusunda kurulan altyapının daha sonra başka bir amaçla ticarileştirilebildiğini gösteriyor.<sup><a href="#source-4">4</a></sup></p>
+              <p>Bu, kullanıcıların önemsiz olduğu anlamına gelmiyor; talep hâlâ önemli. Fakat yeni bir veri merkezi, siz ChatGPT’ye virgülü nereye koyacağınızı sordunuz diye inşa edilmiyor olabilir.</p>
             </section>
 
             <section id="query">
-              <p class="story-number">03 / THE BOUNDARY</p>
-              <h2>Hayal kırıklığına uğrattığım için üzgünüm ama evrensel bir “yapay zekâ sorgusu” yok.</h2>
-              <p>A short answer, a long reasoning task, an image, and an AI-generated video do not consume the same amount of energy. Model, hardware, grid, response length, batching, utilization, and cooling all matter.</p>
-              <p>I know, not the most reliable source, but Sam Altman stated that an average ChatGPT query uses about <strong>0.34 Wh of electricity</strong> and <strong>0.32 mL of water</strong>. OpenAI did not publish a complete methodology, so these numbers are not ground truth.<sup><a href="#source-5">5</a></sup></p>
-              <p>An independent bottom-up analysis nevertheless estimated the same 0.34 Wh median for an ordinary frontier-model query, with an interquartile range of 0.18–0.67 Wh. A longer test-time-compute query reached 4.32 Wh.<sup><a href="#source-6">6</a></sup> Google reported 0.24 Wh and roughly 0.26 mL of water for its median Gemini Apps text prompt.<sup><a href="#source-7">7</a></sup></p>
+              <p class="story-number">03 / SINIR</p>
+              <h2>Hayal kırıklığına uğrattığım için üzgünüm ama evrensel bir “yapay zekâ sorgusu” diye bir şey yok.</h2>
+              <p>Kısa bir yanıt, uzun bir akıl yürütme görevi, bir görsel ve yapay zekâyla üretilmiş bir video aynı miktarda enerji tüketmiyor. Model, donanım, elektrik şebekesi, yanıt uzunluğu, toplu işlem, kullanım oranı ve soğutma biçimi sonuçları değiştiriyor.</p>
+              <p>Biliyorum, en güvenilir kaynak değil; ama Sam Altman ortalama bir ChatGPT sorgusunun yaklaşık <strong>0.34 Wh elektrik</strong> ve <strong>0.32 mL su</strong> tükettiğini söyledi. OpenAI ayrıntılı bir yöntem yayımlamadığı için bu rakamlar mutlak gerçek kabul edilmemeli.<sup><a href="#source-5">5</a></sup></p>
+              <p>Yine de bağımsız ve aşağıdan yukarıya yürütülen bir analiz, sıradan bir öncü model sorgusu için aynı 0.34 Wh medyan değerini buldu; çeyrekler arası aralık 0.18–0.67 Wh idi. Daha uzun, test aşamasında hesaplama kullanan bir sorgu 4.32 Wh’ye ulaştı.<sup><a href="#source-6">6</a></sup> Google ise Gemini Apps’teki medyan metin istemi için 0.24 Wh ve yaklaşık 0.26 mL su bildirdi.<sup><a href="#source-7">7</a></sup></p>
               <div class="calculation-grid">
-                <div><span>25 TEXT QUERIES / DAY / YEAR</span><strong>9,125 queries</strong></div>
-                <div><span>CENTRAL ENERGY ESTIMATE</span><strong>3.10 kWh</strong></div>
-                <div><span>ILLUSTRATIVE EMISSIONS</span><strong>1.24 kg CO₂e</strong></div>
-                <div><span>ALL LONG-REASONING QUERIES</span><strong>15.8 kg CO₂e</strong></div>
+                <div><span>GÜNDE 25 METİN SORGUSU / BİR YIL</span><strong>9.125 sorgu</strong></div>
+                <div><span>MERKEZÎ ENERJİ TAHMİNİ</span><strong>3.10 kWh</strong></div>
+                <div><span>TEMSİLİ EMİSYON</span><strong>1.24 kg CO₂e</strong></div>
+                <div><span>TÜMÜ UZUN AKIL YÜRÜTME SORGUSU OLSAYDI</span><strong>15.8 kg CO₂e</strong></div>
               </div>
-              <p>That last figure is much larger, which is exactly why ordinary text, long reasoning, agents, image generation, and video should not be collapsed into one moral unit called “AI use.”</p>
-              <h3>Eğitim kısmı eksik.</h3>
-              <p>Per-query estimates describe inference: what happens when an already-trained model generates an answer. They do not fully include pretraining, post-training, failed experiments, architecture searches, model updates, chips, servers, networking equipment, or data-center construction.</p>
-              <p>These costs matter. However, there is no transparent public dataset that lets us defensibly divide the full development cost of proprietary frontier models by their lifetime queries, so the honest conclusion is not that training is negligible; it is that its amortized contribution per request is unknown.</p>
-              <aside class="quote-box">A low impact per use does not guarantee a low impact overall. It also does not make every individual use inherently irresponsible.</aside>
+              <p>Son rakam çok daha yüksek. Tam da bu yüzden sıradan metin, uzun akıl yürütme, ajanlar, görsel üretimi ve video “yapay zekâ kullanımı” denen tek bir ahlaki birime sıkıştırılmamalı.</p>
+              <h3>Eğitim bu hesaba dahil değil.</h3>
+              <p>Sorgu başına tahminler çıkarımı, yani önceden eğitilmiş bir modelin yanıt üretirken yaptığı işlemi anlatıyor. Ön eğitim, eğitim sonrası süreçler, başarısız deneyler, mimari arayışları, model güncellemeleri, çipler, sunucular, ağ ekipmanı ve veri merkezi inşaatı bu rakamlara tam olarak dahil değil.</p>
+              <p>Bu maliyetler önemli. Fakat şirketlere ait kapalı öncü modellerin tüm geliştirme maliyetini ömürleri boyunca yanıtladıkları sorgu sayısına savunulabilir biçimde bölmemizi sağlayacak şeffaf bir veri seti yok. Dolayısıyla dürüst sonuç eğitimin önemsiz olduğu değil, sorgu başına amorti edilen payının bilinmediği.</p>
+              <aside class="quote-box">Kullanım başına düşük etki, toplam etkinin de düşük olacağını garanti etmez. Ayrıca her bireysel kullanımı kendiliğinden sorumsuz kılmaz.</aside>
             </section>
 
             <section id="mirror">
               <p class="story-number">04 / AYNA</p>
               <h2>Şimdi bunu hayatınızın geri kalanıyla karşılaştırın.</h2>
-              <p>The point is not to prove AI harmless. It is to show the scale of familiar activities that rarely receive the same personal moral scrutiny.</p>
+              <p>Amaç yapay zekânın zararsız olduğunu kanıtlamak değil. Aynı kişisel ahlaki denetime nadiren tabi tuttuğumuz tanıdık faaliyetlerin ölçeğini göstermek.</p>
               <div class="fact-grid">
-                <article><span>TRANSPORT</span><strong>≈2.5 kg</strong><p>A ten-kilometre petrol-car trip at roughly 250 g CO₂ per kilometre.</p></article>
-                <article><span>FOOD</span><strong>≈14.9 kg</strong><p>A 150 g beef portion, using a global average of 99.5 kg CO₂e per kilogram.</p></article>
-                <article><span>COFFEE</span><strong>0.52–1.69 kg</strong><p>İki sade kahve at the low end; two dairy lattes at the high end.</p></article>
-                <article><span>CLOTHING</span><strong>33.4 kg</strong><p>Levi Strauss’s lifecycle estimate for one pair of 501 jeans.</p></article>
-                <article><span>STREAMING</span><strong>55 g / hour</strong><p>European video-on-demand estimate; the viewing device matters most.</p></article>
-                <article><span>FLYING</span><strong>2.5% global CO₂</strong><p>Aviation’s share before its additional non-CO₂ warming effects.</p></article>
+                <article><span>ULAŞIM</span><strong>≈2.5 kg</strong><p>Kilometre başına yaklaşık 250 g CO₂ hesabıyla benzinli araçla on kilometrelik yol.</p></article>
+                <article><span>YEMEK</span><strong>≈14.9 kg</strong><p>Kilogram başına 99.5 kg CO₂e küresel ortalamasıyla 150 g dana eti.</p></article>
+                <article><span>KAHVE</span><strong>0.52–1.69 kg</strong><p>Alt sınırda iki sade kahve; üst sınırda sütlü iki latte.</p></article>
+                <article><span>GİYİM</span><strong>33.4 kg</strong><p>Levi Strauss’un bir 501 kot pantolon için yaşam döngüsü tahmini.</p></article>
+                <article><span>DİJİTAL YAYIN</span><strong>55 g / saat</strong><p>Avrupa için isteğe bağlı video tahmini; en büyük farkı izlediğiniz cihaz yaratıyor.</p></article>
+                <article><span>UÇUŞ</span><strong>küresel CO₂’nin %2.5’i</strong><p>CO₂ dışındaki ek ısınma etkileri hesaba katılmadan havacılığın payı.</p></article>
               </div>
-              <p>You can buy fewer clothes and keep them longer, walk or take rail where possible, share a car or combine errands, replace some beef meals, reduce autoplay, fly economy, travel less often, and stay longer. None of this requires pretending that pleasure itself is an environmental crime.</p>
-              <h3>“Just Google it” is not a moral philosophy.</h3>
-              <p>People opposed to LLM use often say, “Just search Google,” “Just write it yourself,” or “Just do the task without AI.” Fine, but now apply that logic consistently.</p>
+              <p>Daha az kıyafet alıp daha uzun süre kullanabilir, mümkün olduğunda yürüyebilir ya da trene binebilir, araba paylaşabilir veya işlerinizi aynı yolculukta halledebilir, bazı dana etli öğünlerden vazgeçebilir, otomatik oynatmayı kapatabilir, ekonomi sınıfında uçabilir, daha seyrek seyahat edip daha uzun kalabilirsiniz. Bunların hiçbiri keyif almanın başlı başına bir çevre suçu olduğunu iddia etmenizi gerektirmiyor.</p>
+              <h3>“Google’a baksana” bir ahlak felsefesi değil.</h3>
+              <p>LLM kullanımına karşı çıkanlar sık sık “Google’a baksana”, “Kendin yazsana” ya da “Yapay zekâ olmadan yapsana” diyor. Tamam, ama o zaman bu mantığı tutarlı biçimde her şeye uygulayın.</p>
               <div class="question-stack">
-                <p>Why did you drive instead of walking?</p>
-                <p>Why did you buy another item of clothing?</p>
-                <p>Why did you eat beef instead of lentils?</p>
-                <p>Why did you drink coffee, stream a series, fly for a holiday, or replace a device that still worked?</p>
+                <p>Yürümek yerine neden arabaya bindiniz?</p>
+                <p>Neden bir kıyafet daha aldınız?</p>
+                <p>Mercimek yerine neden dana eti yediniz?</p>
+                <p>Neden kahve içtiniz, dizi izlediniz, tatile uçtunuz ya da hâlâ çalışan bir cihazı değiştirdiniz?</p>
               </div>
-              <p>Most of these things are not strictly required for survival. We do them because they save time, create comfort, entertain us, express identity, reduce effort, or make life more enjoyable.</p>
-              <p>That does not make them immoral, but it does mean <strong>“you could have done without it” is not, by itself, a serious environmental framework.</strong></p>
-              <p>Instead, people often treat old habits as natural and new habits as choices. Nobody appears personally offended by the environmental footprint of paperback books; introduce a Kindle, however, and suddenly everyone remembers mining, batteries, electricity, and electronic waste. Familiar consumption becomes invisible, while technological novelty remains morally conspicuous.</p>
+              <p>Bunların çoğu hayatta kalmak için kesinlikle gerekli değil. Zaman kazandırdıkları, rahatlık sağladıkları, bizi eğlendirdikleri, kimliğimizi ifade ettikleri, çabayı azalttıkları ya da hayatı daha keyifli hâle getirdikleri için bunları yapıyoruz.</p>
+              <p>Bu, onları ahlaksız yapmıyor; fakat <strong>“onsuz da yapabilirdin” cümlesinin tek başına ciddi bir çevresel çerçeve olmadığını</strong> gösteriyor.</p>
+              <p>İnsanlar eski alışkanlıkları doğal, yeni alışkanlıkları ise seçim gibi görüyor. Basılı kitapların çevresel ayak izi kimseyi kişisel olarak gücendirmiyor; işin içine Kindle girince herkes birden madenciliği, bataryaları, elektriği ve elektronik atıkları hatırlıyor. Alışılmış tüketim görünmezleşirken teknolojik yenilik ahlaken göze batmaya devam ediyor.</p>
             </section>
 
             <section id="joy">
-              <p class="story-number">05 / THE PLEASURE PRINCIPLE</p>
+              <p class="story-number">05 / KEYİF İLKESİ</p>
               <h2>Bu, keyfe karşı bir argüman değil.</h2>
-              <p>I am not arguing that everyone should stop drinking coffee, traveling, buying clothes, eating enjoyable food, watching films, or using technology. Environmental ethics should not require turning life into a punishment.</p>
-              <p>If coffee brings you joy, and caffeine, drink your coffee.</p>
-              <p>If traveling to Japan is meaningful to you, I am not going to pretend that staying home forever is a real alternative.</p>
-              <p>If a meal connects you to your family or culture, or you simply enjoy it a lot, its value cannot be reduced to one carbon number.</p>
-              <p>If an LLM helps you learn, work, create, communicate, be productive, or manage a disability, that benefit is also real.</p>
-              <p>Environmental impact is one consideration among many, not the only value in human life. My point is not to attack your desires; my point is the selective moral superiority involved in accepting the environmental cost of your own pleasures while treating someone else’s useful or enjoyable activity as uniquely frivolous.</p>
-              <h3>Bir de çocuk sahibi olmak var.</h3>
-              <p>I could not finish this article without mentioning this, right? IYKYK. One influential 2017 study estimated that having one fewer child in a developed country could reduce attributed emissions by 58.6 tonnes of CO₂e per year.<sup><a href="#source-16">16</a></sup></p>
-              <p>This number requires a major disclaimer: it assigns parents a fraction of their descendants’ future emissions, so it is a long-term accounting method, not the emissions released by the biological act of having a baby.</p>
-              <p>I am not arguing that people should not have children. Okay, maybe I kind of do that; at least, I prefer you doing that. But reproductive choices are deeply personal, and reducing a human life to a carbon calculation would be grotesque. However, apparently, I am kind of grotesque.</p>
-              <p>If you are planning to create an entirely new consumer of food, housing, transport, clothing, electronics, and energy, perhaps do not build your environmental identity around scolding someone for asking a chatbot three questions.</p>
+              <p>Herkes kahve içmeyi, seyahat etmeyi, kıyafet almayı, sevdiği yemekleri yemeyi, film izlemeyi ya da teknoloji kullanmayı bıraksın demiyorum. Çevre etiği hayatı cezaya çevirmemizi gerektirmemeli.</p>
+              <p>Kahve size keyif ve kafein veriyorsa kahvenizi için.</p>
+              <p>Japonya’ya gitmek sizin için anlamlıysa, sonsuza kadar evde kalmanın gerçekçi bir alternatifmiş gibi davranmayacağım.</p>
+              <p>Bir yemek sizi ailenize ya da kültürünüze bağlıyorsa veya sadece onu çok seviyorsanız, değeri tek bir karbon rakamına indirgenemez.</p>
+              <p>Bir LLM öğrenmenize, çalışmanıza, üretmenize, iletişim kurmanıza, verimli olmanıza ya da bir engelle yaşamanıza yardımcı oluyorsa bu fayda da gerçek.</p>
+              <p>Çevresel etki, insan hayatındaki tek değer değil; birçok değerlendirmeden biri. Amacım arzularınıza saldırmak değil. Mesele, kendi keyiflerinizin çevresel maliyetini kabul ederken başkasının faydalı ya da keyifli bulduğu bir faaliyeti benzersiz ölçüde gereksiz saymanın getirdiği seçici ahlaki üstünlük.</p>
+              <h3>Bir de çocuk sahibi olma meselesi var.</h3>
+              <p>Bu yazıyı bundan bahsetmeden bitiremezdim, değil mi? IYKYK. Çok ses getiren 2017 tarihli bir araştırma, gelişmiş bir ülkede bir çocuk daha az dünyaya getirmenin ebeveyne atfedilen emisyonları yılda 58.6 ton CO₂e azaltabileceğini tahmin etti.<sup><a href="#source-16">16</a></sup></p>
+              <p>Bu rakam çok büyük bir dipnot gerektiriyor: ebeveynlere gelecek nesillerinin ilerideki emisyonlarının bir kısmını atfediyor. Yani çocuk sahibi olma eyleminin doğrudan ortaya çıkardığı emisyonu değil, uzun vadeli bir muhasebe yöntemini anlatıyor.</p>
+              <p>İnsanlar çocuk sahibi olmasın demiyorum. Tamam, belki biraz diyorum; en azından sizin çocuk sahibi olmamanızı tercih ederim. Ama üreme tercihleri son derece kişisel ve bir insan hayatını karbon hesabına indirgemek grotesk olurdu. Gerçi görünüşe göre ben de biraz groteskim.</p>
+              <p>Yiyecek, barınma, ulaşım, giyim, elektronik ve enerji tüketecek yepyeni bir insan yaratmayı planlıyorsanız, çevreci kimliğinizi bir sohbet botuna üç soru soran birini azarlamak üzerine kurmasanız belki daha iyi olur.</p>
             </section>
 
             <section id="verdict" class="closing-section">
-              <p class="story-number">06 / HÜKÜM</p>
+              <p class="story-number">06 / SONUÇ</p>
               <h2>Peki, ikiyüzlü müsünüz?</h2>
-              <p>AI has a real environmental cost, full stop. Data centers consume substantial electricity and water, rapid expansion can pressure local grids and water systems, more complex models and automated agents can multiply demand, companies are insufficiently transparent, and infrastructure should obviously be regulated. The global concern is legitimate.</p>
-              <p>But the argument here is narrower: ordinary individual text use appears relatively modest compared with many normalized discretionary habits, and singling it out as a personal moral failure while ignoring larger optional consumption is inconsistent.</p>
-              <p>If you avoid those other activities too, good for you; your position is coherent. If you participate in them but do not judge others, also good for you, because at least you recognize that modern life is built from compromises.</p>
-              <p>If you drink coffee, eat meat, drive, fly, buy clothes, stream television, and use AI yourself while arguing for stronger environmental regulation, that is coherent too. Regulation and personal imperfection can coexist.</p>
+              <p>Yapay zekânın gerçek bir çevresel maliyeti var, nokta. Veri merkezleri ciddi miktarda elektrik ve su tüketiyor; hızlı büyüme yerel elektrik şebekeleriyle su sistemleri üzerinde baskı yaratabiliyor; daha karmaşık modeller ve otonom ajanlar talebi katlayabiliyor; şirketler yeterince şeffaf değil ve altyapı elbette düzenlenmeli. Küresel kaygı meşru.</p>
+              <p>Fakat buradaki argüman daha dar: sıradan bireysel metin kullanımı, normalleştirilmiş birçok isteğe bağlı alışkanlıkla karşılaştırıldığında görece mütevazı görünüyor. Daha büyük isteğe bağlı tüketimleri görmezden gelirken yalnızca bunu kişisel bir ahlak kusuru olarak seçmek tutarlı değil.</p>
+              <p>Diğer faaliyetlerden de kaçınıyorsanız ne güzel; pozisyonunuz tutarlı. Bunları yapıyor ama başkalarını yargılamıyorsanız o da güzel, çünkü en azından modern hayatın tavizlerden oluştuğunu kabul ediyorsunuz.</p>
+              <p>Kahve içiyor, et yiyor, araba kullanıyor, uçağa biniyor, kıyafet alıyor, dizi izliyor ve yapay zekâ kullanırken daha güçlü çevre düzenlemeleri istiyorsanız bu da tutarlı. Düzenleme talebiyle kişisel kusurlar aynı anda var olabilir.</p>
               <div class="final-line">
-                <span>IF YOU DO ALL OF THAT AND SCOLD SOMEONE FOR SUMMARIZING A PDF:</span>
-                <strong>Congratulations.<br>You did not save the planet.<br>You chose which emissions felt embarrassing.</strong>
+                <span>BUNLARIN HEPSİNİ YAPIP BİRİSİNİ PDF ÖZETLETTİ DİYE AZARLIYORSANIZ:</span>
+                <strong>Tebrikler.<br>Gezegeni kurtarmadınız.<br>Yalnızca hangi emisyonların utanç verici olduğuna siz karar verdiniz.</strong>
               </div>
             </section>
 
             <section id="sources" class="sources-section">
-              <p class="story-number">16 REFERENCES</p>
+              <p class="story-number">16 KAYNAK</p>
               <h2>Kaynaklar.</h2>
               <ol class="sources-list">
                 <li id="source-1"><a href="https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/">Pew Research Center: How Americans’ Opinions and Use of AI Differ by Age</a></li>
@@ -628,175 +622,175 @@
   <template id="article-cn">
         <header class="article-hero">
           <p class="eyebrow">文章 / 02 · 简体中文</p>
-          <h1>恭喜，你因为没有问 ChatGPT 而拯救了地球</h1>
-          <p class="summary">AI 确实有环境成本，但那些我们很少拿来做个人道德审判的日常快乐也一样。</p>
+          <h1>恭喜，你没问 ChatGPT，地球得救了</h1>
+          <p class="summary">AI 确实有环境成本，但我们习以为常、很少拿来做个人道德审判的那些快乐，也一样有。</p>
           <div class="post-meta large">
-            <span>日期：2026年7月19日</span>
+            <span>日期：2026 年 7 月 19 日</span>
             <span>阅读时间：12 分钟</span>
             <span>语言：简体中文</span>
           </div>
-          
+          <a class="pdf-action" href="../pdf_files/Congratulations__You_Saved_the_Planet_by_Not_Asking_ChatGPT.pdf" download>读这篇完整、极其科学的文章（PDF 仅提供英文版）↓</a>
         </header>
 
-        <section class="metric-strip" aria-label="Key figures">
-          <div><span>文本查询中位数</span><strong>0.34 Wh</strong><small>不是通用数字</small></div>
-          <div><span>2030 年数据中心</span><strong>945 TWh</strong><small>IEA 预测</small></div>
-          <div><span>核心问题</span><strong>为什么偏偏是 AI？</strong><small>而不是其他所有事？</small></div>
+        <section class="metric-strip" aria-label="关键数字">
+          <div><span>普通文本查询中位数</span><strong>0.34 Wh</strong><small>不是放之四海而皆准的数字</small></div>
+          <div><span>2030 年的数据中心</span><strong>945 TWh</strong><small>IEA 预测</small></div>
+          <div><span>核心问题</span><strong>为什么偏偏是 AI？</strong><small>其他事情呢？</small></div>
         </section>
 
         <section class="comparison-panel" aria-labelledby="comparison-title">
-          <p class="section-label">01 / 尺度感</p>
-          <h2 id="comparison-title">重点就在于比较。</h2>
-          <p class="panel-deck">这些估算采用的边界不同，所以并不完全等价；它们只是用来提供尺度，让熟悉的习惯重新变得可见。</p>
-          <div class="impact-chart" role="img" aria-label="Illustrative emissions comparison from an AI query to a beef meal">
+          <p class="section-label">01 / 先找找尺度感</p>
+          <h2 id="comparison-title">重点就是拿来比较。</h2>
+          <p class="panel-deck">这些估算采用的统计边界不同，不能直接画等号；它们只是帮我们找回尺度感，也让那些早已习以为常的习惯重新显形。</p>
+          <div class="impact-chart" role="img" aria-label="从一次 AI 查询到一顿牛肉餐的示意性排放比较">
             <div class="impact-row"><div><span>一次普通 AI 文本查询</span><strong>0.00007–0.00027 kg CO₂e</strong></div><i style="--size: 1%; --bar: var(--accent)"></i></div>
             <div class="impact-row"><div><span>每天 25 次普通文本查询，持续一年</span><strong>0.66–2.45 kg CO₂e</strong></div><i style="--size: 15%; --bar: var(--accent)"></i></div>
             <div class="impact-row"><div><span>两杯黑咖啡</span><strong>0.52 kg CO₂e</strong></div><i style="--size: 9%"></i></div>
-            <div class="impact-row"><div><span>10 公里汽油车行程</span><strong>≈2.5 kg CO₂e</strong></div><i style="--size: 17%"></i></div>
-            <div class="impact-row"><div><span>150 克牛肉餐</span><strong>≈14.9 kg CO₂e</strong></div><i style="--size: 100%; --bar: var(--alert)"></i></div>
+            <div class="impact-row"><div><span>开汽油车 10 公里</span><strong>≈2.5 kg CO₂e</strong></div><i style="--size: 17%"></i></div>
+            <div class="impact-row"><div><span>一顿含 150 克牛肉的饭</span><strong>≈14.9 kg CO₂e</strong></div><i style="--size: 100%; --bar: var(--alert)"></i></div>
           </div>
-          <p class="method-note">Method note: query estimates vary by model, response length, hardware, energy mix, batching and cooling. Water figures are approximate operational estimates, not universal lifecycle totals.</p>
+          <p class="method-note">方法说明：查询估算会随模型、回答长度、硬件、能源结构、批处理方式和冷却系统而变化。用水数字只是近似的运行阶段估算，并非通用的全生命周期总量。</p>
         </section>
 
         <div class="article-layout story-layout">
-          <aside class="contents" aria-label="Article contents">
+          <aside class="contents" aria-label="文章目录">
             <span>目录</span>
             <a href="#premise">01 / 前提</a>
             <a href="#scale">02 / 规模</a>
             <a href="#query">03 / 一次查询</a>
-            <a href="#mirror">04 / 镜子</a>
+            <a href="#mirror">04 / 照照镜子</a>
             <a href="#joy">05 / 快乐</a>
             <a href="#verdict">06 / 结论</a>
           </aside>
 
           <div class="prose story-prose">
             <section class="story-intro">
-              <p>Unless you have been living under a rock, you have probably seen the discussions about AI, data centers, and how much electricity and water they consume.</p>
-              <p>First, a terminology complaint before I lose my mind: when people say “I do not use AI,” they usually mean “I do not use large language models.” LLMs are AI, but AI also powers search engines, recommendation systems, social-media feeds, fraud detection, navigation, photo processing, translation, and countless other services people use every day.</p>
-              <p>Now imagine an ordinary weekend: you wake up and check Instagram, eat granola or perhaps a traditional Turkish breakfast with sucuklu yumurta, drive to a café, have a couple of coffees with friends, walk around some shops, buy groceries, and return home.</p>
-              <p>You open Amazon, Trendyol, or whatever else you use and order something. Perhaps you are environmentally conscious, so you buy it second-hand from a shop in Kadıköy or through Dolap. You eat dinner, stream something, scroll a little more, and go to sleep while looking forward to your trip to Cologne (or Japan, which appears to be the new default destination), and perhaps you would not be opposed to having a child if the economy were less catastrophic.</p>
+              <p>除非你一直住在山洞里，不然你大概已经看过不少关于 AI、数据中心，以及它们究竟要用多少电和水的讨论。</p>
+              <p>先让我在崩溃之前抱怨一下术语：大家说“我不用 AI”时，通常真正想说的是“我不用大语言模型”。LLM 是 AI 没错，但搜索引擎、推荐系统、社交媒体信息流、欺诈检测、导航、照片处理、翻译，以及无数大家天天在用的服务，背后也都有 AI。</p>
+              <p>现在想象一个普通周末：醒来先看 Instagram，吃点格兰诺拉麦片，或者来一顿传统土耳其早餐配香肠炒蛋；开车去咖啡馆，和朋友喝两杯咖啡，逛逛店，买点菜，再回家。</p>
+              <p>你打开 Amazon、Trendyol，或者你平时用的随便哪个平台，下个单。也许你很有环保意识，于是去 Kadıköy 的店里，或通过 Dolap 买了件二手货。晚饭后看点流媒体，再刷一会儿手机，然后想着即将去科隆的旅行入睡——或者去日本，毕竟日本好像已经成了新的默认目的地。要不是经济糟得这么离谱，你可能也不反对生个孩子。</p>
               <div class="headline-box">
-                <span>THE WEEKEND AUDIT</span>
-                <strong>Was that day environmentally innocent?</strong>
-                <p>More importantly, would you feel proud because you did not make a single ChatGPT query?</p>
+                <span>周末环保审计</span>
+                <strong>这一天在环保上清清白白吗？</strong>
+                <p>更重要的是：只因为一次 ChatGPT 都没问，你会觉得自己很值得骄傲吗？</p>
               </div>
-              <p>I suspect many people would. However, something about that does not add up, so I decided to look at both sides of the comparison: the global environmental impact of AI infrastructure and the environmental impact of the ordinary habits we rarely moralize.</p>
+              <p>我猜很多人会。但这事总有哪里对不上，所以我决定把比较的两边都看看：一边是 AI 基础设施对全球环境的影响，另一边是那些我们几乎从不拿来进行道德审判的日常习惯。</p>
             </section>
 
             <section id="premise">
               <p class="story-number">01 / 前提</p>
-              <h2>每个人都讨厌 AI。每个人也都在用它。</h2>
-              <p>The obvious expectation is that people who are deeply concerned about AI would avoid using it. In reality, adoption keeps rising while public trust remains low.</p>
-              <p>A 2026 Pew survey found that 49% of American adults had used an AI chatbot, up from 33% in 2024. Among adults aged 18–29, usage reached 66%. At the same time, 63% said AI was advancing too quickly, and only 16% expected its long-term effect on society to be positive.<sup><a href="#source-1">1</a></sup></p>
-              <p>This is not automatically contradictory: you can use something while distrusting it, and you can believe a technology is useful while opposing the companies, labor practices, copyright rules, politics, or social consequences surrounding it. I believe those are valid discussions.</p>
-              <p>However, if someone says using an LLM is environmentally unacceptable, continues using it, and then blames other users for aggregate demand, they are not standing outside the system they criticize.</p>
-              <blockquote class="formula-card">Total inference demand = users × queries per user × computation per query.</blockquote>
-              <p>Of course, adoption is not driven only by individual chatbot users. AI is increasingly embedded in search engines, office software (I am looking at you, Google Docs), customer service, advertising, social media, and corporate workflows, but aggregate usage does not appear from nowhere; it is composed of individual, corporate, and automatic uses, including the use of people who say they dislike it.</p>
+              <h2>人人都讨厌 AI。人人也都在用。</h2>
+              <p>按理说，一个人如果特别担心 AI，最明显的做法就是别用它。现实却是，使用率一路上涨，公众信任度依然很低。</p>
+              <p>Pew 在 2026 年的一项调查发现，49% 的美国成年人用过 AI 聊天机器人，高于 2024 年的 33%。18–29 岁人群的使用率更是达到 66%。与此同时，63% 的人认为 AI 发展得太快，只有 16% 的人觉得它长期来看会给社会带来积极影响。<sup><a href="#source-1">1</a></sup></p>
+              <p>这并不天然矛盾：你可以一边使用某样东西，一边不信任它；也可以承认一项技术有用，同时反对围绕它的公司、劳动方式、版权规则、政治立场或社会后果。我觉得这些讨论都完全合理。</p>
+              <p>但如果一个人说使用 LLM 在环境上不可接受，自己却继续用，然后又把总需求怪到其他用户头上，那这个人并没有站在自己所批评的系统之外。</p>
+              <blockquote class="formula-card">推理总需求 = 用户数 × 每位用户的查询次数 × 每次查询的计算量。</blockquote>
+              <p>当然，AI 普及不只靠聊天机器人的个人用户推动。它越来越多地被塞进搜索引擎、办公软件（说的就是你，Google Docs）、客服、广告、社交媒体和企业工作流。但总使用量也不是凭空冒出来的；它由个人、企业和自动化使用共同组成，也包括那些嘴上说不喜欢 AI 的人的使用。</p>
             </section>
 
             <section id="scale">
               <p class="story-number">02 / 规模</p>
-              <h2>全球图景并不小。</h2>
-              <p>Obviously, a small footprint per query does not mean the AI industry has a small total footprint.</p>
-              <p>Data centers consumed roughly 415–460 TWh of electricity worldwide in 2024. The International Energy Agency projects approximately <strong>945 TWh by 2030</strong>, just under 3% of global electricity demand and more than double today’s level.<sup><a href="#source-2">2</a></sup></p>
-              <p>AI is the largest driver of the expected growth, although those facilities also serve cloud computing, streaming, storage, cryptocurrency, websites, and the rest of the internet. Hardware associated with AI workloads is projected to grow around 30% annually through 2030.</p>
-              <aside class="alert-box"><span>LOCAL MATTERS</span><p>Global percentages conceal regional grid and water pressure. Data centers are concentrated; power plants, grids, and water systems are local.</p></aside>
-              <p>Renewables may meet almost half of the additional electricity demand, but natural gas and coal are still expected to supply more than 40% of the increase. Data-centre electricity emissions are projected to peak at roughly <strong>320 million tonnes of CO₂</strong> in 2030.<sup><a href="#source-3">3</a></sup></p>
+              <h2>放到全球看，这规模一点也不小。</h2>
+              <p>很显然，单次查询的足迹小，不代表整个 AI 行业的总足迹也小。</p>
+              <p>2024 年，全球数据中心大约消耗了 415–460 TWh 的电力。国际能源署预计，到 2030 年，这个数字将达到约 <strong>945 TWh</strong>，略低于全球用电需求的 3%，也是当前水平的两倍多。<sup><a href="#source-2">2</a></sup></p>
+              <p>AI 是预期增长的最大推手，不过这些设施也同时服务于云计算、流媒体、存储、加密货币、网站，以及互联网剩下的所有东西。预计到 2030 年，与 AI 工作负载相关的硬件将以每年约 30% 的速度增长。</p>
+              <aside class="alert-box"><span>地点很重要</span><p>全球百分比会掩盖具体地区的电网和用水压力。数据中心是集中分布的；发电厂、电网和供水系统面对的压力，却都发生在当地。</p></aside>
+              <p>可再生能源也许能满足将近一半的新增用电需求，但天然气和煤炭预计仍会供应超过 40% 的增量。到 2030 年，数据中心用电造成的排放预计会在约 <strong>3.2 亿吨 CO₂</strong> 见顶。<sup><a href="#source-3">3</a></sup></p>
               <div class="checklist-box">
-                <span>WHAT COMPANIES SHOULD DISCLOSE</span>
+                <span>公司应该公开什么</span>
                 <ul>
-                  <li>Electricity consumption and facility locations</li>
-                  <li>Direct and indirect water consumption</li>
-                  <li>Local grid and water impacts</li>
-                  <li>Cooling technology and hardware lifecycle emissions</li>
-                  <li>Training and inference energy, reported separately</li>
+                  <li>用电量和设施所在地</li>
+                  <li>直接与间接用水量</li>
+                  <li>对当地电网和水资源的影响</li>
+                  <li>冷却技术和硬件全生命周期排放</li>
+                  <li>分别报告训练和推理的能耗</li>
                 </ul>
               </div>
-              <p>They should also be regulated. But this standard should not be invented only for AI. Fashion companies, airlines, meat producers, oil companies, electronics manufacturers, delivery platforms, streaming services, and social-media companies also benefit from weak reporting, selective accounting, greenwashing, and insufficient regulation.</p>
-              <p><strong>The answer is consistent environmental governance, not treating one new industry as uniquely sinful while accepting opacity everywhere else.</strong></p>
+              <p>它们当然也应该受到监管。但这套标准不该只为 AI 临时发明。时尚公司、航空公司、肉类生产商、石油公司、电子产品制造商、配送平台、流媒体服务和社交媒体公司，也都在从披露不足、选择性记账、漂绿和监管不力中获利。</p>
+              <p><strong>真正的答案是一套前后一致的环境治理，而不是一边容忍其他行业不透明，一边把某个新行业单独当成十恶不赦。</strong></p>
 
-              <h3>企业超前建设也是故事的一部分。</h3>
-              <p>It is easy to imagine data-center construction as a direct response to the number of questions ordinary people ask, but the relationship is not that simple. Technology companies build ahead of demonstrated demand because they fear becoming compute-constrained.</p>
-              <p>Infrastructure decisions also reflect model training, enterprise contracts, cloud ambitions, competition, investor expectations, and the strategic fear of not owning enough capacity. Meta’s reported talks to lease as much as $10 billion in compute capacity to Anthropic illustrate how infrastructure can be accumulated for one strategy and commercialized for another.<sup><a href="#source-4">4</a></sup></p>
-              <p>This does not make users irrelevant, because demand still matters; it means a new data center is not necessarily being constructed because you asked ChatGPT where to place a comma.</p>
+              <h3>企业提前堆基础设施，也是故事的一部分。</h3>
+              <p>我们很容易把数据中心建设想成对普通人提问数量的直接回应，但两者的关系没那么简单。科技公司会在实际需求被证明之前就抢先建设，因为它们害怕算力不够用。</p>
+              <p>基础设施决策还会受到模型训练、企业合同、云业务野心、竞争、投资者预期，以及“万一算力掌握得不够多怎么办”这种战略焦虑的影响。据报道，Meta 曾洽谈向 Anthropic 出租价值高达 100 亿美元的算力，这正好说明：为了某个战略囤起来的基础设施，转头也可以拿去做另一门生意。<sup><a href="#source-4">4</a></sup></p>
+              <p>这不代表用户无关紧要，需求当然还是有影响。它只说明：一座新数据中心未必是因为你问了 ChatGPT 逗号该放在哪里才盖起来的。</p>
             </section>
 
             <section id="query">
-              <p class="story-number">03 / THE BOUNDARY</p>
-              <h2>抱歉让你失望了，但并不存在一种通用的“AI 查询”。</h2>
-              <p>A short answer, a long reasoning task, an image, and an AI-generated video do not consume the same amount of energy. Model, hardware, grid, response length, batching, utilization, and cooling all matter.</p>
-              <p>I know, not the most reliable source, but Sam Altman stated that an average ChatGPT query uses about <strong>0.34 Wh of electricity</strong> and <strong>0.32 mL of water</strong>. OpenAI did not publish a complete methodology, so these numbers are not ground truth.<sup><a href="#source-5">5</a></sup></p>
-              <p>An independent bottom-up analysis nevertheless estimated the same 0.34 Wh median for an ordinary frontier-model query, with an interquartile range of 0.18–0.67 Wh. A longer test-time-compute query reached 4.32 Wh.<sup><a href="#source-6">6</a></sup> Google reported 0.24 Wh and roughly 0.26 mL of water for its median Gemini Apps text prompt.<sup><a href="#source-7">7</a></sup></p>
+              <p class="story-number">03 / 边界在哪</p>
+              <h2>不好意思让你失望了，但并不存在一种通用的“AI 查询”。</h2>
+              <p>一个简短回答、一项复杂推理任务、一张图片和一段 AI 生成的视频，耗能并不相同。模型、硬件、电网、回答长度、批处理、利用率和冷却方式，都会影响结果。</p>
+              <p>我知道，这个来源不算最可靠。不过 Sam Altman 说，一次平均 ChatGPT 查询大约消耗 <strong>0.34 Wh 电力</strong>和 <strong>0.32 mL 水</strong>。OpenAI 没有公开完整方法，所以这两个数字绝不是什么终极真相。<sup><a href="#source-5">5</a></sup></p>
+              <p>不过，一项独立的自下而上分析也估算出：一次普通前沿模型查询的中位数同样是 0.34 Wh，四分位距为 0.18–0.67 Wh；一次更长的测试时计算查询则达到 4.32 Wh。<sup><a href="#source-6">6</a></sup> Google 报告称，Gemini Apps 文本提示的中位耗电量为 0.24 Wh，用水量约为 0.26 mL。<sup><a href="#source-7">7</a></sup></p>
               <div class="calculation-grid">
-                <div><span>25 TEXT QUERIES / DAY / YEAR</span><strong>9,125 queries</strong></div>
-                <div><span>CENTRAL ENERGY ESTIMATE</span><strong>3.10 kWh</strong></div>
-                <div><span>ILLUSTRATIVE EMISSIONS</span><strong>1.24 kg CO₂e</strong></div>
-                <div><span>ALL LONG-REASONING QUERIES</span><strong>15.8 kg CO₂e</strong></div>
+                <div><span>每天 25 次文本查询，持续一年</span><strong>9,125 次查询</strong></div>
+                <div><span>能耗中间值估算</span><strong>3.10 kWh</strong></div>
+                <div><span>示意性排放估算</span><strong>1.24 kg CO₂e</strong></div>
+                <div><span>如果全是长推理查询</span><strong>15.8 kg CO₂e</strong></div>
               </div>
-              <p>That last figure is much larger, which is exactly why ordinary text, long reasoning, agents, image generation, and video should not be collapsed into one moral unit called “AI use.”</p>
-              <h3>训练成本还没算进去。</h3>
-              <p>Per-query estimates describe inference: what happens when an already-trained model generates an answer. They do not fully include pretraining, post-training, failed experiments, architecture searches, model updates, chips, servers, networking equipment, or data-center construction.</p>
-              <p>These costs matter. However, there is no transparent public dataset that lets us defensibly divide the full development cost of proprietary frontier models by their lifetime queries, so the honest conclusion is not that training is negligible; it is that its amortized contribution per request is unknown.</p>
-              <aside class="quote-box">A low impact per use does not guarantee a low impact overall. It also does not make every individual use inherently irresponsible.</aside>
+              <p>最后一个数字高得多——这恰好说明，普通文本、长推理、智能体、图片生成和视频，根本不该被压成一个名叫“使用 AI”的统一道德单位。</p>
+              <h3>这里还没算训练成本。</h3>
+              <p>单次查询估算描述的是推理，也就是一个已经训练好的模型生成答案时发生的事情。它没有完整算入预训练、后训练、失败的实验、架构搜索、模型更新、芯片、服务器、网络设备或数据中心建设。</p>
+              <p>这些成本当然重要。但目前没有一套透明的公开数据，能让我们站得住脚地把专有前沿模型的全部开发成本，除以它一生的查询量。所以诚实的结论不是“训练成本可以忽略”，而是它摊到每次请求上的贡献究竟是多少，我们不知道。</p>
+              <aside class="quote-box">单次影响低，不保证总体影响也低；但这同样不代表每一次个人使用都天然不负责任。</aside>
             </section>
 
             <section id="mirror">
-              <p class="story-number">04 / 镜子</p>
-              <h2>现在把它和你生活中的其他部分比一比。</h2>
-              <p>The point is not to prove AI harmless. It is to show the scale of familiar activities that rarely receive the same personal moral scrutiny.</p>
+              <p class="story-number">04 / 照照镜子</p>
+              <h2>现在，把它和你生活里的其他事情比一比。</h2>
+              <p>重点不是证明 AI 毫无危害，而是看看那些熟悉到几乎从不接受同等个人道德审查的活动，到底是什么量级。</p>
               <div class="fact-grid">
-                <article><span>TRANSPORT</span><strong>≈2.5 kg</strong><p>A ten-kilometre petrol-car trip at roughly 250 g CO₂ per kilometre.</p></article>
-                <article><span>FOOD</span><strong>≈14.9 kg</strong><p>A 150 g beef portion, using a global average of 99.5 kg CO₂e per kilogram.</p></article>
-                <article><span>COFFEE</span><strong>0.52–1.69 kg</strong><p>两杯黑咖啡 at the low end; two dairy lattes at the high end.</p></article>
-                <article><span>CLOTHING</span><strong>33.4 kg</strong><p>Levi Strauss’s lifecycle estimate for one pair of 501 jeans.</p></article>
-                <article><span>STREAMING</span><strong>55 g / hour</strong><p>European video-on-demand estimate; the viewing device matters most.</p></article>
-                <article><span>FLYING</span><strong>2.5% global CO₂</strong><p>Aviation’s share before its additional non-CO₂ warming effects.</p></article>
+                <article><span>交通</span><strong>≈2.5 kg</strong><p>开汽油车 10 公里，按每公里约 250 克 CO₂ 计算。</p></article>
+                <article><span>食物</span><strong>≈14.9 kg</strong><p>一份 150 克牛肉，按全球平均每公斤 99.5 kg CO₂e 计算。</p></article>
+                <article><span>咖啡</span><strong>0.52–1.69 kg</strong><p>低值是两杯黑咖啡，高值是两杯牛奶拿铁。</p></article>
+                <article><span>衣服</span><strong>33.4 kg</strong><p>Levi Strauss 对一条 501 牛仔裤的全生命周期估算。</p></article>
+                <article><span>流媒体</span><strong>55 g / 小时</strong><p>欧洲视频点播估算；影响最大的是你用什么设备看。</p></article>
+                <article><span>飞行</span><strong>占全球 CO₂ 的 2.5%</strong><p>这只是航空业的 CO₂ 占比，还没算额外的非 CO₂ 增温效应。</p></article>
               </div>
-              <p>You can buy fewer clothes and keep them longer, walk or take rail where possible, share a car or combine errands, replace some beef meals, reduce autoplay, fly economy, travel less often, and stay longer. None of this requires pretending that pleasure itself is an environmental crime.</p>
-              <h3>“Just Google it” is not a moral philosophy.</h3>
-              <p>People opposed to LLM use often say, “Just search Google,” “Just write it yourself,” or “Just do the task without AI.” Fine, but now apply that logic consistently.</p>
+              <p>你可以买少一点衣服、多穿几年；能走路或坐火车时就别开车；和别人拼车，或把几趟差事一次办完；少吃几顿牛肉；关掉自动播放；坐经济舱；少飞几次，每次多待几天。做这些，并不需要假装快乐本身就是一种环境罪行。</p>
+              <h3>“Google 一下不就好了”不是什么道德哲学。</h3>
+              <p>反对使用 LLM 的人经常说：“Google 一下就行了”“自己写不行吗”或者“别用 AI，自己做”。行，那就把这套逻辑前后一致地用到底。</p>
               <div class="question-stack">
-                <p>Why did you drive instead of walking?</p>
-                <p>Why did you buy another item of clothing?</p>
-                <p>Why did you eat beef instead of lentils?</p>
-                <p>Why did you drink coffee, stream a series, fly for a holiday, or replace a device that still worked?</p>
+                <p>你为什么开车，不走路？</p>
+                <p>你为什么又买了一件衣服？</p>
+                <p>你为什么吃牛肉，不吃扁豆？</p>
+                <p>你为什么喝咖啡、追剧、坐飞机度假，或者换掉一台明明还能用的设备？</p>
               </div>
-              <p>Most of these things are not strictly required for survival. We do them because they save time, create comfort, entertain us, express identity, reduce effort, or make life more enjoyable.</p>
-              <p>That does not make them immoral, but it does mean <strong>“you could have done without it” is not, by itself, a serious environmental framework.</strong></p>
-              <p>Instead, people often treat old habits as natural and new habits as choices. Nobody appears personally offended by the environmental footprint of paperback books; introduce a Kindle, however, and suddenly everyone remembers mining, batteries, electricity, and electronic waste. Familiar consumption becomes invisible, while technological novelty remains morally conspicuous.</p>
+              <p>这些事情大多都不是活下去的严格必需品。我们做它们，是因为它们省时间、带来舒适、让人开心、表达身份、减少麻烦，或者干脆让生活好过一点。</p>
+              <p>这不会自动让它们变得不道德，但也意味着：<strong>“你本来可以不用它”这句话，本身根本算不上一套严肃的环境框架。</strong></p>
+              <p>人们往往把旧习惯当成自然，把新习惯当成选择。好像没谁会被纸质书的环境足迹冒犯；可一换成 Kindle，大家立刻想起采矿、电池、用电和电子垃圾。熟悉的消费会隐身，技术新鲜事物却始终在道德聚光灯下。</p>
             </section>
 
             <section id="joy">
-              <p class="story-number">05 / THE PLEASURE PRINCIPLE</p>
-              <h2>这不是反对快乐的论点。</h2>
-              <p>I am not arguing that everyone should stop drinking coffee, traveling, buying clothes, eating enjoyable food, watching films, or using technology. Environmental ethics should not require turning life into a punishment.</p>
-              <p>If coffee brings you joy, and caffeine, drink your coffee.</p>
-              <p>If traveling to Japan is meaningful to you, I am not going to pretend that staying home forever is a real alternative.</p>
-              <p>If a meal connects you to your family or culture, or you simply enjoy it a lot, its value cannot be reduced to one carbon number.</p>
-              <p>If an LLM helps you learn, work, create, communicate, be productive, or manage a disability, that benefit is also real.</p>
-              <p>Environmental impact is one consideration among many, not the only value in human life. My point is not to attack your desires; my point is the selective moral superiority involved in accepting the environmental cost of your own pleasures while treating someone else’s useful or enjoyable activity as uniquely frivolous.</p>
-              <h3>然后还有生孩子这件事。</h3>
-              <p>I could not finish this article without mentioning this, right? IYKYK. One influential 2017 study estimated that having one fewer child in a developed country could reduce attributed emissions by 58.6 tonnes of CO₂e per year.<sup><a href="#source-16">16</a></sup></p>
-              <p>This number requires a major disclaimer: it assigns parents a fraction of their descendants’ future emissions, so it is a long-term accounting method, not the emissions released by the biological act of having a baby.</p>
-              <p>I am not arguing that people should not have children. Okay, maybe I kind of do that; at least, I prefer you doing that. But reproductive choices are deeply personal, and reducing a human life to a carbon calculation would be grotesque. However, apparently, I am kind of grotesque.</p>
-              <p>If you are planning to create an entirely new consumer of food, housing, transport, clothing, electronics, and energy, perhaps do not build your environmental identity around scolding someone for asking a chatbot three questions.</p>
+              <p class="story-number">05 / 快乐原则</p>
+              <h2>这不是一篇反对快乐的文章。</h2>
+              <p>我不是在说，所有人都该戒咖啡、不旅行、不买衣服、不吃好吃的、不看电影，也不用任何科技。环境伦理不该要求我们把生活过成一种惩罚。</p>
+              <p>如果咖啡能给你快乐——以及咖啡因——那就喝。</p>
+              <p>如果去日本旅行对你很重要，我不会假装永远待在家里是一个真实可行的替代方案。</p>
+              <p>如果一道菜让你和家人或文化产生联系，或者你就是特别喜欢吃，它的价值不可能被压缩成一个碳排数字。</p>
+              <p>如果 LLM 能帮你学习、工作、创作、沟通、提高效率，或者应对残障，那些好处也是真的。</p>
+              <p>环境影响只是诸多考量之一，不是人类生活中唯一的价值。我的重点不是攻击你的欲望，而是指出一种选择性的道德优越感：你接受自己享乐带来的环境成本，却把别人觉得有用或快乐的活动单独判成轻浮。</p>
+              <h3>然后，还有生孩子这件事。</h3>
+              <p>这篇文章不提它，我也写不完，对吧？懂的都懂。2017 年一项影响很大的研究估算，在发达国家少生一个孩子，每年可减少 58.6 吨被归因到父母名下的 CO₂e 排放。<sup><a href="#source-16">16</a></sup></p>
+              <p>这里必须加一个很大的免责声明：这个数字把后代未来排放的一部分也算到父母头上，所以它是一种长期核算方法，并不是“生下一个婴儿”这个生物行为本身直接排放了多少。</p>
+              <p>我不是在说大家都不该生孩子。好吧，也许我多少有点这个意思；至少，我更希望你别生。可生育选择非常私人，把一条人命简化成碳排计算会很荒谬。不过看起来，我本人多少也有点荒谬。</p>
+              <p>如果你正打算创造一个全新的食物、住房、交通、衣服、电子产品和能源消费者，也许就别靠骂别人问了聊天机器人三个问题，来建立自己的环保人设。</p>
             </section>
 
             <section id="verdict" class="closing-section">
               <p class="story-number">06 / 结论</p>
-              <h2>所以，你是伪善者吗？</h2>
-              <p>AI has a real environmental cost, full stop. Data centers consume substantial electricity and water, rapid expansion can pressure local grids and water systems, more complex models and automated agents can multiply demand, companies are insufficiently transparent, and infrastructure should obviously be regulated. The global concern is legitimate.</p>
-              <p>But the argument here is narrower: ordinary individual text use appears relatively modest compared with many normalized discretionary habits, and singling it out as a personal moral failure while ignoring larger optional consumption is inconsistent.</p>
-              <p>If you avoid those other activities too, good for you; your position is coherent. If you participate in them but do not judge others, also good for you, because at least you recognize that modern life is built from compromises.</p>
-              <p>If you drink coffee, eat meat, drive, fly, buy clothes, stream television, and use AI yourself while arguing for stronger environmental regulation, that is coherent too. Regulation and personal imperfection can coexist.</p>
+              <h2>所以，你是个伪君子吗？</h2>
+              <p>AI 确实有环境成本，就这么简单。数据中心消耗大量电力和水；快速扩张会给当地电网和供水系统带来压力；更复杂的模型和自动化智能体可能让需求成倍增加；企业远远不够透明；这些基础设施当然应该受到监管。对全球影响的担忧完全合理。</p>
+              <p>但这篇文章要说的范围更窄：和很多已经被日常化的可选消费相比，普通个人文本使用的影响似乎小得多。如果你忽略那些规模更大的非必要消费，却把这一项单独挑出来当作个人道德失败，那就不一致。</p>
+              <p>如果那些活动你也全都避开了，很好，你的立场很统一。如果你照样参与，却不审判别人，也很好——至少你承认，现代生活本来就是由各种妥协拼起来的。</p>
+              <p>如果你一边喝咖啡、吃肉、开车、坐飞机、买衣服、看流媒体、自己也用 AI，一边主张更严格的环境监管，这同样前后一致。监管诉求和个人不完美完全可以同时存在。</p>
               <div class="final-line">
-                <span>IF YOU DO ALL OF THAT AND SCOLD SOMEONE FOR SUMMARIZING A PDF:</span>
-                <strong>Congratulations.<br>You did not save the planet.<br>You chose which emissions felt embarrassing.</strong>
+                <span>如果这些事你一件没少做，却还要骂别人用 AI 总结一份 PDF：</span>
+                <strong>恭喜。<br>你没有拯救地球。<br>你只是挑了一种让自己觉得丢脸的排放。</strong>
               </div>
             </section>
 
             <section id="sources" class="sources-section">
-              <p class="story-number">16 REFERENCES</p>
+              <p class="story-number">16 条参考资料</p>
               <h2>资料来源。</h2>
               <ol class="sources-list">
                 <li id="source-1"><a href="https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/">Pew Research Center: How Americans’ Opinions and Use of AI Differ by Age</a></li>
@@ -820,33 +814,46 @@
           </div>
         </div>
 </template>
+  <script src="../language.js"></script>
   <script>
-    (function () {
-      const supported = new Set(['en', 'tr', 'cn']);
-      const params = new URLSearchParams(window.location.search);
-      const requested = params.get('lang');
-      const stored = localStorage.getItem('siteLanguage');
-      const lang = supported.has(requested) ? requested : (supported.has(stored) ? stored : 'en');
-      const article = document.querySelector('[data-article-root]');
-      const template = document.getElementById('article-' + lang);
+    const articleChrome = {
+      en: {
+        "footer.back": "← ALL POSTS",
+        "footer.post": "POST 02"
+      },
+      tr: {
+        "footer.back": "← TÜM YAZILAR",
+        "footer.post": "YAZI 02"
+      },
+      cn: {
+        "footer.back": "← 全部文章",
+        "footer.post": "文章 02"
+      }
+    };
+    const articleMetadata = {
+      en: {
+        title: "Congratulations, You Saved the Planet by Not Asking ChatGPT | Sima",
+        description: "AI has a real environmental cost. So do the ordinary pleasures we rarely turn into personal morality plays."
+      },
+      tr: {
+        title: "Tebrikler, ChatGPT’ye Sormayarak Gezegeni Kurtardınız | Sima",
+        description: "Yapay zekânın gerçek bir çevresel maliyeti var. Nadiren kişisel ahlak meselesine çevirdiğimiz sıradan keyiflerin de."
+      },
+      cn: {
+        title: "恭喜，你没问 ChatGPT，地球得救了 | Sima",
+        description: "AI 确实有环境成本。那些我们很少拿来做个人道德审判的日常享受也一样有环境成本。"
+      }
+    };
+
+    function renderArticle(language) {
+      const article = document.querySelector("[data-article-root]");
+      const template = document.getElementById("article-" + language);
       if (article && template) article.innerHTML = template.innerHTML;
-      document.documentElement.lang = lang === 'cn' ? 'zh-Hans' : lang;
-      localStorage.setItem('siteLanguage', lang);
-      document.querySelectorAll('[data-set-lang]').forEach((link) => {
-        const next = link.dataset.setLang;
-        const url = new URL(window.location.href);
-        if (next === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', next);
-        link.href = url.pathname + url.search + url.hash;
-        link.setAttribute('aria-current', next === lang ? 'true' : 'false');
-      });
-      document.querySelectorAll('a[href]').forEach((link) => {
-        const href = link.getAttribute('href');
-        if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.includes('.pdf') || href.startsWith('#') || link.dataset.setLang) return;
-        const url = new URL(href, window.location.href);
-        if (lang === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', lang);
-        link.href = url.pathname + url.search + url.hash;
-      });
-    })();
+      document.title = articleMetadata[language].title;
+      document.querySelector('meta[name="description"]').content = articleMetadata[language].description;
+    }
+
+    SiteLanguage.init({ copy: articleChrome, render: renderArticle });
   </script>
 </body>
 </html>

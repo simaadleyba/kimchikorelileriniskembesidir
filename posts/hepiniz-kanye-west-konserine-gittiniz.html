@@ -10,20 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
-  <style>
-    .language-switcher { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
-    .language-switcher button { border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; padding: 0.35rem 0.65rem; cursor: pointer; }
-    .language-switcher button[aria-pressed="true"] { background: currentColor; color: var(--page-bg, #fff); }
-    .is-hidden { display: none !important; }
-  </style>
 </head>
 <body data-current-lang="en">
   <div class="site-shell">
     <header class="utility-header">
-      <a class="wordmark" href="../">SIMA / NOTLAR</a>
-      <nav aria-label="Ana menü">
-        <a href="../#archive">TÜM YAZILAR</a>
-        <a href="#kaynaklar">KAYNAKLAR</a>
+      <a class="wordmark" href="../" data-language-link>SIMA / NOTES</a>
+      <nav aria-label="Primary navigation" data-i18n-aria-label="nav.aria">
+        <a href="../#latest" data-language-link data-i18n="nav.latest">LATEST</a>
+        <a href="../#archive" data-language-link data-i18n="nav.archive">ARCHIVE</a>
+        <a href="mailto:hello@kimchikorelileriniskembesidir.com" data-i18n="nav.contact">CONTACT</a>
+        <span class="language-switcher" aria-label="Language selector" data-i18n-aria-label="language.aria">
+          <button type="button" data-lang-switch="tr" aria-pressed="false">TR</button><span>/</span><button type="button" data-lang-switch="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang-switch="cn" aria-pressed="false">CN</button>
+        </span>
       </nav>
     </header>
 
@@ -39,11 +37,6 @@
             <span>DİL: TÜRKÇE</span>
           </div>
           <a class="pdf-action" href="../pdf_files/Hepiniz_Kanye_West_Konserine_Gittiniz.pdf" download>(BİLİMSEL) MAKALEYİ BURADAN OKU (PDF) ↓</a>
-          <div class="language-switcher" aria-label="Dil seçimi">
-            <button type="button" data-lang-option="tr" aria-pressed="true">TR</button>
-            <button type="button" data-lang-option="en" aria-pressed="false">EN</button>
-            <button type="button" data-lang-option="cn" aria-pressed="false">CN</button>
-          </div>
         </header>
 
         <section class="metric-strip" aria-label="Temel rakamlar">
@@ -204,11 +197,12 @@
     </main>
 
     <footer class="site-footer">
-      <a href="../">← TÜM YAZILAR</a>
+      <a href="../" data-language-link>← TÜM YAZILAR</a>
       <span>POST 01</span>
     </footer>
   </div>
 
+  <script src="../language.js"></script>
   <script>
     const translations = {
       en: {
@@ -249,22 +243,22 @@
       },
       cn: {
         documentLang: 'zh-Hans',
-        description: '给一边网暴听 Kanye West 的人、一边继续用 Instagram 的人一份带数字的小提醒。',
-        title: '你们全都去了 Kanye West 演唱会 | Sima',
+        description: '给那些一边网暴 Kanye West 听众、一边照刷 Instagram 的人算一笔账。',
+        title: '你们都去了一场 Kanye West 演唱会 | Sima',
         nav: ['所有文章', '资料来源'],
-        footer: ['← 所有文章', 'POST 01'],
-        hero: { eyebrow: 'POST / 01 · 简体中文', h1: '你们全都去了 Kanye West 演唱会', summary: '给一边网暴听 Kanye West 的人、一边继续用 Instagram 的人一份带数字的小提醒：金钱支持、选择性道德，以及你给 Mark Zuckerberg 赚的钱。', meta: ['日期：2026 年 7 月 2 日', '阅读时间：7 分钟', '语言：简体中文'] },
+        footer: ['← 全部文章', '文章 01'],
+        hero: { eyebrow: '文章 / 01 · 简体中文', h1: '你们都去了一场 Kanye West 演唱会', summary: '给那些一边网暴 Kanye West 听众、一边照刷 Instagram 的人算一笔账：钱到底流向了谁、选择性道德，以及你究竟给 Mark Zuckerberg 赚了多少。', meta: ['日期：2026 年 7 月 2 日', '阅读时间：7 分钟', '语言：简体中文'] },
         metricsLabel: '关键数字',
-        metrics: [['你每年给 META 的贡献', '≈$39', '土耳其中位估算'], ['每月 50 次 KANYE 播放', '$0.60–$1.20', 'Spotify 年度估算'], ['最便宜的演唱会票', '≈$157', '一次性']],
-        comparison: { label: '01 / 跟着钱走', h2: '所以，到底是多少钱？', deck: '想给 Zuckerberg 赚到一张最便宜演唱会票的钱，用 Instagram 2–7 年就够了；想靠播放给 Kanye 赚到同样金额，则需要 131–262 年。', cards: [['INSTAGRAM / FACEBOOK', '2–7 年', '给 Zuckerberg 产生约 $157。'], ['每月 50 次 KANYE 播放', '131–262 年', '给 Kanye 产生约 $157。']], punchline: '恭喜。你们全都去了一场 KANYE WEST 演唱会。' },
+        metrics: [['你每年给 META 带来的价值', '≈$39', '土耳其的折中估算'], ['每月 50 次 KANYE 播放', '$0.60–$1.20', 'Spotify 年度估算'], ['最便宜的演唱会票', '≈$157', '一次性']],
+        comparison: { label: '01 / 跟着钱走', h2: '所以，到底是多少钱？', deck: '用 Instagram 2–7 年，你就能给 Zuckerberg 带来差不多一张最便宜演唱会门票的价值；靠听 Kanye 的歌凑到同样金额，则要 131–262 年。', cards: [['INSTAGRAM / FACEBOOK', '2–7 年', '给 Zuckerberg 带来约 $157 的价值。'], ['每月 50 次 KANYE 播放', '131–262 年', '给 Kanye 带来约 $157 的收入。']], punchline: '恭喜。你们都去了一场 KANYE WEST 演唱会。' },
         contents: ['目录', '01 / 问题', '02 / ZUCKERBERG', '03 / 算账', '04 / 播放', '05 / 演唱会', '06 / 结论'],
         sections: {
-          mesele: ['这段时间，我一直在关注社交媒体上围绕 Kanye West 演唱会的争论。我的立场原本是把艺术家的人格和作品分开，但不要提供金钱支持；因为艺术家从流媒体平台拿不到什么收入，所以我认为播放并没有多大实际影响，而买周边或去演唱会这类行为可能更有问题。', '真正让我不舒服的是：那些对去 Kanye West 演唱会或听他歌的人表示愤怒的人，却无视自己给其他有问题人物提供的金钱贡献。', '承认吧，我们谁都不可能完全避开这类贡献。但一边提供金钱支持、一边装作看不见，另一边又因此网暴别人，这本身就不一致，也有问题；因为就像我说的，我们都是人。', ['问题就在这', '无视自己的贡献，却因为同一件事网暴别人，并不一致。', '提醒是一回事；把自己的行为隐形化，再把别人的一次播放变成人格测试，是另一回事。'], '我并不认为提醒别人或谈论问题是错的。但社交媒体上从“我会绝交”到网暴某些名人的景象，让我不舒服。', '听一个艺术家、买周边、去演唱会，并不是同一种金钱行为。做这个区分不是替 Kanye 洗白；只是试着衡量我们所说的“支持”的金额、形式和真实影响。', '所以我想用数字测试我的说法：看看那些反对 Kanye West 演唱会的人所做的另一件事，会给另一个有问题的人提供多少金钱支持——我计算了你花在 Instagram 上的时间给 Mark Zuckerberg 赚了多少钱。'],
-          zuckerberg: ['02 / 先来一个小提醒', 'Zuckerberg 为什么有问题？', '在给出数字之前，我想简单说明为什么我要谈 Zuckerberg。', [['2016 年选举', 'Cambridge Analytica 获取了数百万 Facebook 用户的数据，并用它在 Trump 竞选中定向选民；由于两边竞选团队都没有正式承认，真实影响仍有争议。'], ['事实核查结束', 'Meta 在 2025 年取消独立事实核查项目，转向“community notes”系统。'], ['DEI 项目被取消', '多元、公平与包容团队被解散；招聘和供应商实践被改变。'], ['LGBTQ+ 内容压力', '标签限制、仇恨言论规则变化和账号停用案例接连出现。'], ['游说活动', 'Meta 在 2024 年花费创纪录的 2440 万美元用于联邦游说：相当于国会每八名成员就有一名游说者。'], ['PETER THIEL', '近二十年来，Thiel 一直是 Zuckerberg 的亲近顾问；他在 2022 年离开，转而专注 Trump 的议程。']], '“那还能怎么办？”Bluesky、Substack、Mastodon，甚至 Reddit，都比 Meta 和 X 问题少得多。'],
-          hesap: ['03 / 计算器打开了', '一个土耳其用户对 Meta 的年度价值。', 'Meta 的单用户收入简单来说这样计算：', 'ARPU = 总收入 ÷ 月活跃用户数', '我故意选择这个方法，因为 Meta 的收入并不直接取决于它从每个用户那里偷走多少分钟，而是取决于它有多少用户。更多用户意味着更大的广告池和更多数据；所以“你在平台上”就意味着“你在为这个数字做贡献”。为了简单，我把每个人都当作平均用户。', 'Meta 把土耳其用户放在欧洲分区；但土耳其广告市场相比西欧没那么发达，所以我没有使用一个绝对数字，而是用了三个情景。', ['情景', '年度 ARPU', '说明', '欧洲', '$68.12', '官方上限', '全球', '$57.03', '中间估算', '亚太', '$21.28', '下限', '土耳其估算', '$39.16', '中点'], ['简而言之', '如果你有 Instagram 或 Facebook 账号，你每年大约给 Zuckerberg 赚 <strong>$21–$68</strong>。保守中位估算：<strong>$39</strong>。'], '这个数字并不意味着你每年直接给 Zuckerberg 转账三十九美元；它显示的是广告收入分摊到每个用户的平均价值。但因为 Meta 的商业模式建立在用户数量、注意力和数据之上，保留你的账号也不是经济系统之外的中立动作。', '所以“我在 Instagram 上不点广告”这个反驳并不能改变多少，因为平台卖给广告主的不只是点击，还有触达、定向、衡量和用户行为。你在那里，就是产品的一部分。'],
-          stream: ['04 / 每月 50 次播放', '每月 50 次播放。', '每月 50 次播放明显高于 Spotify 的“超级听众”门槛；也就是说，我们模拟的不是随机用户，而是一个艺术家最忠实的粉丝之一。', '由于平均用户每周会听 40 位不同艺术家，把每月 50 次播放分给单一艺术家已经是相当慷慨的估算。你实际听 Kanye 的次数很可能更低，这也意味着你给他赚的钱比下面估算还少。', '由于土耳其订阅价格较低，加上平台使用按比例分配的资金池系统，单次播放支付也低。按我们手里的比例，表格如下：', [['SPOTIFY', '$0.60–$1.20 / 年'], ['APPLE MUSIC', '$0.72–$1.02 / 年'], ['YOUTUBE MUSIC', '≈$0.41 / 年']], '三个平台结果如此接近，是按比例分配模式造成的：即便订阅价格变化，资金池总规模和平台政策也会决定最终比例。YouTube Music 落后的主要原因，是广告支持的免费层稀释了资金池。', '这里的目的不是说“播放没有任何影响”，因为数百万听众聚在一起当然会产生收入。但一个用户每月听 50 次，和直接买一张演唱会票，是两种完全不同的金钱量级；而在社交媒体争论里，它们常常被塞进同一个道德包裹。', '你真实的播放次数很可能低于每月 50 次；这会让下面的结果不是更不搞笑，而是更搞笑。'],
-          konser: ['05 / YE LIVE IN ISTANBUL', '然后还有真正去演唱会的价格。', '2026 年 5 月 30 日 Atatürk Olympic Stadium 演唱会的官方票价如下：', [['VIP', '₺100,000', '≈$2,174'], ['PIT', '₺65,000', '≈$1,413'], ['DIAMOND', '₺35,000', '≈$761'], ['PREMIUM', '₺23,400', '≈$509'], ['GOLDEN', '₺18,000', '≈$391'], ['SILVER', '₺12,600', '≈$274'], ['北 / 南', '₺7,200', '≈$157']], '现在把它们放到同一张桌上：', [['使用 Instagram / Facebook', '$21–$68 / 年'], ['Spotify 每月 50 次 Kanye 播放', '$0.60–$1.20 / 年'], ['Apple Music 每月 50 次播放', '$0.72–$1.02 / 年'], ['YouTube Music 每月 50 次播放', '≈$0.41 / 年'], ['最便宜的演唱会票', '≈$157 / 一次性']]],
-          sonuc: ['06 / 总之', '总之。', '具体一点说：想给 Zuckerberg 产生相当于最便宜演唱会票的金钱贡献，使用 Instagram 大约 <strong>2–7 年</strong> 就够了；而每月在 Spotify 听 Kanye 50 次，要给他赚到同样金额则需要 <strong>131–262 年</strong>。', '承认吧，我们谁都不可能完全避免给有问题的人或公司提供金钱贡献。提醒、谈论问题、讨论金钱支持的大小都没错；但把自己的贡献隐形化，再把别人的播放变成人格测试，本身就不一致，而且有点好笑。', '如果你不想让 Kanye 赚任何钱，可以不听他；如果你不想让 Meta 赚钱，可以关掉账号。如果两件事你都做，你的立场是一致的；如果没有，那至少当你在 Instagram story 里道德审查别人的 Spotify 历史时，可以记得：那个 story 所在平台的老板，每年都从你这里获得几十美元的价值。', ['如果读到这里的大多数人已经用了 INSTAGRAM 至少 2–7 年：', '恭喜。<br>你们全都去了一场 Kanye West 演唱会。']],
+          mesele: ['这段时间，我一直在看社交媒体上关于 Kanye West 演唱会的争论。我的想法一直是：作品可以和艺术家本人分开看，但别真金白银地支持他。艺术家从流媒体分到的钱少得可怜，所以听歌实际影响不大；买周边或去演唱会，可能才更值得讨论。', '真正让我不舒服的是：有人会对去 Kanye West 演唱会、甚至只是听他歌的人大发雷霆，却对自己给其他问题人物带来的经济利益视而不见。', '承认吧，我们谁都不可能彻底避开这种经济贡献。但一边让钱流过去、一边假装没看见，再因为同一件事去网暴别人，就很不一致，也很有问题。毕竟，就像我说的，我们都是普通人。', ['问题就在这', '看不见自己的贡献，却因为同一件事网暴别人，怎么都说不通。', '提醒别人是一回事；把自己的行为藏起来，再拿别人听了一次歌做人品测试，是另一回事。'], '我不觉得提醒别人、讨论问题有什么错。但社交媒体上从“我会和你绝交”一路闹到网暴某些名人的场面，确实让我不舒服。', '听歌、买周边、去演唱会，不是同一种花钱方式。把它们分开，不是在替 Kanye 洗白；只是想认真算算，我们口中的“支持”到底有多少钱、以什么形式发生、实际影响又有多大。', '所以我想拿数字检验一下自己的说法：那些反对 Kanye West 演唱会的人，日常做的另一件事究竟会给另一个问题人物带来多少经济利益？于是我算了算，你刷 Instagram 到底给 Mark Zuckerberg 赚了多少钱。'],
+          zuckerberg: ['02 / 先快速复习一下', 'Zuckerberg 到底有什么问题？', '开始算账之前，先简单说说我为什么要提 Zuckerberg。', [['2016 年选举', 'Cambridge Analytica 获取了数百万 Facebook 用户的数据，并用它在 Trump 竞选中定向选民；由于两边竞选团队都没有正式承认，真实影响仍有争议。'], ['停止事实核查', 'Meta 在 2025 年取消独立事实核查项目，改用“社区注释（Community Notes）”系统。'], ['DEI 项目被取消', '多元、公平与包容团队被解散；招聘和供应商实践被改变。'], ['LGBTQ+ 内容压力', '标签限制、仇恨言论规则变化和账号停用案例接连出现。'], ['游说活动', 'Meta 在 2024 年花费创纪录的 2440 万美元用于联邦游说：相当于国会每八名成员就有一名游说者。'], ['PETER THIEL', '近二十年来，Thiel 一直是 Zuckerberg 的核心顾问；他在 2022 年离开，转而专注 Trump 的议程。']], '“那我还能用什么？”Bluesky、Substack、Mastodon，甚至 Reddit，问题都比 Meta 和 X 少得多。'],
+          hesap: ['03 / 计算器拿出来', '一个土耳其用户一年能给 Meta 带来多少价值。', 'Meta 的单用户收入，说白了就是这么算：', 'ARPU = 总收入 ÷ 月活跃用户数', '我特意用了这个算法，因为 Meta 赚多少钱，并不直接取决于它从每个用户身上偷走了多少分钟，而是取决于平台上有多少人。用户越多，广告池越大，数据也越多。所以只要“你还在平台上”，就已经“在给这个数字添砖加瓦”。为了方便，我把每个人都当成平均用户。', 'Meta 把土耳其用户算进欧洲区；但土耳其广告市场没有西欧那么成熟，所以我没硬塞一个绝对数字，而是列了三种情况。', ['情景', '年度 ARPU', '说明', '欧洲', '$68.12', '官方上限', '全球', '$57.03', '中间估算', '亚太', '$21.28', '下限', '土耳其估算', '$39.16', '中点'], ['简而言之', '如果你有 Instagram 或 Facebook 账号，你每年大约会给 Zuckerberg 带来 <strong>$21–$68</strong> 的价值。保守取个中间值：<strong>$39</strong>。'], '这不代表你每年亲手给 Zuckerberg 转账 39 美元；它指的是广告收入平均分摊到每位用户后的价值。但 Meta 的商业模式本来就靠用户数量、注意力和数据运转，所以留着账号也不是什么置身经济系统之外的中立行为。', '所以“可我在 Instagram 上从来不点广告”并不能改变多少。平台卖给广告主的不只是点击，还有触达、定向、衡量和你的行为。你只要在那里，就是产品的一部分。'],
+          stream: ['04 / 每月 50 次播放', '每月 50 次播放。', '每月听 50 次，已经明显超过 Spotify 的“超级听众”门槛。换句话说，我们模拟的不是随便听听的人，而是一个艺术家最忠实的那批粉丝。', '平均用户每周会听 40 位不同的艺术家，所以把每月 50 次播放全算给同一个人，已经很大方了。你实际听 Kanye 的次数大概率更少，也就是说，你给他赚的钱还低于下面的估算。', '土耳其订阅价格较低，再加上平台采用按比例分配的资金池模式，所以单次播放能分到的钱也很少。按现有比例算，结果如下：', [['SPOTIFY', '$0.60–$1.20 / 年'], ['APPLE MUSIC', '$0.72–$1.02 / 年'], ['YOUTUBE MUSIC', '≈$0.41 / 年']], '三个平台的结果这么接近，是按比例分配模式造成的：就算订阅价格不同，资金池总额和平台政策仍会决定最后能分到多少。YouTube Music 更低，主要是因为带广告的免费层把资金池摊薄了。', '这里的目的不是说“播放没有任何影响”，因为数百万听众聚在一起当然会产生收入。但一个用户每月听 50 次，和直接买一张演唱会票，是两种完全不同的金钱量级；而在社交媒体争论里，它们常常被塞进同一个道德包裹。', '你真实的播放次数大概还不到每月 50 次；这只会让下面的结果更好笑，不会更严肃。'],
+          konser: ['05 / YE LIVE IN ISTANBUL', '然后，再来看看真去演唱会要花多少钱。', '2026 年 5 月 30 日 Atatürk Olympic Stadium 演唱会的官方票价如下：', [['VIP', '₺100,000', '≈$2,174'], ['PIT', '₺65,000', '≈$1,413'], ['DIAMOND', '₺35,000', '≈$761'], ['PREMIUM', '₺23,400', '≈$509'], ['GOLDEN', '₺18,000', '≈$391'], ['SILVER', '₺12,600', '≈$274'], ['北 / 南', '₺7,200', '≈$157']], '现在把这些数字摆到同一张桌上：', [['使用 Instagram / Facebook', '$21–$68 / 年'], ['Spotify 每月 50 次 Kanye 播放', '$0.60–$1.20 / 年'], ['Apple Music 每月 50 次播放', '$0.72–$1.02 / 年'], ['YouTube Music 每月 50 次播放', '≈$0.41 / 年'], ['最便宜的演唱会票', '≈$157 / 一次性']]],
+          sonuc: ['06 / 总之', '总之。', '说得更具体一点：用 Instagram 大约 <strong>2–7 年</strong>，你就能给 Zuckerberg 带来相当于一张最便宜演唱会票的价值；而每月在 Spotify 听 Kanye 50 次，要让他赚到同样金额，则需要 <strong>131–262 年</strong>。', '承认吧，我们谁都不可能彻底避免让有问题的人或公司赚到钱。提醒别人、讨论问题、比较经济支持的大小，都没错；但把自己的贡献藏起来，再拿别人听了几次歌做人品测试，就很不一致，也有点好笑。', '如果你一分钱都不想让 Kanye 赚，那就别听；如果你不想让 Meta 赚钱，那就注销账号。两件事都做到，你的立场很一致；如果没有，那么下次你在 Instagram Story 里审判别人的 Spotify 收听记录时，至少记得：这个 Story 所在平台的老板，每年都能从你身上得到几十美元的价值。', ['如果读到这里的大多数人已经用了 INSTAGRAM 至少 2–7 年：', '恭喜。<br>你们都去了一场 Kanye West 演唱会。']],
           sources: ['资料来源', '这些数字从哪里来？']
         }
       }
@@ -274,7 +268,7 @@
     const remember = (selector, prop = 'innerHTML') => {
       document.querySelectorAll(selector).forEach((node, index) => original.set(`${selector}:${index}:${prop}`, node[prop]));
     };
-    ['meta[name="description"]', 'title', '.utility-header nav a', '.site-footer a', '.site-footer span', '.article-hero .eyebrow', '.article-hero h1', '.article-hero .summary', '.post-meta.large span', '.metric-strip', '.comparison-panel', '.contents', '.prose', '.pdf-action'].forEach((selector) => remember(selector, selector === 'meta[name="description"]' ? 'content' : selector === 'title' ? 'textContent' : 'innerHTML'));
+    ['meta[name="description"]', 'title', '.site-footer a', '.site-footer span', '.article-hero .eyebrow', '.article-hero h1', '.article-hero .summary', '.post-meta.large span', '.metric-strip', '.comparison-panel', '.contents', '.prose', '.pdf-action'].forEach((selector) => remember(selector, selector === 'meta[name="description"]' ? 'content' : selector === 'title' ? 'textContent' : 'innerHTML'));
 
     const setAll = (selector, values, renderer) => document.querySelectorAll(selector).forEach((node, index) => renderer(node, values[index], index));
     const setParagraphs = (sectionId, values) => setAll(`#${sectionId} > p:not(.story-number)`, values, (node, value) => { node.innerHTML = value; });
@@ -288,13 +282,11 @@
     }
 
     function applyTranslation(lang) {
-      if (lang === 'tr' || !translations[lang]) { restoreTurkish(); }
-      else {
+      restoreTurkish();
+      if (lang !== 'tr' && translations[lang]) {
         const t = translations[lang];
-        document.documentElement.lang = t.documentLang;
         document.title = t.title;
         document.querySelector('meta[name="description"]').content = t.description;
-        setAll('.utility-header nav a', t.nav, (n, v) => n.textContent = v);
         setAll('.site-footer a, .site-footer span', t.footer, (n, v) => n.textContent = v);
         document.querySelector('.article-hero .eyebrow').textContent = t.hero.eyebrow;
         document.querySelector('.article-hero h1').textContent = t.hero.h1;
@@ -343,29 +335,15 @@
         document.querySelector('#kaynaklar h2').textContent = t.sections.sources[1];
       }
 
-      document.documentElement.lang = lang === 'cn' ? 'zh-Hans' : lang;
-      document.body.dataset.currentLang = lang;
-      document.querySelector('.pdf-action').classList.toggle('is-hidden', lang !== 'tr');
-      document.querySelectorAll('[data-lang-option]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.langOption === lang)));
-      document.querySelectorAll('a[href]').forEach((link) => {
-        const href = link.getAttribute('href');
-        if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.endsWith('.pdf')) return;
-        const [path, hash = ''] = href.split('#');
-        const cleanPath = path.replace(/\?lang=(tr|en|cn)$/, '');
-        link.setAttribute('href', `${cleanPath}${lang === 'en' ? '' : `?lang=${lang}`}${hash ? `#${hash}` : ''}`);
-      });
-      localStorage.setItem('siteLanguage', lang);
+      const pdfLabels = {
+        tr: '(BİLİMSEL) MAKALEYİ BURADAN OKU (PDF) ↓',
+        en: 'READ THE (SCIENTIFIC) ARTICLE HERE (PDF, ONLY AVAILABLE IN TURKISH) ↓',
+        cn: '在这里读这篇（科学）文章（PDF 仅提供土耳其语版）↓'
+      };
+      document.querySelector('.pdf-action').textContent = pdfLabels[lang];
     }
 
-    const params = new URLSearchParams(window.location.search);
-    const initialLang = params.get('lang') || localStorage.getItem('siteLanguage') || 'en';
-    applyTranslation(['tr', 'en', 'cn'].includes(initialLang) ? initialLang : 'en');
-    document.querySelectorAll('[data-lang-option]').forEach((button) => button.addEventListener('click', () => {
-      applyTranslation(button.dataset.langOption);
-      const url = new URL(window.location.href);
-      if (button.dataset.langOption === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', button.dataset.langOption);
-      window.history.replaceState({}, '', url);
-    }));
+    SiteLanguage.init({ render: applyTranslation });
   </script>
 </body>
 </html>

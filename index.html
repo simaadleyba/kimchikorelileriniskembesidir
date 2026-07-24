@@ -19,13 +19,13 @@
 <body>
   <div class="site-shell">
     <header class="utility-header">
-      <a class="wordmark" href="./">SIMA / NOTES</a>
-      <nav aria-label="Primary navigation">
+      <a class="wordmark" href="./" data-language-link>SIMA / NOTES</a>
+      <nav aria-label="Primary navigation" data-i18n-aria-label="nav.aria">
         <a href="#latest" data-i18n="nav.latest">LATEST</a>
         <a href="#archive" data-i18n="nav.archive">ARCHIVE</a>
         <a href="mailto:hello@kimchikorelileriniskembesidir.com" data-i18n="nav.contact">CONTACT</a>
-        <span class="language-switcher" aria-label="Language selector">
-          <button type="button" data-lang-switch="tr">TR</button><span>/</span><button type="button" data-lang-switch="en">EN</button><span>/</span><button type="button" data-lang-switch="cn">CN</button>
+        <span class="language-switcher" aria-label="Language selector" data-i18n-aria-label="language.aria">
+          <button type="button" data-lang-switch="tr" aria-pressed="false">TR</button><span>/</span><button type="button" data-lang-switch="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang-switch="cn" aria-pressed="false">CN</button>
         </span>
       </nav>
     </header>
@@ -48,27 +48,27 @@
         <div class="section-label"><span data-i18n="latest.label">LATEST / 02</span></div>
         <article class="post-feature">
           <div class="post-meta">
-            <span>19 JUL 26</span>
+            <span data-i18n="post.ai.date">19 JUL 26</span>
             <span><span data-i18n="latest.read">12 MIN READ</span></span>
             </div>
-          <h2 id="latest-title"><a href="posts/congratulations-you-saved-the-planet-by-not-asking-chatgpt.html" data-post-link><span data-i18n="post.ai.title">Congratulations, You Saved the Planet by Not Asking ChatGPT</span></a></h2>
+          <h2 id="latest-title"><a href="posts/congratulations-you-saved-the-planet-by-not-asking-chatgpt.html" data-language-link><span data-i18n="post.ai.title">Congratulations, You Saved the Planet by Not Asking ChatGPT</span></a></h2>
           <p><span data-i18n="post.ai.deck">AI has a real environmental cost. The question is why one ordinary text query attracts more personal moral theatre than driving, coffee, beef, clothes, streaming, flights, and the rest of modern life.</span></p>
-          <a class="text-link" href="posts/congratulations-you-saved-the-planet-by-not-asking-chatgpt.html" data-post-link><span data-i18n="post.read">READ ESSAY →</span></a>
+          <a class="text-link" href="posts/congratulations-you-saved-the-planet-by-not-asking-chatgpt.html" data-language-link><span data-i18n="post.read">READ ESSAY →</span></a>
         </article>
       </section>
 
       <section id="archive" class="archive" aria-labelledby="archive-title">
         <div class="section-label"><span data-i18n="archive.label">ARCHIVE</span></div>
         <h2 id="archive-title"><span data-i18n="archive.title">All posts</span></h2>
-        <a class="archive-row" href="posts/congratulations-you-saved-the-planet-by-not-asking-chatgpt.html" data-post-link>
+        <a class="archive-row" href="posts/congratulations-you-saved-the-planet-by-not-asking-chatgpt.html" data-language-link>
           <span>02</span>
           <strong data-i18n="post.ai.title">Congratulations, You Saved the Planet by Not Asking ChatGPT</strong>
-          <time datetime="2026-07-19">19 Jul 26</time>
+          <time datetime="2026-07-19" data-i18n="post.ai.date">19 JUL 26</time>
         </a>
-        <a class="archive-row" href="posts/hepiniz-kanye-west-konserine-gittiniz.html" data-post-link>
+        <a class="archive-row" href="posts/hepiniz-kanye-west-konserine-gittiniz.html" data-language-link>
           <span>01</span>
           <strong data-i18n="post.kanye.title">Hepiniz Kanye West Konserine Gittiniz</strong>
-          <time datetime="2026-07-02">02 Jul 26</time>
+          <time datetime="2026-07-02" data-i18n="post.kanye.date">02 JUL 26</time>
         </a>
       </section>
     </main>
@@ -78,29 +78,20 @@
       <span><span data-i18n="footer.built">built with curiosity</span></span>
     </footer>
   </div>
+  <script src="language.js"></script>
   <script>
     const translations = {
       en: {
-        "nav.latest":"LATEST","nav.archive":"ARCHIVE","nav.contact":"CONTACT","hero.eyebrow":"PERSONAL BLOG / NOTES, ARTICLES, EVIDENCE","hero.title":"curiosity, indexed","hero.summary":"an index for whatever i got curious about long enough to finish","hero.cta":"READ LATEST ↓","strip.posts":"POSTS","latest.label":"LATEST / 02","latest.read":"12 MIN READ","post.ai.title":"Congratulations, You Saved the Planet by Not Asking ChatGPT","post.ai.deck":"AI has a real environmental cost. The question is why one ordinary text query attracts more personal moral theatre than driving, coffee, beef, clothes, streaming, flights, and the rest of modern life.","post.kanye.title":"Hepiniz Kanye West Konserine Gittiniz","post.read":"READ ESSAY →","archive.label":"ARCHIVE","archive.title":"All posts","footer.built":"built with curiosity"
+        "nav.latest":"LATEST","nav.archive":"ARCHIVE","nav.contact":"CONTACT","hero.eyebrow":"PERSONAL BLOG / NOTES, ARTICLES, EVIDENCE","hero.title":"curiosity, indexed","hero.summary":"an index for whatever i got curious about long enough to finish","hero.cta":"READ LATEST ↓","strip.posts":"POSTS","latest.label":"LATEST / 02","latest.read":"12 MIN READ","post.ai.title":"Congratulations, You Saved the Planet by Not Asking ChatGPT","post.ai.deck":"AI has a real environmental cost. The question is why one ordinary text query attracts more personal moral theatre than driving, coffee, beef, clothes, streaming, flights, and the rest of modern life.","post.ai.date":"19 JUL 26","post.kanye.title":"Hepiniz Kanye West Konserine Gittiniz","post.kanye.date":"02 JUL 26","post.read":"READ ESSAY →","archive.label":"ARCHIVE","archive.title":"All posts","footer.built":"built with curiosity"
       },
       tr: {
-        "nav.latest":"SON YAZI","nav.archive":"ARŞİV","nav.contact":"İLETİŞİM","hero.eyebrow":"KİŞİSEL BLOG / NOTLAR, YAZILAR, KANITLAR","hero.title":"merak, indekslenmiş","hero.summary":"bitirecek kadar kafama taktığım şeyler için bir indeks","hero.cta":"SON YAZIYI OKU ↓","strip.posts":"YAZI","latest.label":"SON YAZI / 02","latest.read":"12 DK OKUMA","post.ai.title":"Tebrikler, ChatGPT’ye Sormayarak Gezegeni Kurtardınız","post.ai.deck":"AI’ın gerçek bir çevresel maliyeti var. Asıl soru, neden sıradan bir metin sorgusunun araba, kahve, et, kıyafet, streaming, uçuşlar ve modern hayatın geri kalanından daha fazla kişisel ahlak tiyatrosu çektiği.","post.kanye.title":"Hepiniz Kanye West Konserine Gittiniz","post.read":"YAZIYI OKU →","archive.label":"ARŞİV","archive.title":"Tüm yazılar","footer.built":"merakla yapıldı"
+        "nav.latest":"SON YAZI","nav.archive":"ARŞİV","nav.contact":"İLETİŞİM","hero.eyebrow":"KİŞİSEL BLOG / NOTLAR, YAZILAR, KANITLAR","hero.title":"derlenmiş merak","hero.summary":"üzerine bir şeyler yazmayı bitirecek kadar merak ettiğim şeyler için bir blog","hero.cta":"SON YAZIYI OKU ↓","strip.posts":"YAZI","latest.label":"SON YAZI / 02","latest.read":"12 DK OKUMA","post.ai.title":"Tebrikler, ChatGPT’ye Sormayarak Gezegeni Kurtardınız","post.ai.deck":"Yapay zekânın gerçek bir çevresel maliyeti var. Asıl soru, neden sıradan bir metin sorgusunu araba, kahve, et, kıyafet, dijital yayınlar, uçuşlar ve modern hayatın geri kalanından daha çok kişisel bir ahlak gösterisine çevirdiğimiz.","post.ai.date":"19 TEM 26","post.kanye.title":"Hepiniz Kanye West Konserine Gittiniz","post.kanye.date":"02 TEM 26","post.read":"YAZIYI OKU →","archive.label":"ARŞİV","archive.title":"Tüm yazılar","footer.built":"merakla desteklendi"
       },
       cn: {
-        "nav.latest":"最新","nav.archive":"归档","nav.contact":"联系","hero.eyebrow":"个人博客 / 笔记、文章、证据","hero.title":"把好奇心编个目录","hero.summary":"这里放那些我好奇到真的写完了的东西","hero.cta":"读最新文章 ↓","strip.posts":"文章","latest.label":"最新 / 02","latest.read":"约 12 分钟","post.ai.title":"恭喜，你没问 ChatGPT，地球得救了","post.ai.deck":"AI 确实有环境成本。问题是，为什么一个普通文字提问，比开车、咖啡、牛肉、衣服、刷剧、坐飞机和现代生活其他一切，更容易变成个人道德小剧场。","post.kanye.title":"你们都去了一场 Kanye West 演唱会","post.read":"读文章 →","archive.label":"归档","archive.title":"全部文章","footer.built":"凭好奇心搭的"
+        "nav.latest":"最新","nav.archive":"归档","nav.contact":"联系","hero.eyebrow":"个人博客 / 笔记、文章、证据","hero.title":"把好奇心编个目录","hero.summary":"这里放那些我好奇到真的写完了的东西","hero.cta":"读最新文章 ↓","strip.posts":"文章","latest.label":"最新 / 02","latest.read":"约 12 分钟","post.ai.title":"恭喜，你没问 ChatGPT，地球得救了","post.ai.deck":"AI 确实有环境成本。问题是，为什么一个普通文字提问，比开车、咖啡、牛肉、衣服、刷剧、坐飞机和现代生活里的其他一切，更容易变成个人道德小剧场。","post.ai.date":"2026 年 7 月 19 日","post.kanye.title":"你们都去了一场 Kanye West 演唱会","post.kanye.date":"2026 年 7 月 2 日","post.read":"读文章 →","archive.label":"归档","archive.title":"全部文章","footer.built":"凭好奇心搭的"
       }
     };
-    function setLang(lang){
-      if(!translations[lang]) lang='en';
-      document.documentElement.lang = lang === 'cn' ? 'zh-CN' : lang;
-      localStorage.setItem('siteLanguage', lang);
-      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = translations[lang][el.dataset.i18n] || translations.en[el.dataset.i18n] || el.textContent; });
-      document.querySelectorAll('[data-lang-switch]').forEach(btn => btn.classList.toggle('active', btn.dataset.langSwitch === lang));
-      document.querySelectorAll('[data-post-link]').forEach(a => { const url = new URL(a.getAttribute('href'), location.href); if (lang === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', lang); a.href = url.pathname.replace(location.pathname.replace(/[^/]*$/, ''), '') + url.search; });
-    }
-    const initialLang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('siteLanguage') || 'en';
-    document.querySelectorAll('[data-lang-switch]').forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.langSwitch)));
-    setLang(initialLang);
+    SiteLanguage.init({ copy: translations });
   </script>
 </body>
 </html>
