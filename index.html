@@ -65,7 +65,7 @@
           <strong data-i18n="post.ai.title">Congratulations, You Saved the Planet by Not Asking ChatGPT</strong>
           <time datetime="2026-07-19">19 Jul 26</time>
         </a>
-        <a class="archive-row" href="posts/hepiniz-kanye-west-konserine-gittiniz.html" data-post-link lang="tr">
+        <a class="archive-row" href="posts/hepiniz-kanye-west-konserine-gittiniz.html" data-post-link>
           <span>01</span>
           <strong data-i18n="post.kanye.title">Hepiniz Kanye West Konserine Gittiniz</strong>
           <time datetime="2026-07-02">02 Jul 26</time>
@@ -96,7 +96,7 @@
       localStorage.setItem('siteLanguage', lang);
       document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = translations[lang][el.dataset.i18n] || translations.en[el.dataset.i18n] || el.textContent; });
       document.querySelectorAll('[data-lang-switch]').forEach(btn => btn.classList.toggle('active', btn.dataset.langSwitch === lang));
-      document.querySelectorAll('[data-post-link]').forEach(a => { const url = new URL(a.getAttribute('href'), location.href); url.searchParams.set('lang', lang); a.href = url.pathname.replace(location.pathname.replace(/[^/]*$/, ''), '') + url.search; });
+      document.querySelectorAll('[data-post-link]').forEach(a => { const url = new URL(a.getAttribute('href'), location.href); if (lang === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', lang); a.href = url.pathname.replace(location.pathname.replace(/[^/]*$/, ''), '') + url.search; });
     }
     const initialLang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('siteLanguage') || 'en';
     document.querySelectorAll('[data-lang-switch]').forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.langSwitch)));

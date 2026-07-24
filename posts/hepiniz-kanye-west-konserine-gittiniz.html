@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
     .is-hidden { display: none !important; }
   </style>
 </head>
-<body data-current-lang="tr">
+<body data-current-lang="en">
   <div class="site-shell">
     <header class="utility-header">
       <a class="wordmark" href="../">SIMA / NOTLAR</a>
@@ -42,7 +42,7 @@
           <div class="language-switcher" aria-label="Dil seçimi">
             <button type="button" data-lang-option="tr" aria-pressed="true">TR</button>
             <button type="button" data-lang-option="en" aria-pressed="false">EN</button>
-            <button type="button" data-lang-option="cn" aria-pressed="false">简体中文</button>
+            <button type="button" data-lang-option="cn" aria-pressed="false">CN</button>
           </div>
         </header>
 
@@ -352,19 +352,18 @@
         if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.endsWith('.pdf')) return;
         const [path, hash = ''] = href.split('#');
         const cleanPath = path.replace(/\?lang=(tr|en|cn)$/, '');
-        link.setAttribute('href', `${cleanPath}${lang === 'tr' ? '' : `?lang=${lang}`}${hash ? `#${hash}` : ''}`);
+        link.setAttribute('href', `${cleanPath}${lang === 'en' ? '' : `?lang=${lang}`}${hash ? `#${hash}` : ''}`);
       });
-      localStorage.setItem('siteLang', lang);
+      localStorage.setItem('siteLanguage', lang);
     }
 
     const params = new URLSearchParams(window.location.search);
-    const browserLang = document.documentElement.lang === 'zh-Hans' ? 'cn' : document.documentElement.lang;
-    const initialLang = params.get('lang') || localStorage.getItem('siteLang') || (['tr', 'en', 'cn'].includes(browserLang) ? browserLang : 'tr');
-    applyTranslation(['tr', 'en', 'cn'].includes(initialLang) ? initialLang : 'tr');
+    const initialLang = params.get('lang') || localStorage.getItem('siteLanguage') || 'en';
+    applyTranslation(['tr', 'en', 'cn'].includes(initialLang) ? initialLang : 'en');
     document.querySelectorAll('[data-lang-option]').forEach((button) => button.addEventListener('click', () => {
       applyTranslation(button.dataset.langOption);
       const url = new URL(window.location.href);
-      if (button.dataset.langOption === 'tr') url.searchParams.delete('lang'); else url.searchParams.set('lang', button.dataset.langOption);
+      if (button.dataset.langOption === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', button.dataset.langOption);
       window.history.replaceState({}, '', url);
     }));
   </script>

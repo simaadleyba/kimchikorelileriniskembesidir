@@ -29,10 +29,7 @@
 
     <main>
       <div class="language-switcher" aria-label="Language selector">
-        <span>LANGUAGE</span>
-        <a href="?lang=en" data-set-lang="en" aria-current="true">EN</a>
-        <a href="?lang=tr" data-set-lang="tr">TR</a>
-        <a href="?lang=cn" data-set-lang="cn">中文</a>
+        <a href="?lang=tr" data-set-lang="tr">TR</a><span>/</span><a href="?lang=en" data-set-lang="en" aria-current="true">EN</a><span>/</span><a href="?lang=cn" data-set-lang="cn">CN</a>
       </div>
 
       <article class="article-page longform" data-article-root>
@@ -828,13 +825,13 @@
       const supported = new Set(['en', 'tr', 'cn']);
       const params = new URLSearchParams(window.location.search);
       const requested = params.get('lang');
-      const stored = localStorage.getItem('postLanguage');
+      const stored = localStorage.getItem('siteLanguage');
       const lang = supported.has(requested) ? requested : (supported.has(stored) ? stored : 'en');
       const article = document.querySelector('[data-article-root]');
       const template = document.getElementById('article-' + lang);
       if (article && template) article.innerHTML = template.innerHTML;
       document.documentElement.lang = lang === 'cn' ? 'zh-Hans' : lang;
-      localStorage.setItem('postLanguage', lang);
+      localStorage.setItem('siteLanguage', lang);
       document.querySelectorAll('[data-set-lang]').forEach((link) => {
         const next = link.dataset.setLang;
         const url = new URL(window.location.href);
