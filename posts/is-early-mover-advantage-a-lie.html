@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fifty-four hardware categories, one pioneer each, and the brand that actually ended up on top. A scrolling count of who wins: the first, the early, or the late.">
+  <title>Is early mover advantage a lie? | Sima</title>
+  <link rel="icon" type="image/png" href="../assets/kimchi.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="utility-header">
+      <a class="wordmark" href="../" data-language-link>SIMA / NOTES</a>
+      <nav aria-label="Primary navigation" data-i18n-aria-label="nav.aria">
+        <a href="../#latest" data-language-link data-i18n="nav.latest">LATEST</a>
+        <a href="../#archive" data-language-link data-i18n="nav.archive">ARCHIVE</a>
+        <a href="mailto:hello@kimchikorelileriniskembesidir.com" data-i18n="nav.contact">CONTACT</a>
+        <span class="language-switcher" aria-label="Language selector" data-i18n-aria-label="language.aria">
+          <button type="button" data-lang-switch="tr" aria-pressed="false">TR</button><span>/</span><button type="button" data-lang-switch="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang-switch="cn" aria-pressed="false">CN</button>
+        </span>
+      </nav>
+    </header>
+
+    <main>
+      <article class="article-page longform">
+        <header class="article-hero">
+          <p class="eyebrow" data-i18n="hero.eyebrow">POST / 03 · ENGLISH · SCROLL STORY</p>
+          <h1 data-i18n="hero.title">Is early mover advantage a lie?</h1>
+          <p class="summary" data-i18n="hero.summary">Scroll, and the squares will tell you who wins: the first, the early, or the late.</p>
+          <div class="post-meta large">
+            <span data-i18n="hero.date">DATE: 10 SEP 26</span>
+            <span data-i18n="hero.read">READING TIME: 8 MIN</span>
+            <span data-i18n="hero.lang">LANGUAGE: ENGLISH</span>
+          </div>
+          <a class="pdf-action" href="../data/early-mover-advantage-dataset.xlsx" download data-i18n="hero.download">DOWNLOAD THE DATASET (XLSX) ↓</a>
+        </header>
+
+        <section class="metric-strip" aria-label="Key figures">
+          <div><span data-i18n="m1.label">CATEGORIES</span><strong>54</strong><small data-i18n="m1.note">first products from 1925 to 2018</small></div>
+          <div><span data-i18n="m2.label">PIONEER STILL #1</span><strong>20 / 54</strong><small data-i18n="m2.note">37 percent, if you are generous about "first"</small></div>
+          <div><span data-i18n="m3.label">MEDIAN WINNER</span><strong data-i18n="m3.value">Entrant #3</strong><small data-i18n="m3.note">fifteen months after the pioneer</small></div>
+        </section>
+
+        <section class="scrolly-intro">
+          <p class="section-label" data-i18n="intro.label">01 / THE PREMISE</p>
+          <h2 data-i18n="intro.title">Two clichés.</h2>
+          <p class="panel-deck" data-i18n="intro.p1">They say "get there first and the market is yours". The other, well, actually someone from Twitter, says that first mover advantage is the biggest myth.</p>
+          <p data-i18n="intro.p2">Both are told with anecdotes, which is convenient, because it is the best and, most of the time, not so scientific way of trying to prove something. As a result, I wanted to check this. I curated lots of categories, found who shipped first, who is number one now (or at the category's peak, if it is dead), and looked at the gap between the two.</p>
+          <p data-i18n="intro.p3">Hardware: a physical product is easy to check in terms of who came first and who is selling the most. So we are going with those. There are 54 categories, from a 1925 Leica film camera to a 2018 folding phone. Each one is a square below. Scroll and enjoy.</p>
+        </section>
+
+        <section class="scrolly" aria-label="Scroll-driven data story">
+          <div class="scrolly-figure">
+            <div class="figure-frame">
+              <div class="figure-head"><span data-i18n="fig.title">FIG. 01 / THE BOARD</span><strong id="figure-caption" aria-live="polite"></strong></div>
+              <div class="board" id="board">
+                <div class="axis" id="axis" aria-hidden="true"></div>
+                <div class="board-tip" id="board-tip" role="status" hidden></div>
+              </div>
+              <div class="figure-legend" id="legend" aria-hidden="true">
+                <span data-legend="ink"><i></i><em data-i18n="leg.cat">category</em></span>
+                <span data-legend="disputed" hidden><i class="disputed"></i><em data-i18n="leg.disputed">pioneer disputed</em></span>
+                <span data-legend="one" hidden><i class="one"></i><em data-i18n="leg.one">pioneer still #1</em></span>
+                <span data-legend="mid" hidden><i class="mid"></i><em data-i18n="leg.mid">pioneer in top 5</em></span>
+                <span data-legend="out" hidden><i class="out"></i><em data-i18n="leg.out">pioneer out of top 5</em></span>
+                <span data-legend="early" hidden><i class="one"></i><em data-i18n="leg.early">winner entered ≤ 12 months</em></span>
+                <span data-legend="early24" hidden><i class="one"></i><em data-i18n="leg.early24">winner entered ≤ 24 months</em></span>
+                <span data-legend="late" hidden><i class="out"></i><em data-i18n="leg.late">winner entered &gt; 5 years later</em></span>
+                <span data-legend="rest" hidden><i class="dim"></i><em data-i18n="leg.rest">everyone else</em></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps" id="steps">
+            <div class="step" data-step="0"><div>
+              <span data-i18n="s0.n">STEP 01 / 54 SQUARES</span>
+              <p data-i18n="s0.p">Fifty-four categories, sorted by the year the first product shipped. Top left is the Leica I, 1925. Bottom right is the foldable phone, 2018. Cameras, televisions, phones, chips, printers, consoles, a robot vacuum, two cars.</p>
+            </div></div>
+            <div class="step" data-step="1"><div>
+              <span data-i18n="s1.n">STEP 02 / THE PIONEERS</span>
+              <p data-i18n="s1.p">Every square has a pioneer: the first brand to put a commercial product in the category. Hover a square to see it. For 17 of the 54 the "first" is disputed, which is already a warning about how this story usually gets told.</p>
+            </div></div>
+            <div class="step" data-step="2"><div>
+              <span data-i18n="s2.n">STEP 03 / STILL ON TOP</span>
+              <p data-i18n="s2.p">Now the question. In how many of these is the pioneer still number one? Twenty. GoPro, Intel, HP in both inkjet and laser printers, Toyota in hybrids, Amazon in smart speakers, Fitbit, Raspberry Pi, the iPad. Thirty-seven percent.</p>
+            </div></div>
+            <div class="step" data-step="3"><div>
+              <span data-i18n="s3.n">STEP 04 / PASSED, OR GONE</span>
+              <p data-i18n="s3.p">In ten more the pioneer is still in the top five but got passed: Polaroid behind Instax, Motorola behind Nokia, Toshiba behind Sony in DVD players. And in 24, nearly half, the pioneer is not in the top five at all. Casio, Kodak, 3dfx, MakerBot, Osborne, Magnavox, Pebble.</p>
+            </div></div>
+            <div class="step" data-step="4"><div>
+              <span data-i18n="s4.n">STEP 05 / CHANGE THE QUESTION</span>
+              <p data-i18n="s4.p">So 37 percent hold on and 44 percent fall off the leaderboard. On that count the cliché looks about half true. But "first" is doing a lot of work in that sentence. Ask something else: not who was first, but how long after the first did the eventual winner show up? Each square is now a bar. Its length is that delay, in months.</p>
+            </div></div>
+            <div class="step" data-step="5"><div>
+              <span data-i18n="s5.n">STEP 06 / THE FIRST YEAR</span>
+              <p data-i18n="s5.p">In 26 of 54 categories the brand that ended up on top entered within twelve months of the pioneer. Sixteen were the pioneer itself. Ten arrived in the first year: Apple, one month after LG's Prada phone; Nvidia, ten months after 3dfx; Samsung, nine months after Sharp's LCD television.</p>
+            </div></div>
+            <div class="step" data-step="6"><div>
+              <span data-i18n="s6.n">STEP 07 / THE LONG TAIL</span>
+              <p data-i18n="s6.p">Stretch the window to two years and it is 30 of 54, more than half. The tail is the other story: 14 winners arrived more than five years late. Canon in 35mm, 129 months after Leica. Samsung in DRAM, 161. Sony's PlayStation, 267. Seagate, 285. Fujifilm's Instax, 395 months, thirty-three years after Polaroid.</p>
+            </div></div>
+            <div class="step" data-step="7"><div>
+              <span data-i18n="s7.n">STEP 08 / ENTRY ORDER</span>
+              <p data-i18n="s7.p">Regroup by entry order instead of time. The winner was the first entrant 16 times, the second 10 times, the third 7 times, and then it thins out. The median winner is entrant number three, fifteen months after the pioneer. Not first. Not tenth. Early.</p>
+            </div></div>
+            <div class="step" data-step="8"><div>
+              <span data-i18n="s8.n">STEP 09 / HOW THE LATE ONES WON</span>
+              <p data-i18n="s8.p">And the late winners have a pattern. Nearly all of them won on manufacturing scale (Samsung, Lenovo, Seagate, Lite-On, TP-Link, Creality, Roborock) or on a platform reset: the PlayStation with CDs, the Switch, Instax as a revival. Nobody won late by shipping a slightly better version of the pioneer's product.</p>
+            </div></div>
+          </div>
+        </section>
+
+        <section class="ledger-panel" aria-labelledby="ledger-title">
+          <p class="section-label" data-i18n="ledger.label">02 / THE FULL LIST</p>
+          <h2 id="ledger-title" data-i18n="ledger.title">If you want to check, here are all 54.</h2>
+          <p class="panel-deck" data-i18n="ledger.deck">Number one is measured at the current market (2023–24) for living categories and at the peak year for dead ones. Delay is months between the pioneer's release and the winner's first qualifying product.</p>
+          <div class="filter-row" role="group" aria-label="Filter rows">
+            <button type="button" data-filter="all" aria-pressed="true" data-i18n="f.all">ALL</button>
+            <button type="button" data-filter="one" aria-pressed="false" data-i18n="f.one">PIONEER STILL #1</button>
+            <button type="button" data-filter="mid" aria-pressed="false" data-i18n="f.mid">PIONEER IN TOP 5</button>
+            <button type="button" data-filter="out" aria-pressed="false" data-i18n="f.out">PIONEER OUT OF TOP 5</button>
+            <button type="button" data-filter="late" aria-pressed="false" data-i18n="f.late">LATE WINNERS (&gt; 5 YRS)</button>
+          </div>
+          <div class="ledger-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th data-i18n="t.cat">Category</th>
+                  <th data-i18n="t.pioneer">Pioneer (first release)</th>
+                  <th data-i18n="t.winner">#1 brand</th>
+                  <th class="num" data-i18n="t.months">Delay (months)</th>
+                  <th class="num" data-i18n="t.order">Entry order</th>
+                  <th data-i18n="t.rank">Pioneer now</th>
+                </tr>
+              </thead>
+              <tbody id="ledger-body"></tbody>
+            </table>
+          </div>
+          <p class="ledger-count" id="ledger-count"></p>
+        </section>
+
+        <div class="article-layout story-layout">
+          <aside class="contents" aria-label="Article contents">
+            <span data-i18n="c.head">CONTENTS</span>
+            <a href="#verdict" data-i18n="c.verdict">03 / THE VERDICT</a>
+            <a href="#caveats" data-i18n="c.caveats">04 / WHAT IT DOESN'T SHOW</a>
+            <a href="#sources" data-i18n="c.sources">05 / SOURCES</a>
+          </aside>
+
+          <div class="prose story-prose">
+            <section id="verdict">
+              <p class="story-number" data-i18n="v.n">03 / THE VERDICT</p>
+              <h2 data-i18n="v.title">So, is it a lie?</h2>
+              <p data-i18n="v.p1">Being literally first is a weak bet. About a third of pioneers keep the crown, closer to 30 percent if you refuse to count shared or disputed firsts, and 44 percent are not on the leaderboard by the time the category matures. If that is what someone means by first-mover advantage, they are right to be suspicious of it.</p>
+              <p data-i18n="v.p2">Being early is a strong bet. In half of the categories the winner entered within a year of the pioneer, in more than half within two, and in 37 of 54 at least one first-year entrant is still in the top five. The advantage is real. It just belongs to the first wave, not the first name.</p>
+              <div class="headline-box">
+                <span data-i18n="v.boxLabel">THE SHORT VERSION</span>
+                <strong data-i18n="v.boxTitle">The pioneer's job is to prove the category exists. The winner's job is to arrive before anyone else believes it.</strong>
+                <p data-i18n="v.boxP">The median winner entered third, fifteen months late, after the pioneer had spent the money to find out what the product actually was.</p>
+              </div>
+              <p data-i18n="v.p3">This is not a new finding, which is reassuring. Golder and Tellis counted consumer goods in 1993 and found that pioneers failed 47 percent of the time and that "early leaders," firms that entered later but before the category took off, ended up with roughly three times the pioneer's share. Markides and Geroski wrote a whole book about it and called it Fast Second. Consumer hardware from Leica to the Quest does not look any different.</p>
+            </section>
+
+            <section id="caveats">
+              <p class="story-number" data-i18n="cv.n">04 / WHAT IT DOESN'T SHOW</p>
+              <h2 data-i18n="cv.title">Correlation, definitions, survivors.</h2>
+              <aside class="alert-box">
+                <span data-i18n="cv.boxLabel">READ BEFORE QUOTING</span>
+                <p data-i18n="cv.boxP">This is a descriptive count, not a causal claim. Firms with more money and better foresight may simply enter earlier, and win for those reasons.</p>
+              </aside>
+              <p data-i18n="cv.p1">First, there is survivorship. Every category here matured into something with a market share to measure. However, there are lots of categories that... never became categories. As a result, they are not in this set. Which means that though they failed, the pioneers of those categories are not counted in this research, making the pioneer result look better than it actually is.</p>
+              <p data-i18n="cv.p2">Secondly, there is "definition". Logitech counts as the webcam pioneer because it bought Connectix; Apple shares the touchscreen smartphone with LG because the Prada shipped a month earlier; 17 of 54 pioneers are flagged as disputed in the data. Read the entry-order numbers as roughly right, not exact.</p>
+              <p data-i18n="cv.p3">Third, measurement. "Number one" mixes current shipment shares (2023–24) for living categories with peak-year shares for dead ones, and the shares come from mixed public sources: company reports, CIPA, IDC, Counterpoint, Statista. The dataset grades 47 of the 54 categories A for evidence quality and 7 as B. Every row carries its own source links in the spreadsheet above.</p>
+              <p data-i18n="cv.p4">Lastly, the scope. I only checked hardware. Software, platforms, services: there are many other things to check, and we cannot be sure whether the result looks similar there. However, I was lazy and did not check those. So I am leaving this as an exercise to the reader.</p>
+              <div class="final-line">
+                <span data-i18n="fl.label">IF YOU ONLY REMEMBER ONE ROW:</span>
+                <strong data-i18n="fl.text">Median winner: entrant number three, fifteen months after the pioneer.</strong>
+              </div>
+            </section>
+
+            <section id="sources" class="sources-section">
+              <p class="story-number" data-i18n="src.n">5 REFERENCES</p>
+              <h2 data-i18n="src.title">Sources.</h2>
+              <ol class="sources-list">
+                <li><a href="../data/early-mover-advantage-dataset.xlsx" download data-i18n="src.1">Technology Early Mover Advantage Historical Dataset (XLSX): 54 categories, 275 entrants, per-row sources</a></li>
+                <li><a href="https://doi.org/10.1177/002224379303000201">Golder, P. N. and Tellis, G. J. (1993). Pioneer Advantage: Marketing Logic or Marketing Legend? Journal of Marketing Research, 30(2)</a></li>
+                <li><a href="https://doi.org/10.1002/smj.4250090706">Lieberman, M. B. and Montgomery, D. B. (1988). First-Mover Advantages. Strategic Management Journal, 9(S1)</a></li>
+                <li><a href="https://www.wiley.com/en-us/Fast+Second%3A+How+Smart+Companies+Bypass+Radical+Innovation+to+Enter+and+Dominate+New+Markets-p-9780787971540">Markides, C. and Geroski, P. (2005). Fast Second. Jossey-Bass</a></li>
+                <li><a href="https://www.cipa.jp/stats/dc_e.html">CIPA: Camera and Imaging Products Association shipment statistics</a></li>
+              </ol>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <a href="../" data-language-link data-i18n="footer.back">← ALL POSTS</a>
+      <span data-i18n="footer.post">POST 03</span>
+    </footer>
+  </div>
+
+  <script src="../language.js"></script>
+  <script>
+    const DATA = [{"id":"CAT-01","name":"35mm film camera","pioneer":"Leica","winner":"Canon","year":1925,"domain":"Imaging","rank":null,"order":12,"months":129,"disputed":false},{"id":"CAT-02","name":"Instant camera","pioneer":"Polaroid","winner":"Fujifilm Instax","year":1948,"domain":"Imaging","rank":2,"order":4,"months":395,"disputed":false},{"id":"CAT-08","name":"Colour TV","pioneer":"Westinghouse / RCA","winner":"RCA","year":1954,"domain":"Television & Displays","rank":null,"order":2,"months":1,"disputed":true},{"id":"CAT-25","name":"Hard disk drive","pioneer":"IBM","winner":"Seagate","year":1956,"domain":"Storage & Media","rank":null,"order":8,"months":285,"disputed":false},{"id":"CAT-47","name":"Ball mouse","pioneer":"Telefunken / Xerox / Apple","winner":"Logitech","year":1968,"domain":"Peripherals","rank":null,"order":4,"months":168,"disputed":true},{"id":"CAT-26","name":"DRAM","pioneer":"Intel","winner":"Samsung","year":1970,"domain":"Semiconductors & Components","rank":null,"order":8,"months":161,"disputed":false},{"id":"CAT-22","name":"Microprocessor","pioneer":"Intel","winner":"Intel","year":1971,"domain":"Semiconductors & Components","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-35","name":"Home game console","pioneer":"Magnavox","winner":"Sony PlayStation","year":1972,"domain":"Gaming","rank":null,"order":7,"months":267,"disputed":false},{"id":"CAT-13","name":"Mobile phone","pioneer":"Motorola","winner":"Nokia","year":1973,"domain":"Mobile & Telephony","rank":2,"order":2,"months":38,"disputed":false},{"id":"CAT-17","name":"Desktop PC","pioneer":"MITS / Apple / Commodore","winner":"Lenovo","year":1974,"domain":"Computing","rank":null,"order":9,"months":185,"disputed":true},{"id":"CAT-36","name":"Handheld console","pioneer":"Milton Bradley / Nintendo","winner":"Nintendo","year":1979,"domain":"Gaming","rank":null,"order":3,"months":113,"disputed":true},{"id":"CAT-12","name":"PC monitor","pioneer":"IBM","winner":"Dell","year":1981,"domain":"Television & Displays","rank":null,"order":6,"months":97,"disputed":true},{"id":"CAT-18","name":"Laptop","pioneer":"Osborne / Epson / GRiD","winner":"Lenovo","year":1981,"domain":"Computing","rank":null,"order":6,"months":60,"disputed":true},{"id":"CAT-31","name":"In-ear earphones","pioneer":"Sony","winner":"Sony","year":1982,"domain":"Audio","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-07","name":"Camcorder","pioneer":"Sony","winner":"Sony","year":1983,"domain":"Imaging","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-27","name":"Inkjet printer","pioneer":"HP","winner":"HP","year":1984,"domain":"Printing","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-28","name":"Laser printer","pioneer":"HP","winner":"HP","year":1984,"domain":"Printing","rank":1,"order":1,"months":0,"disputed":true},{"id":"CAT-43","name":"CD-ROM drive","pioneer":"Philips / Sony","winner":"Lite-On","year":1984,"domain":"Storage & Media","rank":4,"order":5,"months":120,"disputed":false},{"id":"CAT-04","name":"DSLR","pioneer":"Kodak","winner":"Canon","year":1991,"domain":"Imaging","rank":null,"order":3,"months":50,"disputed":false},{"id":"CAT-14","name":"Keyboard smartphone","pioneer":"IBM / BellSouth","winner":"Nokia","year":1992,"domain":"Mobile & Telephony","rank":null,"order":2,"months":24,"disputed":false},{"id":"CAT-03","name":"Digital camera","pioneer":"Casio","winner":"Canon","year":1994,"domain":"Imaging","rank":null,"order":4,"months":16,"disputed":true},{"id":"CAT-49","name":"Webcam","pioneer":"Connectix","winner":"Logitech","year":1994,"domain":"Peripherals","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-23","name":"Discrete GPU","pioneer":"3dfx","winner":"Nvidia","year":1995,"domain":"Semiconductors & Components","rank":null,"order":3,"months":10,"disputed":true},{"id":"CAT-44","name":"DVD player","pioneer":"Toshiba","winner":"Sony","year":1996,"domain":"Storage & Media","rank":3,"order":3,"months":5,"disputed":false},{"id":"CAT-09","name":"Plasma TV","pioneer":"Fujitsu","winner":"Panasonic","year":1997,"domain":"Television & Displays","rank":null,"order":3,"months":11,"disputed":false},{"id":"CAT-50","name":"Robot vacuum","pioneer":"Electrolux / iRobot","winner":"Roborock","year":1997,"domain":"Home Technology","rank":3,"order":5,"months":178,"disputed":true},{"id":"CAT-54","name":"Hybrid car","pioneer":"Toyota","winner":"Toyota","year":1997,"domain":"Transportation","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-33","name":"MP3 player","pioneer":"SaeHan / Eiger","winner":"Apple iPod","year":1998,"domain":"Audio","rank":null,"order":6,"months":42,"disputed":false},{"id":"CAT-41","name":"Wi-Fi router","pioneer":"Apple / Linksys","winner":"TP-Link","year":1999,"domain":"Networking & Connectivity","rank":null,"order":5,"months":71,"disputed":true},{"id":"CAT-48","name":"Optical mouse","pioneer":"Microsoft","winner":"Logitech","year":1999,"domain":"Peripherals","rank":5,"order":2,"months":8,"disputed":false},{"id":"CAT-10","name":"LCD TV","pioneer":"Sharp","winner":"Samsung","year":2000,"domain":"Television & Displays","rank":null,"order":2,"months":9,"disputed":true},{"id":"CAT-46","name":"USB flash drive","pioneer":"Trek / M-Systems","winner":"SanDisk","year":2000,"domain":"Storage & Media","rank":1,"order":4,"months":26,"disputed":true},{"id":"CAT-06","name":"Action camera","pioneer":"GoPro","winner":"GoPro","year":2004,"domain":"Imaging","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-20","name":"E-reader","pioneer":"Sony","winner":"Amazon Kindle","year":2004,"domain":"Computing","rank":null,"order":3,"months":43,"disputed":false},{"id":"CAT-30","name":"Bluetooth headphones","pioneer":"Bluetrek / Motorola","winner":"Sony","year":2004,"domain":"Audio","rank":null,"order":8,"months":145,"disputed":true},{"id":"CAT-24","name":"Consumer SSD","pioneer":"Samsung / SanDisk","winner":"Samsung","year":2006,"domain":"Semiconductors & Components","rank":1,"order":1,"months":0,"disputed":true},{"id":"CAT-45","name":"Blu-ray player","pioneer":"Samsung","winner":"Sony","year":2006,"domain":"Storage & Media","rank":2,"order":2,"months":5,"disputed":false},{"id":"CAT-53","name":"Electric car","pioneer":"Tesla / Nissan","winner":"BYD","year":2006,"domain":"Transportation","rank":2,"order":3,"months":43,"disputed":true},{"id":"CAT-15","name":"Touchscreen smartphone","pioneer":"LG / Apple","winner":"Apple","year":2007,"domain":"Mobile & Telephony","rank":1,"order":2,"months":1,"disputed":true},{"id":"CAT-11","name":"OLED TV","pioneer":"Sony","winner":"LG","year":2007,"domain":"Television & Displays","rank":3,"order":2,"months":30,"disputed":false},{"id":"CAT-39","name":"Fitness tracker","pioneer":"Fitbit","winner":"Fitbit","year":2009,"domain":"Wearables","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-29","name":"Desktop 3D printer","pioneer":"MakerBot","winner":"Creality","year":2009,"domain":"Printing","rank":null,"order":4,"months":63,"disputed":false},{"id":"CAT-05","name":"Mirrorless camera","pioneer":"Panasonic","winner":"Canon","year":2008,"domain":"Imaging","rank":null,"order":7,"months":47,"disputed":false},{"id":"CAT-19","name":"Tablet","pioneer":"Apple","winner":"Apple","year":2010,"domain":"Computing","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-21","name":"Single-board computer","pioneer":"Raspberry Pi","winner":"Raspberry Pi","year":2012,"domain":"Computing","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-51","name":"Smart thermostat","pioneer":"Nest","winner":"Google Nest","year":2011,"domain":"Home Technology","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-38","name":"Smartwatch","pioneer":"Sony / Pebble","winner":"Apple","year":2012,"domain":"Wearables","rank":null,"order":5,"months":36,"disputed":true},{"id":"CAT-52","name":"Video doorbell","pioneer":"Ring","winner":"Amazon Ring","year":2013,"domain":"Home Technology","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-40","name":"Smart ring","pioneer":"McLear / Oura","winner":"Oura","year":2013,"domain":"Wearables","rank":1,"order":2,"months":24,"disputed":true},{"id":"CAT-32","name":"True wireless earbuds","pioneer":"Onkyo / Bragi","winner":"Apple","year":2015,"domain":"Audio","rank":null,"order":4,"months":13,"disputed":true},{"id":"CAT-34","name":"Smart speaker","pioneer":"Amazon","winner":"Amazon Echo","year":2014,"domain":"Audio","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-42","name":"Mesh Wi-Fi","pioneer":"Eero","winner":"TP-Link","year":2016,"domain":"Networking & Connectivity","rank":3,"order":5,"months":14,"disputed":false},{"id":"CAT-37","name":"Standalone VR headset","pioneer":"Oculus","winner":"Meta Quest","year":2018,"domain":"Wearables","rank":1,"order":1,"months":0,"disputed":false},{"id":"CAT-16","name":"Foldable phone","pioneer":"Royole / Samsung","winner":"Samsung","year":2018,"domain":"Mobile & Telephony","rank":1,"order":2,"months":9,"disputed":true}];
+    DATA.sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
+
+    const MAX_MONTHS = 395;
+    const outcome = (d) => d.rank === 1 ? "one" : d.rank ? "mid" : "out";
+
+    /* ---------- Board ---------- */
+    const board = document.getElementById("board");
+    const axis = document.getElementById("axis");
+    const tip = document.getElementById("board-tip");
+    const caption = document.getElementById("figure-caption");
+    const legend = document.getElementById("legend");
+    const cells = DATA.map((d, i) => {
+      const el = document.createElement("div");
+      el.className = "cell";
+      el.tabIndex = 0;
+      el.dataset.index = i;
+      const label = document.createElement("b");
+      label.setAttribute("aria-hidden", "true");
+      el.appendChild(label);
+      board.appendChild(el);
+      return el;
+    });
+
+    const byMonths = DATA.map((d, i) => i).sort((a, b) => DATA[a].months - DATA[b].months || DATA[a].year - DATA[b].year);
+    const byOrder = {};
+    DATA.forEach((d, i) => { (byOrder[d.order] = byOrder[d.order] || []).push(i); });
+    const ORDERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+    let currentStep = 0;
+    let currentLang = "en";
+
+    function layoutGrid(W, H) {
+      const cols = 9, rows = 6, gap = Math.max(4, Math.min(10, W * 0.012));
+      const size = Math.floor(Math.min((W - gap * (cols - 1)) / cols, (H - gap * (rows - 1)) / rows));
+      const ox = (W - (size * cols + gap * (cols - 1))) / 2;
+      const oy = (H - (size * rows + gap * (rows - 1))) / 2;
+      return DATA.map((d, i) => ({ x: ox + (i % cols) * (size + gap), y: oy + Math.floor(i / cols) * (size + gap), w: size, h: size }));
+    }
+    function layoutBars(W, H) {
+      const top = 18, rowH = (H - top) / DATA.length, gap = Math.max(1, rowH * 0.22);
+      const scale = (m) => 6 + (W - 6) * Math.sqrt(m / MAX_MONTHS);
+      const pos = new Array(DATA.length);
+      byMonths.forEach((idx, r) => { pos[idx] = { x: 0, y: top + r * rowH, w: scale(DATA[idx].months), h: Math.max(2, rowH - gap) }; });
+      return pos;
+    }
+    function layoutHist(W, H) {
+      const bottom = 18, colW = W / ORDERS.length, gap = Math.max(3, colW * 0.12);
+      const maxStack = 16;
+      const size = Math.floor(Math.min(colW - gap, (H - bottom) / maxStack - 2));
+      const pos = new Array(DATA.length);
+      ORDERS.forEach((o, c) => {
+        (byOrder[o] || []).forEach((idx, k) => {
+          pos[idx] = { x: c * colW + (colW - size) / 2, y: H - bottom - (k + 1) * (size + 2), w: size, h: size };
+        });
+      });
+      return pos;
+    }
+
+    function renderAxis(kind, W, H) {
+      axis.className = "axis";
+      axis.innerHTML = "";
+      if (kind === "months") {
+        axis.classList.add("is-months");
+        [0, 12, 24, 60, 120, 240, 395].forEach((m) => {
+          const s = document.createElement("span");
+          s.textContent = m === 0 ? "0" : m + "m";
+          s.style.left = (6 + (W - 6) * Math.sqrt(m / MAX_MONTHS)) + "px";
+          axis.appendChild(s);
+        });
+      } else if (kind === "order") {
+        axis.classList.add("is-order");
+        const colW = W / ORDERS.length;
+        ORDERS.forEach((o, c) => {
+          const s = document.createElement("span");
+          s.textContent = "#" + o;
+          s.style.left = (c * colW + colW / 2) + "px";
+          axis.appendChild(s);
+        });
+      }
+    }
+
+    const STEPS = [
+      { layout: "grid", cls: () => "", legend: ["ink"], caption: { en: "54 CATEGORIES · SORTED BY FIRST RELEASE", tr: "54 KATEGORİ · İLK ÇIKIŞA GÖRE SIRALI", cn: "54 个品类 · 按首发年份排序" } },
+      { layout: "grid", cls: (d) => d.disputed ? "is-disputed" : "", legend: ["ink", "disputed"], caption: { en: "17 DISPUTED PIONEERS", tr: "17 TARTIŞMALI ÖNCÜ", cn: "17 个存在争议的先行者" } },
+      { layout: "grid", cls: (d) => d.rank === 1 ? "is-one" : "is-dim", legend: ["one", "rest"], caption: { en: "PIONEER STILL #1 · 20 / 54", tr: "ÖNCÜ HÂLÂ 1 NUMARA · 20 / 54", cn: "先行者仍是第一 · 20 / 54" } },
+      { layout: "grid", cls: (d) => "is-" + outcome(d), legend: ["one", "mid", "out"], caption: { en: "#1 · TOP 5 · OUT — 20 · 10 · 24", tr: "1 NUMARA · İLK 5 · DIŞARIDA — 20 · 10 · 24", cn: "第一 · 前五 · 出局 — 20 · 10 · 24" } },
+      { layout: "bars", cls: () => "", legend: ["ink"], caption: { en: "MONTHS BETWEEN PIONEER AND EVENTUAL #1", tr: "ÖNCÜ İLE NİHAİ 1 NUMARA ARASINDAKİ AY", cn: "先行者与最终第一之间相隔的月数" } },
+      { layout: "bars", cls: (d) => d.months <= 12 ? "is-one" : "is-dim", legend: ["early", "rest"], caption: { en: "WINNER ENTERED WITHIN 12 MONTHS · 26 / 54", tr: "KAZANAN 12 AY İÇİNDE GİRDİ · 26 / 54", cn: "赢家在 12 个月内进入 · 26 / 54" } },
+      { layout: "bars", cls: (d) => d.months <= 24 ? "is-one" : d.months > 60 ? "is-out" : "is-dim", legend: ["early24", "late", "rest"], caption: { en: "≤ 24 MONTHS: 30 · > 5 YEARS: 14", tr: "≤ 24 AY: 30 · > 5 YIL: 14", cn: "≤ 24 个月：30 · > 5 年：14" } },
+      { layout: "hist", cls: () => "", legend: ["ink"], caption: { en: "WINNER'S ENTRY ORDER · MEDIAN #3", tr: "KAZANANIN GİRİŞ SIRASI · MEDYAN #3", cn: "赢家的进入顺序 · 中位数 #3" } },
+      { layout: "hist", cls: (d) => d.months > 60 ? "is-out" : "is-dim", legend: ["late", "rest"], caption: { en: "LATE WINNERS · 14 / 54", tr: "GEÇ KAZANANLAR · 14 / 54", cn: "迟到的赢家 · 14 / 54" } }
+    ];
+
+    function render() {
+      const step = STEPS[currentStep];
+      const W = board.clientWidth, H = board.clientHeight;
+      if (!W || !H) return;
+      const pos = step.layout === "grid" ? layoutGrid(W, H) : step.layout === "bars" ? layoutBars(W, H) : layoutHist(W, H);
+      cells.forEach((el, i) => {
+        const p = pos[i];
+        el.style.transform = "translate(" + p.x + "px," + p.y + "px)";
+        el.style.width = p.w + "px";
+        el.style.height = p.h + "px";
+        el.className = "cell " + step.cls(DATA[i]) + (step.layout === "bars" && p.w > W - 150 ? " label-in" : "");
+        el.firstChild.textContent = step.layout === "bars" ? DATA[i].winner + " · " + DATA[i].months : DATA[i].year;
+      });
+      board.dataset.layout = step.layout;
+      renderAxis(step.layout === "bars" ? "months" : step.layout === "hist" ? "order" : "none", W, H);
+      caption.textContent = step.caption[currentLang] || step.caption.en;
+      legend.querySelectorAll("[data-legend]").forEach((s) => { s.hidden = !step.legend.includes(s.dataset.legend); });
+    }
+
+    /* Tooltip */
+    const TIP = {
+      en: (d) => "<strong>" + d.name + "</strong>PIONEER: " + d.pioneer + " (" + d.year + ")<br>#1: " + d.winner + " · " + (d.months ? d.months + " MONTHS LATER" : "SAME BRAND") + "<br>ENTRY ORDER #" + d.order + " · PIONEER NOW: " + (d.rank ? "#" + d.rank : "OUT OF TOP 5") + (d.disputed ? "<br>PIONEER DISPUTED" : ""),
+      tr: (d) => "<strong>" + d.name + "</strong>ÖNCÜ: " + d.pioneer + " (" + d.year + ")<br>1 NUMARA: " + d.winner + " · " + (d.months ? d.months + " AY SONRA" : "AYNI MARKA") + "<br>GİRİŞ SIRASI #" + d.order + " · ÖNCÜ ŞİMDİ: " + (d.rank ? "#" + d.rank : "İLK 5 DIŞI") + (d.disputed ? "<br>ÖNCÜ TARTIŞMALI" : ""),
+      cn: (d) => "<strong>" + d.name + "</strong>先行者：" + d.pioneer + "（" + d.year + "）<br>第一：" + d.winner + " · " + (d.months ? d.months + " 个月后" : "同一品牌") + "<br>进入顺序 #" + d.order + " · 先行者现状：" + (d.rank ? "#" + d.rank : "前五之外") + (d.disputed ? "<br>先行者身份有争议" : "")
+    };
+    function showTip(el) {
+      const d = DATA[el.dataset.index];
+      tip.innerHTML = (TIP[currentLang] || TIP.en)(d);
+      tip.hidden = false;
+      const b = board.getBoundingClientRect(), r = el.getBoundingClientRect();
+      let x = r.left - b.left + r.width + 10, y = r.top - b.top;
+      if (x + tip.offsetWidth > b.width) x = Math.max(0, r.left - b.left - tip.offsetWidth - 10);
+      if (y + tip.offsetHeight > b.height) y = Math.max(0, b.height - tip.offsetHeight);
+      tip.style.transform = "translate(" + x + "px," + y + "px)";
+    }
+    cells.forEach((el) => {
+      el.setAttribute("aria-label", DATA[el.dataset.index].name);
+      el.addEventListener("mouseenter", () => showTip(el));
+      el.addEventListener("focus", () => showTip(el));
+      el.addEventListener("mouseleave", () => { tip.hidden = true; });
+      el.addEventListener("blur", () => { tip.hidden = true; });
+    });
+
+    /* Steps */
+    const stepEls = Array.from(document.querySelectorAll(".step"));
+    const figure = document.querySelector(".scrolly-figure");
+    let observer = null;
+    function observeSteps() {
+      if (observer) observer.disconnect();
+      const mobile = window.innerWidth <= 760;
+      const top = mobile ? Math.round(figure.offsetHeight + 12) + "px" : "-45%";
+      const bottom = mobile ? "-30%" : "-45%";
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          currentStep = Number(entry.target.dataset.step);
+          stepEls.forEach((s) => s.classList.toggle("is-active", s === entry.target));
+          render();
+        });
+      }, { rootMargin: "-" + top.replace(/^-/, "") + " 0px " + bottom + " 0px", threshold: 0 });
+      stepEls.forEach((s) => observer.observe(s));
+    }
+    stepEls[0].classList.add("is-active");
+    observeSteps();
+    let resizeTimer = null;
+    window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(observeSteps, 150); });
+    new ResizeObserver(() => render()).observe(board);
+    render();
+
+    /* ---------- Ledger ---------- */
+    const body = document.getElementById("ledger-body");
+    const count = document.getElementById("ledger-count");
+    const RANK_LABEL = {
+      en: (d) => d.rank ? "#" + d.rank : "Out of top 5",
+      tr: (d) => d.rank ? "#" + d.rank : "İlk 5 dışı",
+      cn: (d) => d.rank ? "#" + d.rank : "前五之外"
+    };
+    const DISPUTED = { en: "disputed", tr: "tartışmalı", cn: "有争议" };
+    const COUNT_LABEL = { en: (n) => n + " OF 54 ROWS", tr: (n) => "54 SATIRDAN " + n, cn: (n) => "54 行中的 " + n + " 行" };
+    let currentFilter = "all";
+    function renderLedger() {
+      const rows = DATA.filter((d) => currentFilter === "all" || (currentFilter === "late" ? d.months > 60 : outcome(d) === currentFilter));
+      body.innerHTML = rows.map((d) => {
+        const n = DATA.indexOf(d) + 1;
+        return "<tr><td class='idx'>" + String(n).padStart(2, "0") + "</td><td>" + d.name + "</td><td>" + d.pioneer + " <em>" + d.year + (d.disputed ? " · " + DISPUTED[currentLang] : "") + "</em></td><td>" + d.winner + "</td><td class='num'>" + d.months + "</td><td class='num'>#" + d.order + "</td><td><i class='" + outcome(d) + "'></i>" + RANK_LABEL[currentLang](d) + "</td></tr>";
+      }).join("");
+      count.textContent = COUNT_LABEL[currentLang](rows.length);
+    }
+    document.querySelectorAll("[data-filter]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        currentFilter = btn.dataset.filter;
+        document.querySelectorAll("[data-filter]").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        renderLedger();
+      });
+    });
+    renderLedger();
+
+    /* ---------- Copy ---------- */
+    const copy = {
+      en: {
+        "footer.back": "← ALL POSTS", "footer.post": "POST 03"
+      },
+      tr: {
+        "footer.back": "← TÜM YAZILAR", "footer.post": "YAZI 03",
+        "hero.eyebrow": "YAZI / 03 · TÜRKÇE · KAYDIRMALI HİKÂYE",
+        "hero.title": "Early mover advantage yalan mı?",
+        "hero.summary": "54 kategoride öncü olan ve sonunda zirveye çıkan markanın kıyaslaması. Kaydır çıldır tadında bir görselleştirme ile sizlere sunuluyor.",
+        "hero.date": "TARİH: 10 EYL 26", "hero.read": "OKUMA SÜRESİ: 8 DK", "hero.lang": "DİL: TÜRKÇE",
+        "hero.download": "VERİ SETİNİ İNDİR (XLSX) ↓",
+        "m1.label": "KATEGORİ", "m1.note": "1925'ten 2018'e ürünler",
+        "m2.label": "HÂLÂ BİR NUMARA OLAN ÖNCÜ", "m2.note": "\"ilk\" konusunda cömert davranırsanız 37%",
+        "m3.label": "MEDYAN KAZANAN", "m3.value": "3. giren", "m3.note": "öncüden on beş ay sonra",
+        "intro.label": "01 / GİRİŞ", "intro.title": "İki klişe.",
+        "intro.p1": "\"Get there first and the market is yours.\" Ya da öyle mi? Çünkü başkaları (Twitter'daki random bir hesap) \"early mover advantage yalan yaaaaa\" diyor.",
+        "intro.p2": "Aslında ikisi de anekdotal kanıtlar sunuyor, which is convenient. Anekdotlarla istediğini savunmak kolay, ben de bu yüzden işime gelince çok kullanıyorum zaten. Ama bazen işime gelmiyor, ya da merak ediyorum. Bu durum ikincisi, o yüzden bu \"early mover advantage\" olayı yalan mı değil mi bakmak istedim.",
+        "intro.p3": "Ürün kategorileri belirledim ve ilk kimin çıkardığına ve şu an (ya da artık ölü bir kategoriyse zirve yılında) kim tepede ona baktım. Sadece hardware ile sınırlıyorum çünkü fiziksel bir ürünü ilk kim çıkardı bakmak kolay. 1925 Leica film kameralarından 2018 katlanabilen telefonlara kadar 54 kategori var. Her biri aşağıda bir kare. Kaydır çıl-",
+        "fig.title": "ŞEK. 01 / TAHTA",
+        "leg.cat": "kategori", "leg.disputed": "öncü tartışmalı", "leg.one": "öncü hâlâ 1 numara", "leg.mid": "öncü ilk 5'te", "leg.out": "öncü ilk 5 dışında", "leg.early": "kazanan ≤ 12 ayda girdi", "leg.early24": "kazanan ≤ 24 ayda girdi", "leg.late": "kazanan > 5 yıl sonra girdi", "leg.rest": "diğerleri",
+        "s0.n": "ADIM 01 / 54 KARE",
+        "s0.p": "İlk ürünün çıktığı yıla göre sıralı 54 kategori. Sol üst Leica I, 1925. Sağ alt katlanabilir telefon, 2018. Kameralar, televizyonlar, telefonlar, çipler, yazıcılar, konsollar, bir robot süpürge, iki araba.",
+        "s1.n": "ADIM 02 / ÖNCÜLER",
+        "s1.p": "Her karenin bir öncüsü var: kategoriye ilk ticari ürünü koyan marka. Görmek için karelerin üzerine hover'la ya da tıkla. 54'ün 17'sinde \"ilk\" tartışmalı; bu bile bize bazı şeyler söylüyor. Ne mi? Onu da siz düşünün.",
+        "s2.n": "ADIM 03 / HÂLÂ ZİRVEDE",
+        "s2.p": "Soruya gelelim: bunların kaçında öncü bir numara? 20. GoPro, Intel, hem mürekkep püskürtmeli hem lazer yazıcıda HP, hibritte Toyota, akıllı hoparlörde Amazon, Fitbit, Raspberry Pi, iPad. 37%.",
+        "s3.n": "ADIM 04 / GEÇİLMİŞ YA DA GİTMİŞ",
+        "s3.p": "10 kategoride öncü hâlâ ilk beşte ama geçilmiş. Polaroid Instax'ın arkasında. Motorola Nokia'nın arkasında. Toshiba DVD oynatıcıda Sony'nin arkasında. 24'ünde öncü ilk beşte bile değil. Casio, Kodak, 3dfx, MakerBot, Osborne, Magnavox, Pebble.",
+        "s4.n": "ADIM 05 / SORUYU DEĞİŞTİR",
+        "s4.p": "Yani 37%'si tutunurken 44%'ü tablodan tamamen yok oluyor. Ama şu şekilde düşünelim ve soruyu değiştirelim: \"ilk kimdi\" diye sormayalım, \"kazanan ilkten ne kadar sonra çıktı\" diye düşünelim. Şimdi yandaki çubukların hepsi, kazananın ilk adımı atandan ne kadar sonra girdiğini gösteriyor. Uzunluk, ay cinsinden o gecikme.",
+        "s5.n": "ADIM 06 / İLK YIL",
+        "s5.p": "54 kategorinin 26'sında sonunda zirveye çıkan marka öncüden sonraki on iki ay içinde girdi. On altısı öncünün kendisiydi. On tanesi ilk yılda geldi: LG'nin Prada telefonundan bir ay sonra Apple; 3dfx'ten on ay sonra Nvidia; Sharp'ın LCD televizyonundan dokuz ay sonra Samsung.",
+        "s6.n": "ADIM 07 / UZUN KUYRUK",
+        "s6.p": "Pencereyi 2 seneye çektiğimizde ise 54'te 30 oluyor. Kuyruk ise tamamen başka bir hikâye. 14 kazanan beş seneden geç geldi. 35mm'de Canon, Leica'dan 129 ay sonra. DRAM'de Samsung, 161. Sony PlayStation, 267. Seagate, 285. Fujifilm Instax, 395 ay, Polaroid'den otuz üç yıl sonra.",
+        "s7.n": "ADIM 08 / GİRİŞ SIRASI",
+        "s7.p": "Zaman yerine giriş sırasına göre de bakalım çünkü why not? Kazanan 16 kez ilk giren, 10 kez ikinci, 7 kez üçüncüydü; sonra seyreliyor. Medyan kazanan üç numaralı giren, öncüden on beş ay sonra.",
+        "s8.n": "ADIM 09 / GEÇ GELENLER NASIL KAZANDI",
+        "s8.p": "Geç kazananların da bir örüntüsü var. Neredeyse hepsi ya üretim ölçeğiyle (Samsung, Lenovo, Seagate, Lite-On, TP-Link, Creality, Roborock) ya da bir platform sıfırlamasıyla kazandı: CD'li PlayStation, Switch, pazarda canlanma sonucu Instax. Kimse öncünün ürününün biraz daha iyi bir sürümünü çıkararak geç kazanmadı.",
+        "ledger.label": "02 / GELİŞME", "ledger.title": "Hepsine bakmak isterseniz, 54'ün tamamı.",
+        "ledger.deck": "Bir numara, yaşayan kategoriler için güncel pazarda 2023–24 (as güncel as it gets), ölü kategoriler için ise zirve yılında ölçüldü. Gecikme ise öncünün çıkışıyla kazananın ilk ürünü arasındaki ay farkı.",
+        "f.all": "TÜMÜ", "f.one": "ÖNCÜ HÂLÂ 1 NUMARA", "f.mid": "ÖNCÜ İLK 5'TE", "f.out": "ÖNCÜ İLK 5 DIŞINDA", "f.late": "GEÇ KAZANANLAR (> 5 YIL)",
+        "t.cat": "Kategori", "t.pioneer": "Öncü (ilk çıkış)", "t.winner": "1 numara", "t.months": "Gecikme (ay)", "t.order": "Giriş sırası", "t.rank": "Öncü şimdi",
+        "c.head": "İÇİNDEKİLER", "c.verdict": "03 / SONUÇ", "c.caveats": "04 / SORU İŞARETLERİ", "c.sources": "05 / KAYNAKLAR",
+        "v.n": "03 / SONUÇ", "v.title": "Peki, yalan mı?",
+        "v.p1": "Yaniiiiiii. It depends. İlk olmak pek yaramıyor gibi. Öncülerin üçte biri tacını koruyor. Tartışmalıları ayırırsak 30%'a yakın. Kategori olgunlaşınca 44%'ü tabloda bile yok. Twitter'daki kişi \"early mover advantage is a lie\" derken bunu kastediyorsa pekâlâ haklı.",
+        "v.p2": "Erken girmek ise fena değil. Kategorilerin yarısında kazanan öncüden sonraki 1 senede giriyor. Yarıdan fazlasında ise 2 sene içinde. 54'ün 37'sinde ilk yıl girenlerden en az biri hâlâ ilk beşte. Avantaj gerçek bence. Ama ilk giren değil de, ilk dalgada olanlar demek daha doğru.",
+        "v.boxLabel": "KISA VERSİYON",
+        "v.boxTitle": "Öncü genellikle kategorinin var olduğunu kanıtlıyor. Kazanan ise herkes olaya uyanmadan dahil oluyor.",
+        "v.boxP": "Medyan kazanan üçüncü girdi, on beş ay geç; öncü ürünün aslında ne olduğunu bulmak için parayı harcadıktan sonra.",
+        "v.p3": "Aslında bu yeni bir bulgu değil. Golder ve Tellis 1993'te tüketim mallarını saydı ve öncülerin 47% oranında başarısız olduğunu, daha sonra ama kategori büyümeden önce giren \"erken liderler\"in öncünün payının kabaca üç katına ulaştığını buldu. Markides ve Geroski bunun üzerine koca bir kitap yazıp adına Fast Second dedi.",
+        "cv.n": "04 / SORU İŞARETLERİ", "cv.title": "Korelasyon, tanımlar, hayatta kalanlar.",
+        "cv.boxLabel": "ALINTILAMADAN ÖNCE OKUYUN",
+        "cv.boxP": "Causal bir claim'de bulunmuyorum. Daha çok parası ve daha iyi öngörüsü olan şirketler sadece daha erken giriyor ve o yüzden kazanıyor olabilir.",
+        "cv.p1": "İlk nokta survivorship bias. Bazı kategoriler benim analizime dahil olmadan ölüyor. Doğal olarak o kategorilerin öncüleri için durum pek iç açıcı değil. Ancak bu kategoriler bu analizde olmadıklarından, aslında başarısız olan birçok öncü de analizde yok. Yani aslında bu analiz öncüleri olduğundan iyi gösteriyor.",
+        "cv.p2": "İkinci nokta ise \"tanımlar\". \"İlk\" ifadesi biraz... şey... neyse. Logitech, Connectix'i satın aldığı için web kamerası öncüsü sayılıyor; Prada bir ay önce çıktığı için Apple dokunmatik akıllı telefonu LG ile paylaşıyor; 54 öncünün 17'si veride tartışmalı olarak işaretli. Giriş sırası sayılarını kesin değil kabaca doğru diye okuyun.",
+        "cv.p3": "Üçüncü nokta ise ölçüm. \"Bir numara\" yaşayan kategorilerde güncel zirveyi, ölü olanlar için zirve yılını kullanıyor. Paylar da karışık kamusal kaynaklardan geliyor: şirket raporları, CIPA, IDC, Counterpoint, Statista. Veri seti 54 kategorinin 47'sine kanıt kalitesinde A, 7'sine B veriyor. Her satır yukarıdaki tabloda kendi kaynak bağlantılarını taşıyor.",
+        "cv.p4": "Sonuncusu da kapsam. Burada sadece bazı teknolojik ürünleri kıyasladım. Yazılım, platformlar, servisler, dolu başka kategori var ve bunlarda sonuçlar farklı olabilir. Ancak bakmaya üşendim. Bu kısmı okuyucuya egzersiz olarak bırakıyorum.",
+        "fl.label": "E UZATMA DERSEN:",
+        "fl.text": "Medyan kazanan üç numara ve öncüden on beş ay sonra giriyor.",
+        "src.n": "5 KAYNAK", "src.title": "Kaynaklar.",
+        "src.1": "Technology Early Mover Advantage Historical Dataset (XLSX): 54 kategori, 275 giren, satır bazında kaynaklar"
+      },
+      cn: {
+        "footer.back": "← 全部文章", "footer.post": "文章 03",
+        "hero.eyebrow": "文章 / 03 · 中文 · 滚动叙事",
+        "hero.title": "先发优势是个谎言吗？",
+        "hero.summary": "往下滚动，方块会告诉你谁赢：最先的、早到的，还是迟到的。",
+        "hero.date": "日期：2026 年 9 月 10 日", "hero.read": "阅读时间：约 8 分钟", "hero.lang": "语言：中文",
+        "hero.download": "下载数据集（XLSX）↓",
+        "m1.label": "品类", "m1.note": "首款产品从 1925 到 2018",
+        "m2.label": "先行者仍是第一", "m2.note": "37%，前提是你对“第一个”很宽容",
+        "m3.label": "赢家中位数", "m3.value": "第 3 位进入者", "m3.note": "在先行者之后十五个月",
+        "intro.label": "01 / 前提", "intro.title": "两句老话。",
+        "intro.p1": "有人说：“先到先得，市场就是你的。”另一个人——好吧，其实是推特上的某个人——说先发优势是最大的神话。",
+        "intro.p2": "两句都靠轶事讲，这很方便，因为轶事是证明一件事最好用、也多半最不科学的方式。所以我想查一查。我整理了一大批品类，找出谁最先出货、现在（如果品类已死，就看巅峰年份）谁是第一，再看两者之间的差距。",
+        "intro.p3": "硬件：实体产品很容易核对谁先来、谁卖得最多。所以就用这些。从 1925 年的 Leica 胶片相机到 2018 年的折叠手机，一共 54 个品类。每一个都是下面的一个方块。往下滚，慢慢看。",
+        "fig.title": "图 01 / 棋盘",
+        "leg.cat": "品类", "leg.disputed": "先行者有争议", "leg.one": "先行者仍是第一", "leg.mid": "先行者在前五", "leg.out": "先行者跌出前五", "leg.early": "赢家 ≤ 12 个月进入", "leg.early24": "赢家 ≤ 24 个月进入", "leg.late": "赢家 > 5 年后进入", "leg.rest": "其他",
+        "s0.n": "第 01 步 / 54 个方块",
+        "s0.p": "五十四个品类，按首款产品出货年份排序。左上是 1925 年的 Leica I，右下是 2018 年的折叠手机。相机、电视、手机、芯片、打印机、游戏机、一台扫地机器人、两辆车。",
+        "s1.n": "第 02 步 / 先行者",
+        "s1.p": "每个方块都有一位先行者：第一个把商业化产品放进这个品类的品牌。把鼠标移到方块上就能看到。54 个里有 17 个的“第一”存在争议——这本身就提醒你，这个故事通常是怎么被讲的。",
+        "s2.n": "第 03 步 / 仍在顶端",
+        "s2.p": "现在提问。其中有多少个品类，先行者今天仍是第一？二十个。GoPro、Intel、喷墨和激光打印机里的 HP、混动车里的丰田、智能音箱里的亚马逊、Fitbit、Raspberry Pi、iPad。百分之三十七。",
+        "s3.n": "第 04 步 / 被超越，或出局",
+        "s3.p": "另有十个，先行者还在前五但被超过：Polaroid 落后于 Instax，摩托罗拉落后于诺基亚，DVD 播放机里东芝落后于索尼。而在 24 个——将近一半——先行者根本不在前五。Casio、Kodak、3dfx、MakerBot、Osborne、Magnavox、Pebble。",
+        "s4.n": "第 05 步 / 换个问题",
+        "s4.p": "所以 37% 守住了，44% 掉出了榜单。按这个算法，老话看起来对了一半。但那句话里“第一”这个词承担了太多。换个问法：不是谁最先，而是最终赢家在先行者之后多久才出现？每个方块现在变成一根条，长度就是那段延迟，以月计。",
+        "s5.n": "第 06 步 / 第一年",
+        "s5.p": "54 个品类里有 26 个，最终登顶的品牌在先行者之后十二个月内进入。十六个就是先行者本身。十个在第一年到来：苹果，在 LG Prada 手机之后一个月；Nvidia，在 3dfx 之后十个月；三星，在夏普 LCD 电视之后九个月。",
+        "s6.n": "第 07 步 / 长尾",
+        "s6.p": "把窗口拉到两年，就是 54 个里的 30 个，超过一半。尾巴是另一个故事：14 个赢家晚了五年以上。35mm 相机里的佳能，在 Leica 之后 129 个月。DRAM 里的三星，161。索尼 PlayStation，267。希捷，285。富士 Instax，395 个月，在 Polaroid 之后三十三年。",
+        "s7.n": "第 08 步 / 进入顺序",
+        "s7.p": "改按进入顺序而不是时间重新分组。赢家是第一位进入者的有 16 次，第二位 10 次，第三位 7 次，之后就稀疏了。赢家的中位数是第三位进入者，在先行者之后十五个月。不是第一。不是第十。是早。",
+        "s8.n": "第 09 步 / 迟到者怎么赢",
+        "s8.p": "迟到的赢家也有规律。几乎全部靠制造规模（三星、联想、希捷、建兴、TP-Link、创想三维、石头科技）或平台重置取胜：带 CD 的 PlayStation、Switch、作为复兴的 Instax。没有人是靠做一个比先行者稍好一点的产品而迟到取胜的。",
+        "ledger.label": "02 / 完整列表", "ledger.title": "如果你想核对，这里是全部 54 个。",
+        "ledger.deck": "“第一”对仍在的品类按当前市场（2023–24）计，对已消亡的品类按巅峰年份计。延迟是先行者发布到赢家首款合格产品之间的月数。",
+        "f.all": "全部", "f.one": "先行者仍是第一", "f.mid": "先行者在前五", "f.out": "先行者跌出前五", "f.late": "迟到的赢家（> 5 年）",
+        "t.cat": "品类", "t.pioneer": "先行者（首发）", "t.winner": "第一品牌", "t.months": "延迟（月）", "t.order": "进入顺序", "t.rank": "先行者现状",
+        "c.head": "目录", "c.verdict": "03 / 结论", "c.caveats": "04 / 它没说明什么", "c.sources": "05 / 来源",
+        "v.n": "03 / 结论", "v.title": "那么，是谎言吗？",
+        "v.p1": "字面意义上的“第一”是弱赌注。大约三分之一的先行者保住了王冠；如果你拒绝把共享或有争议的“第一”算进去，接近 30%。到品类成熟时，44% 已不在榜上。如果有人说的先发优势是这个意思，他们的怀疑是对的。",
+        "v.p2": "“早”是强赌注。一半的品类里赢家在先行者之后一年内进入，超过一半在两年内；54 个里有 37 个，至少有一个第一年进入者仍在前五。优势是真实的。它只是属于第一波，而不是第一个名字。",
+        "v.boxLabel": "简短版本",
+        "v.boxTitle": "先行者的工作是证明这个品类存在。赢家的工作是在别人相信之前赶到。",
+        "v.boxP": "赢家中位数是第三位进入者，晚了十五个月——在先行者花完钱、搞清楚这个产品到底是什么之后。",
+        "v.p3": "这不是新发现，这反而让人安心。Golder 和 Tellis 在 1993 年统计了消费品，发现先行者有 47% 失败，而“早期领导者”——进入更晚、但赶在品类起飞之前的公司——最终份额大约是先行者的三倍。Markides 和 Geroski 为此写了一整本书，叫 Fast Second。从 Leica 到 Quest 的消费硬件，看起来并无不同。",
+        "cv.n": "04 / 它没说明什么", "cv.title": "相关性、定义、幸存者。",
+        "cv.boxLabel": "引用前请先读",
+        "cv.boxP": "这是描述性计数，不是因果主张。钱更多、眼光更好的公司可能只是更早进入，并因此获胜。",
+        "cv.p1": "首先是幸存者偏差。这里的每个品类都成熟到了有市场份额可测的程度。但有很多品类……从未成为品类。所以它们不在这个集合里。也就是说，那些先行者虽然失败了，却没有被计入这项研究，这让先行者的成绩看起来比实际更好。",
+        "cv.p2": "其次是“定义”。Logitech 因为收购了 Connectix 而被算作网络摄像头先行者；因为 Prada 早一个月出货，苹果与 LG 共享触屏智能手机的先行者身份；54 个先行者里有 17 个在数据中被标为有争议。把进入顺序的数字当作大致正确，而非精确。",
+        "cv.p3": "第三是测量。“第一”把仍在品类的当前出货份额（2023–24）与已消亡品类的巅峰年份份额混在一起，份额来自各类公开来源：公司报告、CIPA、IDC、Counterpoint、Statista。数据集给 54 个品类中的 47 个评了证据质量 A，7 个评 B。每一行在上面的表格里都带有自己的来源链接。",
+        "cv.p4": "最后是范围。我只查了硬件。软件、平台、服务，还有很多别的可以查，我们没法确定那里的结果是否类似。但我懒，没查。所以这部分留给读者当练习。",
+        "fl.label": "如果你只记住一行：",
+        "fl.text": "赢家中位数：第三位进入者，在先行者之后十五个月。",
+        "src.n": "5 条参考", "src.title": "来源。",
+        "src.1": "Technology Early Mover Advantage Historical Dataset（XLSX）：54 个品类、275 个进入者、逐行来源"
+      }
+    };
+    document.querySelectorAll("[data-i18n]").forEach((el) => { if (!(el.dataset.i18n in copy.en)) copy.en[el.dataset.i18n] = el.textContent; });
+    const meta = {
+      en: { title: "Is early mover advantage a lie? | Sima", description: "Fifty-four hardware categories, one pioneer each, and the brand that actually ended up on top. A scrolling count of who wins: the first, the early, or the late." },
+      tr: { title: "Early mover advantage yalan mı? | Sima", description: "54 kategoride öncü olan ve sonunda zirveye çıkan markanın kıyaslaması. Kaydır çıldır tadında bir görselleştirme." },
+      cn: { title: "先发优势是个谎言吗？| Sima", description: "五十四个硬件品类，每个都有一位先行者，以及最终登顶的品牌。一次滚动式的计数：谁赢——最先的、早到的，还是迟到的。" }
+    };
+    SiteLanguage.init({
+      copy: copy,
+      render: (language) => {
+        currentLang = language;
+        document.title = meta[language].title;
+        document.querySelector('meta[name="description"]').content = meta[language].description;
+        render();
+        renderLedger();
+      }
+    });
+  </script>
+</body>
+</html>
